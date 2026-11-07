@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; Workbench helper v2 (current user only). Remove with workbench-explorer-uninstall.reg
+; workbench-open: opens an existing folder in File Explorer (never runs files).
+; workbench-move: moves/renames a project folder - only folders that contain proj_management,
+;                 only to a new path whose parent exists. Windows asks via the browser first.
+
+[HKEY_CURRENT_USER\Software\Classes\workbench-open]
+@="URL:Workbench open folder"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\workbench-open\shell\open\command]
+@="powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command \"$u=[uri]::UnescapeDataString(('%1' -replace '^workbench-open:','')); if(Test-Path -LiteralPath $u -PathType Container){Start-Process explorer.exe -ArgumentList ('\\\"'+$u+'\\\"')}\""
+
+[HKEY_CURRENT_USER\Software\Classes\workbench-move]
+@="URL:Workbench move project folder"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\workbench-move\shell\open\command]
+@="powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command \"$a=[uri]::UnescapeDataString(('%1' -replace '^workbench-move:','')) -split '\\*',2; $s=$a[0]; $d=$a[1]; $par=Split-Path -Parent $d; if((Test-Path -LiteralPath (Join-Path $s 'proj_management') -PathType Container) -and -not (Test-Path -LiteralPath $d) -and (Test-Path -LiteralPath $par -PathType Container)){ try { Move-Item -LiteralPath $s -Destination $d -ErrorAction Stop; Start-Process explorer.exe -ArgumentList ('\\\"'+$d+'\\\"') } catch { Add-Type -AssemblyName PresentationFramework; [void][System.Windows.MessageBox]::Show('Workbench could not move the folder: '+$_.Exception.Message+' (close any programs using files in it and try again)','Workbench') } } else { Add-Type -AssemblyName PresentationFramework; [void][System.Windows.MessageBox]::Show('Workbench did not move the folder. The source must contain proj_management, the new location must not exist yet, and its parent folder must exist.','Workbench') }\""
+

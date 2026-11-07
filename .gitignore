@@ -1,0 +1,13 @@
+# This repo is PUBLIC (GitHub Pages). Only the app itself is published.
+# Everything else in this folder (proj_management/, ideas/, examples/, your notes) stays local.
+/*
+!/.gitignore
+!/index.html
+!/Workbench.html
+!/manifest.webmanifest
+!/sw.js
+!/icons/
+!/tools/
+!/README.md
+!/PROJ_MANAGEMENT_SPEC.md
+!/CLAUDE.md
