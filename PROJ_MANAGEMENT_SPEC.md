@@ -71,6 +71,7 @@ Source: user
 |---|---|
 | `Status:` | One of Idea, Active, Paused, Maintenance, Completed or Archived. **The human owns it.** |
 | `Color:` | Optional `#RRGGBB`. The human sets it in the app to give the project its own accent color. Leave it alone. |
+| `Icon:` | Optional path to the project's icon image, relative to the project folder (e.g. `Assets/icon.png`). Set by the human in the app. If it's missing, Workbench falls back to `proj_management/icon.png`. |
 | `## <Area>` | An area or subsection (one mod in a pack, one module). Optional: features placed above the first `##` belong to the whole project. |
 | `### <ID> · <Title> [Stage]` | One feature. Use IDs like `F-AREA-01`. They are unique and never reused. |
 | Stage | Ideated 10% · Designed 25% · Testing 50% · Iterating 75% · Completed 100% |
@@ -188,6 +189,39 @@ Sections, in order:
 6. **Feature requests**: features with `Source: user`.
 7. **Results by batch**: every recorded result, including passes with notes.
 8. A `<!-- PROJ-MGMT-DATA ... -->` JSON block. This is the tool's storage. Never edit it.
+
+## Workspace notebook (`<workspace>/notebook/*.md`)
+
+Workbench's **Notebook** keeps one Markdown file per topic in the workspace folder (not in a project). Agents may read these, and add tasks, links or notes **only when asked**, editing the file in place.
+
+```markdown
+<!-- PROJ-MGMT:NOTEBOOK v1 ... -->
+# Mod release checklist
+
+Status: Open            (Open | Waiting | Done)
+Tags: valheim, release
+Created: 2026-11-07
+Updated: 2026-11-07
+
+## Tasks
+### Before upload
+- [ ] Write changelog
+- [x] Bump version
+- [2/10] Screenshots taken      (a counter: current/target)
+
+## Links
+- [Thunderstore page](https://thunderstore.io/...)
+- [Glider Tweaks › VGT-101](#project/<id>/testing/batches?hl=t-VGT-101)
+
+## Notes
+Free Markdown.
+```
+
+`### Name` lines under Tasks group the tasks. Images live in `notebook/attachments/` and are listed on an `Attachments:` line written by Workbench.
+
+A project's icon comes from the `Icon:` path in FEATURES.md (relative to the project folder, so a mod can use its real icon file), falling back to a square `proj_management/icon.png` (or `.webp`, `.jpg`, `.svg`). Workbench shows it on the project card, header and tab.
+
+---
 
 ## Agent workflow (each iteration)
 

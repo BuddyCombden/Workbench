@@ -130,6 +130,7 @@ h1{font-size:26px;margin:4px 0;letter-spacing:-.02em;line-height:1.2}h2{font-siz
 .ph .swatch{width:14px;height:14px;border-radius:5px;background:var(--pc,var(--accent));box-shadow:0 0 0 4px color-mix(in srgb,var(--pc,var(--accent)) 22%,transparent)}
 .ph-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .back{display:inline-flex;align-items:center;gap:4px}
+.tabs a.tab-right{margin-left:auto}.tabs a.tab-ico{padding-left:12px;padding-right:12px}
 .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:20px}
 .tabs a{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s}
 .tabs a:hover{color:var(--text)}
@@ -533,14 +534,15 @@ dialog.report-dlg{width:min(860px,calc(100vw - 32px))}
 .ph h1{display:flex;align-items:center;gap:12px}
 select.st-sel{font-weight:600;border-color:color-mix(in srgb,currentColor 35%,transparent)}
 select.st-sel option{background:var(--panel);color:var(--text);font-weight:400}
-dialog.color-dlg{width:min(440px,calc(100vw - 32px))}
+dialog.color-dlg{width:min(500px,calc(100vw - 32px))}
 .cdlg{display:flex;flex-direction:column;gap:10px}
 .cdlg-h{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);margin-top:4px}
 .cdlg-def{justify-content:flex-start;gap:12px;text-align:left;white-space:normal;padding:10px 12px}
 .cdlg-def.on{border-color:var(--accent);background:var(--accent-soft)}.cdlg-def>.ic{margin-left:auto}
 .cdlg-def .sw{width:26px;height:26px;border-radius:7px;flex:none}
 .cdlg .swatches{display:flex;gap:8px;flex-wrap:wrap}
-.cdlg .swatches .sw{width:34px;height:34px;border-radius:9px;position:relative}
+.cdlg .swatches .sw{width:32px;height:32px;border-radius:9px;position:relative}
+.cdlg-row .swatches{gap:7px;flex-wrap:nowrap}
 .cdlg .sugg{position:absolute;right:2px;top:0;font-size:11px;color:#fff;text-shadow:0 0 3px #0008}
 .cdlg-pick{display:flex;align-items:center;gap:10px;cursor:pointer}
 .cdlg-pick input[type=color]{width:54px;height:34px;padding:2px;border-radius:8px;border:1px solid var(--line-strong);background:var(--panel2);cursor:pointer}
@@ -553,6 +555,77 @@ dialog.color-dlg{width:min(440px,calc(100vw - 32px))}
 .restore{border-left:3px solid var(--accent);margin-bottom:18px}
 .restore-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-top:1px solid var(--line)}
 .restore-row .muted{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.order-sel{display:inline-flex;align-items:center;gap:6px}
+.order-sel select{height:32px;padding:0 8px;font-size:14px;color:var(--text)}
+.picon{display:inline-block;object-fit:cover;border-radius:var(--r-sm);flex:none;vertical-align:middle;background:var(--panel2)}
+.picon.xs{width:18px;height:18px;border-radius:calc(var(--r-sm) * .55)}
+.picon.sm{width:24px;height:24px;border-radius:calc(var(--r-sm) * .7);margin-right:8px}
+.picon.md{width:38px;height:38px}
+.picon.lg{width:56px;height:56px;border-radius:var(--r)}
+.picon.empty{display:inline-flex;align-items:center;justify-content:center;color:var(--faint);border:1px dashed var(--line-strong)}
+.card-top h3{display:flex;align-items:center}
+.cdlg-icon{display:flex;align-items:center;gap:12px}
+.nb-tags{display:inline-flex;gap:6px;flex-wrap:wrap}
+.chip.tag{background:var(--panel3);color:var(--muted);border:1px solid transparent;cursor:pointer}
+.chip.tag.on{border-color:var(--accent);color:var(--accent-strong)}
+.nb-card .nb-tags{margin:2px 0 10px}
+.nb-title{margin:2px 0 4px}
+.nb-title-in{font:inherit;font-size:inherit;font-weight:700;background:transparent;border:1px solid transparent;padding:2px 6px;margin-left:-7px;width:100%;color:var(--text)}
+.nb-title-in:hover{border-color:var(--line)}
+.nb-tagrow{display:flex;align-items:center;gap:8px;margin:-4px 0 16px;color:var(--faint)}.nb-tagrow input{flex:1;max-width:520px}
+.nb-cols{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:start}
+@media (max-width:900px){.nb-cols{grid-template-columns:1fr}}
+.nb-group{margin-top:12px}
+.nb-ghead{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid var(--line);margin-bottom:4px}
+.nb-ghead input{flex:1;font-weight:700;background:transparent;border-color:transparent;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.nb-ghead input:hover{border-color:var(--line)}
+.nb-task,.nb-link{display:flex;align-items:center;gap:8px;padding:3px 0;border-radius:var(--r-sm)}
+.nb-task .nb-ttext{flex:1;background:transparent;border-color:transparent;padding:5px 7px}
+.nb-task .nb-ttext:hover{border-color:var(--line)}
+.nb-task.done .nb-ttext{color:var(--faint);text-decoration:line-through}
+.nb-task>.icon,.nb-link>.icon{opacity:0;transition:opacity .15s}.nb-task:hover>.icon,.nb-link:hover>.icon,.nb-task:focus-within>.icon{opacity:1}
+.nb-grip{color:var(--faint);cursor:grab;display:flex;opacity:.35}.nb-grip .ic{width:14px;height:14px}
+.nb-task:hover .nb-grip,.nb-link:hover .nb-grip,.nb-ghead:hover .nb-grip{opacity:1}
+.nb-check{width:20px;height:20px;padding:0;justify-content:center;border-radius:6px;border:1.5px solid var(--line-strong);background:transparent;flex:none}
+.nb-check.on{background:var(--pass);border-color:var(--pass);color:var(--accent-ink)}.nb-check .ic{width:14px;height:14px}
+.nb-cnt{display:inline-flex;align-items:center;gap:2px;flex:none;font-variant-numeric:tabular-nums}
+.nb-cnt a{min-width:44px;text-align:center;font-weight:700;cursor:pointer}
+.nb-cnt button{width:24px;height:24px;padding:0;justify-content:center;font-weight:700}
+.nb-add{display:flex;align-items:center;gap:8px;color:var(--faint);padding:3px 0 3px 22px}
+.nb-add input{flex:1;background:transparent;border-style:dashed}
+.nb-before{box-shadow:0 -2px 0 0 var(--accent)}.nb-after{box-shadow:0 2px 0 0 var(--accent)}
+.nb-group.nb-before{box-shadow:0 -3px 0 0 var(--accent)}.nb-group.nb-after{box-shadow:0 3px 0 0 var(--accent)}
+.nb-lmain{flex:1;min-width:0;display:flex;flex-direction:column;padding:4px 2px}
+.nb-lmain a{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nb-lmain .muted{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nb-link+.nb-link{border-top:1px solid var(--line)}
+.nb-lform{display:flex;flex-direction:column;gap:6px;padding:8px;border:1px solid var(--line);border-radius:var(--r-sm);margin:6px 0}
+.nb-lform .primary,.nb-lform .ghost{align-self:flex-start}
+.nb-lform{display:grid;grid-template-columns:1fr auto auto}.nb-lform input{grid-column:1/-1}
+.nb-notes{margin-top:16px}.nb-notes textarea{width:100%;min-height:120px}
+.nb-md{padding:4px 2px}
+.dragging{opacity:.45}
+.ph-title{gap:12px}
+.ph-icon{position:relative;padding:0;border:0;background:none;width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:var(--r-sm)}
+.ph-icon:not(.has-img){width:28px;height:28px}
+.ph-icon .picon,.ph-icon .swatch-btn{transition:opacity .15s,transform .15s}
+.ph-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s;color:var(--text);pointer-events:none}
+.ph-ov .ic{width:18px;height:18px;filter:drop-shadow(0 1px 2px #000a)}
+.ph-title:hover .ph-icon .picon,.ph-title:hover .ph-icon .swatch-btn,.ph-icon:focus-visible .picon,.ph-icon:focus-visible .swatch-btn,.icon-pick:hover .picon,.icon-pick:focus-visible .picon{opacity:.35}
+.ph-title:hover .ph-ov,.ph-icon:focus-visible .ph-ov,.icon-pick:hover .ph-ov,.icon-pick:focus-visible .ph-ov{opacity:1}
+.ph-icon .swatch-btn{pointer-events:none}
+.cdlg-hrow{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
+.cdlg-hrow .cdlg-h{margin:0}
+.cdlg-row{display:flex;align-items:center;gap:10px}
+.cdlg-row .swatches{flex:1}
+.cdlg-div{width:1px;align-self:stretch;background:var(--line);margin:0 2px}
+.cdlg-pick{flex:none;border-radius:10px;padding:2px;border:2px solid transparent}.cdlg-pick.on{border-color:var(--text)}
+.cdlg-pick input[type=color]{width:46px;height:34px}
+.cdlg-icon{display:flex;align-items:flex-start;gap:16px}
+.cdlg-icol{display:flex;flex-direction:column;align-items:center;gap:6px;flex:none}
+.icon-pick{position:relative;padding:0;border:0;background:none;cursor:pointer;border-radius:var(--r);display:inline-flex}
+.icon-pick .ph-ov .ic{width:22px;height:22px}
+.cdlg-itext p{margin:0 0 6px}
 .set-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
 </style>
 </head>
@@ -571,7 +644,7 @@ dialog.color-dlg{width:min(440px,calc(100vw - 32px))}
    Open with ?demo for an in-memory demo.
    ===================================================================== */
 
-const APP_VERSION='0.18.1';
+const APP_VERSION='0.20.1';
 const RUN_MODE=location.protocol==='file:'?'file':(matchMedia('(display-mode: standalone)').matches||navigator.standalone?'app':'web');
 const STAGES=['Ideated','Designed','Testing','Iterating','Completed'];
 const STAGE_PCT={Ideated:10,Designed:25,Testing:50,Iterating:75,Completed:100};
@@ -712,6 +785,8 @@ function normStatus(s){const k=String(s||'').trim().toLowerCase();return STATUSE
 function stripAgentNote(t){return String(t||'').replace(/^﻿?\s*<!--[\s\S]*?-->\s*/,'')}
 /* ---------------- icons (inline SVG, stroke = currentColor) ---------------- */
 const ICONS={
+  copy:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>',
+  doc:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
   grid:'<rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/>',
   bulb:'<path d="M9.5 18h5M10.5 21h3"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1V16h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/>',
   plus:'<path d="M12 5v14M5 12h14"/>',
@@ -728,6 +803,12 @@ const ICONS={
   chevR:'<path d="M9.5 6l6 6-6 6"/>',chevD:'<path d="M6 9.5l6 6 6-6"/>',
   sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2.5 12h2M19.5 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
+  sortAsc:'<path d="M4 6h5M4 12h8M4 18h11M18 19V5M15 8l3-3 3 3"/>',
+  sortDesc:'<path d="M4 6h11M4 12h8M4 18h5M18 5v14M15 16l3 3 3-3"/>',
+  prio:'<path d="M4 6h11M4 12h11M4 18h11M19.5 5v9M19.5 18v.6"/>',
+  image:'<rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M20.5 16l-5-5-9 8.5"/>',
+  book:'<path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7.5h6"/>',
+  link:'<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/>',
   rows:'<path d="M4 6h16M4 12h16M4 18h16"/>',rowsTight:'<path d="M4 5h16M4 9.7h16M4 14.3h16M4 19h16"/>',
   chart:'<path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/>',
   flask:'<path d="M9 3h6M10 3v6l-5.2 9.2A1.9 1.9 0 0 0 6.5 21h11a1.9 1.9 0 0 0 1.7-2.8L14 9V3"/><path d="M7.4 15h9.2"/>',
@@ -784,7 +865,7 @@ function importSettings(text){
   if(d.settings){S.set={...SET_DEFAULTS,...d.settings};applySettings(true)}
   if(d.workspacePath){S.paths.__ws=d.workspacePath}
   const pend={fav:d.favoritesByName||{},path:d.pathsByName||{}};lsSet('wb-pending',pend);
-  if(d.layoutByName){const L=layout();L.groups=[];L.member={};const memb={};for(const g of d.layoutByName.groups||[]){const id='g'+rid();L.groups.push({id,name:g.name,collapsed:g.collapsed,color:validColor(g.color)||''});for(const n of g.members||[])memb[n]=id}
+  if(d.layoutByName){const L=layout();L.groups=[];L.member={};const memb={};for(const g of d.layoutByName.groups||[]){const id='g'+rid();L.groups.push({id,name:g.name,collapsed:g.collapsed,color:validColor(g.color)||'',icon:/^data:image\//.test(g.icon||'')?g.icon:''});for(const n of g.members||[])memb[n]=id}
     lsSet('wb-pending-layout',{memb,order:d.layoutByName.order||[]});saveLayout()}
   if(Array.isArray(d.projects)){const have=new Set(S.projects.filter(p=>p.loaded).map(projName));
     const prev=lsGet('wb-pending-projects',[])||[];const list=[...prev.filter(x=>!d.projects.some(y=>y.name===x.name)),...d.projects.filter(x=>x&&x.name&&!have.has(x.name)).map(x=>({name:String(x.name),path:rootPath(x.path||''),folder:String(x.folder||'')}))];
@@ -896,7 +977,7 @@ function splitIdTitle(t){const m=t.match(ID_RE);return m?{id:m[1],title:m[2].tri
 
 /* ---------------- FEATURES.md ---------------- */
 function parseFeatures(text){
-  const m={name:'',status:'',summary:'',color:'',intro:[],areas:[]};
+  const m={name:'',status:'',summary:'',color:'',icon:'',intro:[],areas:[]};
   let area=null,feat=null,inHeader=true;
   const getArea=()=>{if(!area){area={name:'',desc:[],features:[]};m.areas.push(area)}return area};
   for(const raw of stripAgentNote(text).split(/\r?\n/)){
@@ -909,8 +990,8 @@ function parseFeatures(text){
       const sm=t.match(/\s*\[([A-Za-z ]+)\]\s*$/);if(sm&&normStage(sm[1])){stage=normStage(sm[1]);t=t.slice(0,sm.index).trim()}
       const it=splitIdTitle(t);feat={id:it.id,title:it.title,stage:stage||'Ideated',desc:[],parts:[],source:''};getArea().features.push(feat);continue}
     if(inHeader){
-      if((mm=line.match(/^(Project|Status|Summary|Color):\s*(.*)$/i))){const k=mm[1].toLowerCase();
-        if(k==='project')m.name=mm[2].trim()||m.name;else if(k==='status')m.status=normStatus(mm[2]);else if(k==='color')m.color=validColor(mm[2]);else m.summary=mm[2].trim()}
+      if((mm=line.match(/^(Project|Status|Summary|Color|Icon):\s*(.*)$/i))){const k=mm[1].toLowerCase();
+        if(k==='project')m.name=mm[2].trim()||m.name;else if(k==='status')m.status=normStatus(mm[2]);else if(k==='color')m.color=validColor(mm[2]);else if(k==='icon')m.icon=mm[2].trim();else m.summary=mm[2].trim()}
       else if(line.trim()&&!line.trim().startsWith('<!--'))m.intro.push(line);
       continue}
     if(feat){
@@ -923,7 +1004,7 @@ function parseFeatures(text){
   return m;
 }
 function serializeFeatures(m){
-  let o=FEATURES_NOTE+`\n# Features — ${m.name}\n\nProject: ${m.name}\nStatus: ${m.status||'Active'}\nSummary: ${m.summary||''}\n${m.color?`Color: ${m.color}\n`:''}`;
+  let o=FEATURES_NOTE+`\n# Features — ${m.name}\n\nProject: ${m.name}\nStatus: ${m.status||'Active'}\nSummary: ${m.summary||''}\n${m.color?`Color: ${m.color}\n`:''}${m.icon?`Icon: ${m.icon}\n`:''}`;
   if(m.intro.length)o+='\n'+m.intro.join('\n')+'\n';
   const areas=[...m.areas].sort((a,b)=>(a.name?1:0)-(b.name?1:0));
   for(const a of areas){
@@ -1220,6 +1301,7 @@ async function loadProject(p){
     p.setupPending=!!(await readFile(p.pm,'AGENT_SETUP.md'));
     await resolveInWs(p);p.missing=false;if(S.favs)setTimeout(applyPending);
     const rec=S.records.find(x=>x.id===p.id);if(rec&&rec.name!==projName(p)){rec.name=projName(p);saveRecords()}
+    await loadIcon(p);
     p.loaded=true;p.error='';
     await loadActivity(p);
   }catch(e){console.error(e);p.loaded=false;p.missing=e.name==='NotFoundError';
@@ -1409,17 +1491,18 @@ function render(){
   if(!S.demo&&!window.showDirectoryPicker)html=renderUnsupported();
   else if(!S.ws)html=renderWelcome();
   else if(v.page==='ideas')html=renderIdeas();
+  else if(v.page==='notebook')html=renderNotebook();
   else if(v.page==='project'&&getP(v.pid))html=renderProject(getP(v.pid));
   else html=renderHome();
   const cp=v.page==='project'?getP(v.pid):null;
-  document.title='Workbench - '+(cp?projName(cp):v.page==='ideas'?'Ideas':'Projects');
+  document.title='Workbench - '+(cp?projName(cp):v.page==='ideas'?'Ideas':v.page==='notebook'?(v.topic&&getTopic(v.topic)?getTopic(v.topic).title:'Notebook'):'Projects');
   if(cp){const keep={};for(const k of ['tsub','batch','filter','gfilter','dfilter','ifilter','order'])if(v[k]!=null)keep[k]=v[k];S.mem[cp.id]=keep;lsSet('wb-viewmem',S.mem)}
-  const app=$('#app'),vk=JSON.stringify([v.page,v.pid,v.tab]),same=S.lastView===vk;
+  const app=$('#app'),vk=JSON.stringify([v.page,v.pid,v.tab,v.topic]),same=S.lastView===vk;
   const anc=same?scrollAnchor(ae):null;
   app.classList.toggle('enter',!same);S.lastView=vk;
   app.innerHTML=html;
   if(fsel){const el=document.querySelector(fsel);if(el&&document.activeElement!==el){if(key&&val!=null&&el.value!==val)el.value=val;el.focus({preventScroll:true});if(key&&sel&&el.setSelectionRange)try{el.setSelectionRange(sel[0],sel[1])}catch{}}}
-  loadThumbs();
+  loadThumbs();loadNbThumbs();
   document.querySelectorAll('textarea[data-k]').forEach(taFit);
   if(anc){const el=document.getElementById(anc.id);if(el){const d=el.getBoundingClientRect().top-anc.top;if(Math.abs(d)>1)window.scrollBy({top:d,behavior:'instant'})}}
   applyHighlights();
@@ -1450,7 +1533,7 @@ function hlNext(dir=1){
   return true;
 }
 /* back / forward between pages and tabs (Alt+Left/Right, mouse back buttons, browser buttons) */
-function routeOf(v){return {page:v.page||'home',pid:v.page==='project'?v.pid:undefined,tab:v.page==='project'?(v.tab||null):undefined,tsub:v.page==='project'&&v.tab==='testing'?(v.tsub||'batches'):undefined}}
+function routeOf(v){return {page:v.page||'home',pid:v.page==='project'?v.pid:v.page==='notebook'?(v.topic||undefined):undefined,tab:v.page==='project'?(v.tab||null):undefined,tsub:v.page==='project'&&v.tab==='testing'?(v.tsub||'batches'):undefined}}
 function syncHistory(){
   if(S.restoring||!S.booted)return;
   const r=routeOf(S.view),key=JSON.stringify(r);if(key===S.routeKey)return;
@@ -1475,14 +1558,18 @@ addEventListener('popstate',e=>{
   if(!r.tsub)delete S.view.tsub;S.sticky.clear();render();S.routeKey=JSON.stringify(routeOf(S.view));S.restoring=false;scrollTo(0,0);
 });
 function routeFromHash(){
-  const [page,pid,tab,tsub]=location.hash.replace(/^#/,'').split('/').map(decodeURIComponent);
+  const [path,qs]=location.hash.replace(/^#/,'').split('?');
+  const [page,pid,tab,tsub]=path.split('/').map(decodeURIComponent);
   if(page==='ideas')return {page:'ideas'};
-  if(page==='project'&&getP(pid))return {...(S.mem[pid]||{}),page:'project',pid,...(tab?{tab}:{}),...(tsub?{tsub}:{})};
+  if(page==='notebook')return {page:'notebook',...(pid?{topic:pid}:{})};
+  if(page==='project'&&getP(pid)){const q=Object.fromEntries(new URLSearchParams(qs||''));const {hl,...extra}=q;
+    if(hl)S.hl={pid,tab:tab||'overview',ids:[hl],what:'linked item',first:true,i:-1};
+    return {...(S.mem[pid]||{}),page:'project',pid,...(tab?{tab}:{}),...(tsub?{tsub}:{}),...extra}}
   return null;
 }
 function renderNav(){
   const v=S.view,p=v.page==='project'?getP(v.pid):null;
-  $('#nav').innerHTML=`<a class="${v.page==='home'?'on':''}" data-act="nav" data-page="home">${ic('grid')}Projects</a><a class="${v.page==='ideas'?'on':''}" data-act="nav" data-page="ideas">${ic('bulb')}Ideas</a>${p?`<a class="on" style="${projStyle(p)}">${ic(projStatus(p)==='Idea'?'bulb':'folder')}${h(projName(p))}</a>`:''}`;
+  $('#nav').innerHTML=`<a class="${v.page==='home'?'on':''}" data-act="nav" data-page="home">${ic('grid')}Projects</a><a class="${v.page==='ideas'?'on':''}" data-act="nav" data-page="ideas">${ic('bulb')}Ideas</a><a class="${v.page==='notebook'?'on':''}" data-act="nav" data-page="notebook">${ic('book')}Notebook</a>${p?`<a class="on" style="${projStyle(p)}">${picon(p,'xs')||ic(projStatus(p)==='Idea'?'bulb':'folder')}${h(projName(p))}</a>`:''}`;
   const dark=document.documentElement.dataset.theme!=='light';
   $('#topright').innerHTML=`${S.demo?'<span class="chip st-Idea">DEMO</span>':''}${S.ws?`<span class="ws" title="Workspace folder (ideas are stored here)">${ic('folder')} ${h(S.ws.name)}</span><button class="ghost small" data-act="choose-ws" title="Change workspace folder">Change</button>`:''}${tip(`Switch to ${dark?'light':'dark'} theme`,`<button class="ghost icon" data-act="theme" title="Switch to ${dark?'light':'dark'} theme">${ic(dark?'sun':'moon')}</button>`)}${tip('Search everything (Ctrl+K)',`<button class="ghost icon" data-act="search" title="Search everything (Ctrl+K)">${ic('search')}</button>`)}${tip('Settings',`<button class="ghost icon" data-act="settings" title="Settings">${ic('gear')}</button>`)}`;
 }
@@ -1589,7 +1676,7 @@ function projCard(p){
   const st=projStatus(p),lb=p.tests.batches[0],lc=lb?batchStats(p,lb):null,all=sumStats(p),fp=projFeatPct(p.features),oi=openCount(p),od=openDecisions(p).length,nf=allFeatures(p.features).length;
   const col=projColor(p),areas=p.features.areas.filter(a=>a.name).length;
   return `<article class="card${col?' has-color':''}" style="${projStyle(p)}" data-act="open" data-pid="${h(p.id)}">
-  <div class="card-top"><h3>${h(projName(p))}</h3><span class="card-tools">${folderBtn(p)}${favBtn(p)}<span class="chip st-${st}">${st}</span></span></div>
+  <div class="card-top"><h3>${picon(p,'sm')}${h(projName(p))}</h3><span class="card-tools">${folderBtn(p)}${favBtn(p)}<span class="chip st-${st}">${st}</span></span></div>
   ${p.features.summary?`<p class="muted small">${h(p.features.summary)}</p>`:''}
   ${S.set.progress==='bars'?`
   ${st!=='Idea'?`<div class="metric"><span>Testing${lb?' · batch <b>'+h(lb.version)+'</b>':''}</span><span><b>${lc?lc.done:0}</b>/${lc?lc.total:0} tested</span></div>${stackBar(lc||{total:0})}`:''}
@@ -1673,8 +1760,8 @@ function homeSection(key,title,icon,list,opts={}){
   const L=layout(),g=opts.group,col=g&&g.collapsed;
   const shown=list.filter(p=>S.showArch||!p.loaded||projStatus(p)!=='Archived');
   const head=`<div class="sec-head${g?' grp-head':''}" data-drop-head="${h(key)}"${g?` draggable="true" data-drag-group="${h(g.id)}" style="${validColor(g.color)?`--pc:${g.color}`:''}"`:''}>
-    <h2${g?` class="grp-title" data-act="grp-toggle" data-g="${h(g.id)}" title="${col?'Expand':'Collapse'} (drag to reorder)" role="button" tabindex="0" aria-expanded="${!col}"`:''}>${g?`<span class="chev">${ic(col?'chevR':'chevD')}</span>`:''}${ic(icon)}${h(title)}${g||key==='_'?` <span class="tab-count">${list.length}</span>`:''}</h2>
-    <span class="form-row">${opts.tools||''}${g?`<button class="ghost icon grp-sw" data-act="grp-color" data-g="${h(g.id)}" title="Group color: default for its projects without their own color"><span class="swatch-mini${validColor(g.color)?'':' none'}" style="${validColor(g.color)?`--pc:${g.color}`:''}"></span></button><button class="ghost icon" data-act="grp-rename" data-g="${h(g.id)}" title="Rename group">${ic('edit')}</button><button class="ghost icon danger" data-act="grp-del" data-g="${h(g.id)}" title="Delete group (projects move to Projects)">${ic('trash')}</button>`:''}</span></div>`;
+    <h2${g?` class="grp-title" data-act="grp-toggle" data-g="${h(g.id)}" title="${col?'Expand':'Collapse'} (drag to reorder)" role="button" tabindex="0" aria-expanded="${!col}"`:''}>${g?`<span class="chev">${ic(col?'chevR':'chevD')}</span>`:''}${g&&g.icon?gicon(g,'sm'):ic(icon)}${h(title)}${g||key==='_'?` <span class="tab-count">${list.length}</span>`:''}</h2>
+    <span class="form-row">${opts.tools||''}${g?`<button class="ghost icon grp-sw" data-act="grp-color" data-g="${h(g.id)}" title="Group color and icon (the color is the default for its projects without their own)"><span class="swatch-mini${validColor(g.color)?'':' none'}" style="${validColor(g.color)?`--pc:${g.color}`:''}"></span></button><button class="ghost icon" data-act="grp-rename" data-g="${h(g.id)}" title="Rename group">${ic('edit')}</button><button class="ghost icon danger" data-act="grp-del" data-g="${h(g.id)}" title="Delete group (projects move to Projects)">${ic('trash')}</button>`:''}</span></div>`;
   if(col)return `<section class="sec grp collapsed" data-grp="${h(g.id)}">${head}</section>`;
   return `<section class="sec${g?' grp':''}"${g?` data-grp="${h(g.id)}"`:''}>${head}<div class="grid" data-drop="${h(key)}">${shown.map(dcard).join('')||`<div class="empty drop-empty">${opts.empty||'Drag projects here'}</div>`}</div></section>`;
 }
@@ -1712,13 +1799,13 @@ function renderProject(p){
   const v=S.view;if(!p.loaded)return `<div class="empty"><p>${h(recName(p))}: ${h(p.error||'This folder needs access.')}</p><div class="form-row" style="justify-content:center">${p.missing?'':`<button data-act="reconnect" data-pid="${h(p.id)}">Reconnect</button>`}${p.kind==='folder'?`<button data-act="relink" data-pid="${h(p.id)}" title="Point this project at its new location">${ic('folder')}Locate folder…</button>`:''}</div></div>`;
   const st=projStatus(p),tab=v.tab||(st==='Idea'?'features':'overview');
   const where=p.kind==='hosted'?`Workspace › ideas › ${h(p.handle.name)} › proj_management`:p.handle.name==='proj_management'?`(project folder) › proj_management`:`${h(p.handle.name)} › proj_management`;
-  const head=`<div class="ph"><div><a class="small back" data-act="nav" data-page="${st==='Idea'?'ideas':'home'}">${ic('back')}${st==='Idea'?'Ideas':'Projects'}</a><h1><button class="swatch-btn${projColor(p)?'':' none'}" data-act="color-dlg" data-pid="${h(p.id)}" title="Project color${validColor(p.features.color)?'':grpColor(p)?' (from its group)':' (app default)'}" aria-label="Project color"></button>${h(projName(p))}${favBtn(p)}</h1><div class="muted small path-line">${pathChip(p,where)}<a class="path-edit" data-act="set-path" data-pid="${h(p.id)}" title="${projPath(p)?'Change the saved Windows path':'Set the Windows path for this project'}">edit</a> <span id="saving"></span></div></div>
+  const head=`<div class="ph"><div><a class="small back" data-act="nav" data-page="${st==='Idea'?'ideas':'home'}">${ic('back')}${st==='Idea'?'Ideas':'Projects'}</a><h1 class="ph-title"><button class="ph-icon${p.iconUrl?' has-img':''}" data-act="color-dlg" data-pid="${h(p.id)}" title="Project icon and color${validColor(p.features.color)?'':grpColor(p)?' (color from its group)':' (app default color)'}" aria-label="Edit project icon and color">${p.iconUrl?picon(p,'md'):`<span class="swatch-btn${projColor(p)?'':' none'}"></span>`}<span class="ph-ov">${ic('edit')}</span></button><span class="ph-name">${h(projName(p))}</span>${favBtn(p)}</h1><div class="muted small path-line">${pathChip(p,where)}<a class="path-edit" data-act="set-path" data-pid="${h(p.id)}" title="${projPath(p)?'Change the saved Windows path':'Set the Windows path for this project'}">edit</a> <span id="saving"></span></div></div>
   <div class="ph-right"><div class="ph-actions">${st!=='Idea'?`<select data-chg="proj-group" data-pid="${h(p.id)}" title="Group on the Projects page" aria-label="Group"><option value="">No group</option>${layout().groups.map(g=>`<option value="${h(g.id)}" ${groupOf(p)===g.id?'selected':''}>${h(g.name)}</option>`).join('')}<option value="__new">+ New group…</option></select>`:''}<select class="st-sel st-${st}" data-chg="status" data-pid="${h(p.id)}" title="Project status" aria-label="Project status">${STATUSES.map(s=>`<option ${s===st?'selected':''}>${s}</option>`).join('')}</select>
 </div>
   <div class="ph-links muted small">${p.kind==='hosted'?`<a data-act="link-folder" data-pid="${h(p.id)}" title="Move this idea's files into a real project folder">${ic('move')}Move to project folder…</a>${st==='Idea'?`<a class="danger" data-act="delete-idea" data-pid="${h(p.id)}">${ic('trash')}Delete</a>`:`<a class="danger" data-act="remove-hosted" data-pid="${h(p.id)}" title="Stop tracking (files are kept in the workspace)">${ic('trash')}Remove</a>`}`:`<a data-act="move-folder" data-pid="${h(p.id)}" title="Rename or move this project's folder (uses the Explorer helper)">${ic('move')}Move / rename</a><a class="danger" data-act="remove-project" data-pid="${h(p.id)}" title="Stop tracking (files are kept)">${ic('trash')}Remove</a>`}</div></div></div>
   ${p.movePending?`<div class="note-info move-note">${ic('move')}<span>Moving the folder to <b>${h(p.movePending.to)}</b>. Once File Explorer opens it there, click <b>Re-link</b> and pick that folder. (If Windows showed an error, nothing moved; click Cancel.)</span><button class="primary" data-act="relink" data-pid="${h(p.id)}">Re-link</button><button class="ghost" data-act="move-cancel" data-pid="${h(p.id)}">Cancel</button></div>`:''}
   ${p.tests.dupes.length?`<div class="note-info c-fail">${ic('alert')} Duplicate test IDs in TESTS.md: ${h([...new Set(p.tests.dupes)].join(', '))}. Results for these are shared. Ask the agent to fix.</div>`:''}
-  <div class="tabs">${[['overview','Overview','chart'],['testing','Testing','flask'],['features','Features','layers'],['decisions','Decisions','scale'],['ideas','Ideas','bulb'],['history','History','retest']].map(([k,l,i])=>{const n=k==='decisions'?openDecisions(p).length:k==='testing'?openGeneral(p).length:0;const ni=k==='ideas'?(p.ideas?.items||[]).filter(ideaOpen).length:0;return `<a class="${tab===k?'on':''}" data-act="tab" data-tab="${k}">${ic(i)}${l}${n?`<span class="tab-badge${k==='decisions'?' badge-dec':''}" title="${k==='decisions'?n+' waiting for you':n+' open general issue'+(n>1?'s':'')}">${n}</span>`:''}${ni?`<span class="tab-count" title="${ni} open idea${ni>1?'s':''}">${ni}</span>`:''}</a>`}).join('')}</div>`;
+  <div class="tabs">${[['overview','Overview','chart'],['testing','Testing','flask'],['features','Features','layers'],['decisions','Decisions','scale'],['ideas','Ideas','bulb'],['history','History','retest']].map(([k,l,i])=>{const n=k==='decisions'?openDecisions(p).length:k==='testing'?openGeneral(p).length:0;const ni=k==='ideas'?(p.ideas?.items||[]).filter(ideaOpen).length:0;return `<a class="${tab===k?'on':''}${k==='overview'?' tab-ico':''}${k==='ideas'?' tab-right':''}" data-act="tab" data-tab="${k}"${k==='overview'?' title="Overview" aria-label="Overview"':''}>${ic(i)}${k==='overview'?'':l}${n?`<span class="tab-badge${k==='decisions'?' badge-dec':''}" title="${k==='decisions'?n+' waiting for you':n+' open general issue'+(n>1?'s':'')}">${n}</span>`:''}${ni?`<span class="tab-count" title="${ni} open idea${ni>1?'s':''}">${ni}</span>`:''}</a>`}).join('')}</div>`;
   return `<div style="${projStyle(p)}">`+head+(tab==='testing'?renderTesting(p):tab==='features'?renderFeatures(p):tab==='decisions'?renderDecisions(p):tab==='ideas'?renderProjIdeas(p):tab==='history'?renderHistory(p):renderOverview(p))+'</div>';
 }
 function renderOverview(p){
@@ -1787,7 +1874,12 @@ function batchLabel(p,b){const c=batchStats(p,b);if(!c.total)return 'no tests';c
   return c.done===c.total?`✓ all ${c.total} tested${c.fail+c.partial?` (${c.fail+c.partial} with issues)`:''}`:c.done?`${c.done}/${c.total} tested (${pct}%)`:`not started (0/${c.total})`}
 const PRIO_RANK={must:0,should:1,could:2};
 const natId=(a,b)=>a.id.localeCompare(b.id,undefined,{numeric:true});
-function sortTests(list,order){return list.sort(order==='priority'?(a,b)=>(PRIO_RANK[a.priority]??3)-(PRIO_RANK[b.priority]??3)||natId(a,b):natId)}
+const TORDERS=[['default','Default','Order written in TESTS.md'],['asc','Ascending','Batches oldest first, tests by ID low to high'],['desc','Descending','Batches newest first, tests by ID high to low'],['priority','Priority','Must, should, could, then ID']];
+const tOrder=o=>o==='id'?'asc':TORDERS.some(x=>x[0]===o)?o:'default';
+function sortTests(list,order){order=tOrder(order);
+  if(order==='default')return list;
+  if(order==='desc')return list.sort((a,b)=>natId(b,a));
+  return list.sort(order==='priority'?(a,b)=>(PRIO_RANK[a.priority]??3)-(PRIO_RANK[b.priority]??3)||natId(a,b):natId)}
 function renderBatches(p,sw=''){
   const v=S.view,bs=p.tests.batches;
   if(!bs.length)return `<div class="toolbar">${sw}</div><div class="empty">No tests yet. The project’s agent writes them to <code>proj_management/TESTS.md</code> following the spec; they’ll appear here automatically.</div>`;
@@ -1795,7 +1887,9 @@ function renderBatches(p,sw=''){
   v.batch=bsel; // remember, so a TESTS.md update adding a newer batch doesn't move you
   const q=(S.tq||'').trim().toLowerCase();
   const filter=q?'all':(v.filter||'todo');
-  const list=q?bs:bsel==='*'?bs:bs.filter(b=>b.version===bsel);
+  const vcmp=(a,b)=>String(a.version).localeCompare(String(b.version),undefined,{numeric:true});
+  const ordB=l=>tOrder(v.order)==='asc'?[...l].sort(vcmp):tOrder(v.order)==='desc'?[...l].sort((a,b)=>vcmp(b,a)):l;
+  const list=q?ordB(bs):bsel==='*'?ordB(bs):bs.filter(b=>b.version===bsel);
   const hit=t=>!q||[t.id,t.title,t.area,t.feature,t.setup,t.expected,t.change,...t.steps,...t.desc,p.fb.results[t.id]?.notes||''].join('\n').toLowerCase().includes(q);
   const newer=bsel!=='*'&&bs[0].version!==bsel?bs[0]:null;
   const match=(t)=>{if(!hit(t))return false;if(q)return true;if(S.sticky.has(t.id))return true;const s=effState(p,t);if(filter==='todo')return s==='untested'||s==='retest'||s==='stale';if(filter==='issues')return s==='fail'||s==='partial';return true};
@@ -1810,7 +1904,7 @@ function renderBatches(p,sw=''){
   {const bb=!q&&bsel!=='*'&&bs.find(b=>b.version===bsel);if(bb&&bb.notes.length)o+=`<div class="batch-notes">${h(bb.notes.join('\n')).replace(/\n/g,'<br>')}</div>`}
   if(newer&&!q&&S.dismissNewer[p.id]!==newer.version&&batchStats(p,newer).done===0)o+=`<div class="tb-newer-wrap"><div class="tb-newer">${ic('alert')}<span>A newer batch is available: <a data-act="goto-batch-keep" data-batch="${h(newer.version)}"><b>${h(newer.version)}</b></a> (${newer.tests.length} new test${newer.tests.length===1?'':'s'}). You’re viewing ${h(bsel)}.</span><button class="ghost icon" data-act="dismiss-newer" data-pid="${h(p.id)}" data-batch="${h(newer.version)}" title="Hide this notice">${ic('x')}</button></div></div>`;
   if(q)o+=`<div class="note-info">${ic('search')} Searching all batches for “${h(S.tq.trim())}”: ${list.flatMap(b=>b.tests).filter(hit).length} match(es). Filters are paused while searching.</div>`;
-  o+=`<div class="hint-row"><span class="muted small"><kbd>\`</kbd> next test to do · <kbd>Shift</kbd>+<kbd>\`</kbd> previous</span><span class="spacer" style="flex:1"></span>${runEnabled()?`<button class="primary" data-act="run-start" data-pid="${h(p.id)}" title="Go through the tests one at a time with keyboard shortcuts (experimental)">${ic('chevR')}Run tests <span class="beta">beta</span></button>`:''}${bsel!=='*'?`<button class="ghost" data-act="batch-report" data-pid="${h(p.id)}" data-batch="${h(bsel)}" title="Markdown summary of this batch">${ic('layers')}Report</button>`:''}<button class="ghost" data-act="review-prompt" data-pid="${h(p.id)}" title="Copy a review prompt for this project's agent">${ic('clip')}Review prompt</button><button class="ghost" data-act="torder" title="Order: ${v.order==='priority'?'Priority (must, should, could, then ID)':'ID'}. Click to sort by ${v.order==='priority'?'ID':'priority'}.">${ic('rows')}Order: ${v.order==='priority'?'Priority':'ID'}</button></div>`;
+  o+=`<div class="hint-row"><span class="muted small"><kbd>\`</kbd> next test to do · <kbd>Shift</kbd>+<kbd>\`</kbd> previous</span><span class="spacer" style="flex:1"></span>${runEnabled()?`<button class="primary" data-act="run-start" data-pid="${h(p.id)}" title="Go through the tests one at a time with keyboard shortcuts (experimental)">${ic('chevR')}Run tests <span class="beta">beta</span></button>`:''}${bsel!=='*'?`<button class="ghost" data-act="batch-report" data-pid="${h(p.id)}" data-batch="${h(bsel)}" title="Write-up of this batch in Markdown (counts, issues with your notes, features covered) to paste as release notes or a status update">${ic('doc')}Report</button>`:''}<button class="ghost" data-act="review-prompt" data-pid="${h(p.id)}" title="Copy a review prompt for this project's agent">${ic('copy')}Review prompt</button><label class="order-sel small muted" title="Order of the tests">${ic({asc:'sortAsc',desc:'sortDesc',priority:'prio'}[tOrder(v.order)]||'rows')}<select data-chg="torder" aria-label="Test order">${TORDERS.map(([k,l,t])=>`<option value="${k}" title="${t}" ${tOrder(v.order)===k?'selected':''}>${l}</option>`).join('')}</select></label></div>`;
   const single=!q&&bsel!=='*';
   let any=false;
   for(const b of list){
@@ -1969,6 +2063,42 @@ function renderFeatures(p){
 }
 
 /* ---------------- thumbnails ---------------- */
+const ICON_NAMES=['icon.png','icon.webp','icon.jpg','icon.jpeg','icon.svg','icon.gif'];
+const projRoot=p=>p.handle&&p.handle.name!=='proj_management'?p.handle:p.pm;
+async function fileAtPath(root,rel){const parts=String(rel).split(/[\\/]+/).filter(x=>x&&x!=='.');if(!parts.length||parts.includes('..'))return null;
+  let d=root;for(const seg of parts.slice(0,-1))d=await d.getDirectoryHandle(seg);return (await d.getFileHandle(parts[parts.length-1])).getFile()}
+async function loadIcon(p){
+  let f=null;p.iconFrom='';
+  if(p.features?.icon){try{f=await fileAtPath(projRoot(p),p.features.icon);p.iconFrom='path'}catch{f=null;p.iconMissing=p.features.icon}}
+  if(f)p.iconMissing='';
+  if(!f)for(const n of ICON_NAMES){try{f=await (await p.pm.getFileHandle(n)).getFile();p.iconFrom='pm';break}catch{}}
+  const sig=f?f.name+f.lastModified+f.size:'';if(sig===p.iconSig)return;
+  if(p.iconUrl)URL.revokeObjectURL(p.iconUrl);p.iconSig=sig;p.iconUrl=f?URL.createObjectURL(f):'';
+}
+const picon=(p,cls='')=>p?.iconUrl?`<img class="picon ${cls}" src="${p.iconUrl}" alt="">`:'';
+const gicon=(g,cls='')=>g?.icon?`<img class="picon ${cls}" src="${h(g.icon)}" alt="">`:'';
+async function squareImage(file,size){
+  const bmp=await createImageBitmap(file);const c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');
+  const sc=Math.max(size/bmp.width,size/bmp.height),w=bmp.width*sc,hh=bmp.height*sc;x.imageSmoothingQuality='high';x.drawImage(bmp,(size-w)/2,(size-hh)/2,w,hh);
+  return c;
+}
+async function setIcon(kind,id,file){
+  if(kind==='p'){const p=getP(id);
+    if(file){const c=await squareImage(file,256);const blob=await new Promise(r=>c.toBlob(r,'image/png'));for(const n of ICON_NAMES)await p.pm.removeEntry(n).catch(()=>{});await writeFile(p.pm,'icon.png',blob)}
+    else if(p.features.icon){await editFeatures(p,m=>{m.icon=''})}
+    else{if(!await confirmBox('Delete the fallback icon file in proj_management/? This can’t be undone.','Delete'))return;for(const n of ICON_NAMES)await p.pm.removeEntry(n).catch(()=>{})}
+    p.iconSig=null;await loadIcon(p)}
+  else{const g=layout().groups.find(x=>x.id===id);if(!g)return;g.icon=file?(await squareImage(file,96)).toDataURL('image/png'):'';saveLayout()}
+  render();if($('#wbModal.color-dlg'))colorDlg(kind,id);
+}
+async function pickProjIcon(p){
+  if(!window.showOpenFilePicker){$('#iconFallbackInput')?.click();return}
+  let fh;try{[fh]=await window.showOpenFilePicker({startIn:projRoot(p),types:[{description:'Images',accept:{'image/*':['.png','.jpg','.jpeg','.svg','.webp']}}]})}catch(e){if(e.name!=='AbortError')toast(e.message);return}
+  const parts=await projRoot(p).resolve(fh).catch(()=>null);
+  if(parts&&parts.length){const rel=parts.join('/');await editFeatures(p,m=>{m.icon=rel});p.iconSig=null;await loadIcon(p);render();colorDlg('p',p.id);toast('Icon linked to '+rel+'. Changes to that file show up here.');return}
+  if(!await confirmBox('That image is outside the project folder, so Workbench can’t keep a link to it. Copy it into proj_management/icon.png instead?','Copy it'))return;
+  if(p.features.icon)await editFeatures(p,m=>{m.icon=''});await setIcon('p',p.id,await fh.getFile());
+}
 async function attUrl(p,name){
   const key=p.id+'|'+name;if(S.urls[key])return S.urls[key];
   const dir=await p.pm.getDirectoryHandle('attachments');const f=await (await dir.getFileHandle(name)).getFile();
@@ -2045,7 +2175,7 @@ const A={
   'goto-batch'(d){Object.assign(S.view,{tab:'testing',batch:d.batch,filter:'all'});S.sticky.clear();render()},
   'goto-test'(d){Object.assign(S.view,{tab:'testing',batch:d.batch||'*',filter:'all'});S.sticky.clear();render();const el=document.getElementById('t-'+d.id);if(el){el.scrollIntoView({block:'center'});el.animate([{outline:'2px solid var(--accent)'},{outline:'2px solid transparent'}],{duration:1600})}},
   async 'choose-ws'(){
-    try{const hd=await pickDir('tfc-workspace');S.ws=hd;await idb.set('workspace',hd);await loadAll();S.view={page:'home'};render();toast('Workspace set to '+hd.name);autoRestoreProjects()}catch(e){if(e.name!=='AbortError')toast(e.message)}
+    try{const hd=await pickDir('tfc-workspace');S.ws=hd;await idb.set('workspace',hd);await loadAll();S.nb={topics:[],loaded:false};await loadNotebook().catch(()=>{});S.view={page:'home'};render();toast('Workspace set to '+hd.name);autoRestoreProjects()}catch(e){if(e.name!=='AbortError')toast(e.message)}
   },
   async 'add-project'(){
     try{let hd=await pickDir('tfc-project');
@@ -2202,18 +2332,20 @@ const A={
   'restore-skip'(d){const l=pendingProjects();l.splice(+d.i,1);savePendingProjects(l);render()},
   async 'restore-skip-all'(){if(!await confirmBox('Stop listing these projects? You can still add any of them with Add project folder, or import the settings file again.','Dismiss all'))return;savePendingProjects([]);render()},
   'color-dlg'(d){colorDlg('p',d.pid)},
+  async 'icon-remove'(d){await setIcon(d.k2,d.id,null);if($('#wbModal.color-dlg'))colorDlg(d.k2,d.id)},
+  async 'icon-pick'(d){await pickProjIcon(getP(d.id))},
   'grp-color'(d){colorDlg('g',d.g)},
   'pick-color'(d){setPickedColor(d.k2,d.id,d.c);$('#wbModal')?.close()},
   'run-exit'(){S.run=null;S.sticky.clear();render();scrollTo(0,0)},
   'run-step'(d){runStep(+d.d)},
   search(){openSearch()},
-  'gs-open'(d){const x=S.gsHits?.[+d.i];if(!x)return;$('#wbModal')?.close();
+  'gs-open'(d){const x=S.gsHits?.[+d.i];if(!x)return;const pick=S.gsPick;S.gsPick=null;$('#wbModal')?.close();if(pick){pick(x);return}
     if(x.type==='project'){A.open({pid:x.p.id});return}
     S.hl={pid:x.p.id,tab:x.go.tab,ids:[x.hl],what:'search result',first:true,i:-1};goTo({pid:x.p.id,...x.go})},
   'modal-close'(){$('#wbModal')?.close()},
   'review-prompt'(d){const p=getP(d.pid),t=reviewPrompt(p);copyText(t,'Review prompt copied. Paste it into the project’s Claude chat.')},
   'batch-report'(d){const p=getP(d.pid),md=batchReport(p,d.batch);
-    const dlg=openModal(`Batch ${d.batch} report`,`<textarea class="report-ta" readonly>${h(md)}</textarea><div class="form-row" style="justify-content:flex-end;margin-top:10px"><button data-act="report-dl" data-pid="${h(p.id)}" data-batch="${h(d.batch)}">${ic('move')}Download .md</button><button class="primary" data-act="report-copy">${ic('clip')}Copy</button></div>`,'report-dlg');
+    const dlg=openModal(`Batch ${d.batch} report`,`<textarea class="report-ta" readonly>${h(md)}</textarea><div class="form-row" style="justify-content:flex-end;margin-top:10px"><button data-act="report-dl" data-pid="${h(p.id)}" data-batch="${h(d.batch)}">${ic('move')}Download .md</button><button class="primary" data-act="report-copy">${ic('copy')}Copy</button></div>`,'report-dlg');
     S.lastReport=md},
   'report-copy'(){copyText(S.lastReport||'','Report copied')},
   'report-dl'(d){download(`${slugify(projName(getP(d.pid)))}-batch-${d.batch}-report.md`,S.lastReport||'')},
@@ -2232,7 +2364,7 @@ const A={
     if(d.s==='Open'){const cur=p.dec.items.find(y=>y.id===d.id);if(cur)S.decDraft[d.pid+'|'+d.id]={...decDraftFrom(cur),notes:dr?dr.notes:cur.notes.join('\n')}}
   },
   'to-top'(){scrollTo({top:0,behavior:S.set.motion==='off'?'auto':'smooth'})},
-  torder(){S.view.order=S.view.order==='priority'?'id':'priority';render()},
+
   'tsearch-clear'(){S.tq='';S.sticky.clear();render()},
   'goto-batch-keep'(d){S.view.batch=d.batch;S.sticky.clear();render();scrollTo(0,0)},
   async 'install-app'(){const e=S.installEvt;if(!e)return;e.prompt();const r=await e.userChoice.catch(()=>null);S.installEvt=null;renderSettings();if(r?.outcome==='accepted')toast('Installed. Open Workbench from its new icon.')},
@@ -2240,7 +2372,7 @@ const A={
     const byName=(m)=>Object.fromEntries(Object.entries(m||{}).filter(([k])=>!k.startsWith('__')).map(([id,v])=>{const p=getP(id);return p?[projName(p),v]:null}).filter(Boolean));
     const withPaths=lsGet('wb-exp-paths',true)!==false;
     const projects=withPaths?S.projects.filter(p=>p.kind==='folder'&&p.loaded).map(p=>({name:projName(p),path:projPath(p)||'',folder:p.handle?.name||''})):undefined;
-    download('workbench-settings.json',JSON.stringify({app:'workbench',version:APP_VERSION,exported:nowStamp(),settings:S.set,workspacePath:S.paths.__ws||'',favoritesByName:byName(S.favs),...(withPaths?{pathsByName:byName(S.paths),projects}:{}),layoutByName:{groups:layout().groups.map(g=>({name:g.name,collapsed:!!g.collapsed,color:g.color||'',members:S.projects.filter(p=>groupOf(p)===g.id).map(projName)})),order:layout().order.map(id=>getP(id)).filter(Boolean).map(projName)}},null,2));
+    download('workbench-settings.json',JSON.stringify({app:'workbench',version:APP_VERSION,exported:nowStamp(),settings:S.set,workspacePath:S.paths.__ws||'',favoritesByName:byName(S.favs),...(withPaths?{pathsByName:byName(S.paths),projects}:{}),layoutByName:{groups:layout().groups.map(g=>({name:g.name,collapsed:!!g.collapsed,color:g.color||'',icon:g.icon||'',members:S.projects.filter(p=>groupOf(p)===g.id).map(projName)})),order:layout().order.map(id=>getP(id)).filter(Boolean).map(projName)}},null,2));
   },
   'home-clear'(){S.q='';S.homeFilter='all';render()},
   'set-path'(d){pathPrompt(getP(d.pid));render()},
@@ -2272,6 +2404,8 @@ const CHG={
   async status(d,v){const p=getP(d.pid);await editFeatures(p,m=>{m.status=v});toast(`${projName(p)} is now ${v}`)},
   'color-on'(d,v,el){if(!!getP(d.pid).features.color===!!el.checked)return;editFeatures(getP(d.pid),m=>{m.color=el.checked?suggestColor(m.name):''})},
   'pick-color'(d,v){setPickedColor(d.k2,d.id,v)},
+  torder(d,v){S.view.order=tOrder(v);S.sticky.clear();render()},
+  async 'icon-file'(d,v,el){const f=el.files[0];if(f)await setIcon(d.k2,d.id,f)},
   'exp-paths'(d,v,el){lsSet('wb-exp-paths',!!el.checked)},
   color(d,v){if(validColor(v)===getP(d.pid).features.color)return;editFeatures(getP(d.pid),m=>{m.color=validColor(v)})},
   'idea-title'(d,v){if(v.trim())editIdeas(getP(d.pid),m=>{const x=m.items.find(y=>y.id===d.id);if(x)x.title=v.trim()})},
@@ -2453,6 +2587,8 @@ async function poll(){
       }
     }
   }catch(e){console.warn(e)}finally{S.polling=false}
+  if(S.ws&&S.nb.loaded){const sig=S.nb.topics.map(t=>t.file+t.mtime).join();await loadNotebook().catch(()=>{});if(sig!==S.nb.topics.map(t=>t.file+t.mtime).join()&&S.view.page==='notebook')requestRender()}
+  for(const p of S.projects)if(p.loaded&&p.pm){const old=p.iconSig;await loadIcon(p).catch(()=>{});if(p.iconSig!==old)requestRender()}
   for(const p of S.projects)if(p._agentTouched){p._agentTouched=false;trackActivity(p,'agent')}
   if(msgs.length){toast(msgs.join(' · '),go);requestRender()}
 }
@@ -2479,13 +2615,20 @@ function colorDlg(kind,id){
   let cur,def,defLbl,title,sugg='';
   if(kind==='p'){const p=getP(id);cur=validColor(p.features.color);def=grpColor(p);defLbl=def?'Group color':'App default (moss theme)';title='Color for '+projName(p);sugg=suggestColor(projName(p))}
   else{const g=layout().groups.find(x=>x.id===id);cur=validColor(g?.color);def='';defLbl='No group color';title='Color for group “'+(g?.name||'')+'”'}
+  const hasIcon=kind==='p'?!!getP(id).iconUrl:!!layout().groups.find(x=>x.id===id)?.icon,prev=kind==='p'?picon(getP(id),'lg'):gicon(layout().groups.find(x=>x.id===id),'lg');
+  title=title.replace(/^Color for/,'Color and icon for');
   const at=`data-k2="${kind}" data-id="${h(id)}"`;
   openModal(title,`<div class="cdlg">
     <button class="cdlg-def${!cur?' on':''}" data-act="pick-color" ${at} data-c=""><span class="sw" style="background:${def||'var(--accent)'}"></span><span><b>${h(defLbl)}</b><br><span class="muted small">${kind==='p'?(def?'Follows the color of this project’s group.':'Uses the app theme accent.'):'Projects in this group use the app theme accent unless they have their own color.'}</span></span>${!cur?ic('check'):''}</button>
-    <div class="cdlg-h">Presets</div>
-    <div class="swatches">${PROJ_COLORS.map(([n,c])=>`<button class="sw ${c===cur?'on':''}" style="background:${c}" title="${n}${c===sugg?' (suggested for this project)':''}" data-act="pick-color" ${at} data-c="${c}">${c===sugg?'<span class="sugg">★</span>':''}</button>`).join('')}</div>
-    <div class="cdlg-h">Any color</div>
-    <label class="cdlg-pick"><input type="color" value="${cur||def||sugg||'#8db56b'}" data-chg="pick-color" ${at}><span class="muted small">Opens the color picker</span>${cur&&!PROJ_COLORS.some(x=>x[1]===cur)?`<code>${cur}</code>`:''}</label>
+    <div class="cdlg-hrow"><span class="cdlg-h">Presets</span><span class="cdlg-h">Custom color</span></div>
+    <div class="cdlg-row"><div class="swatches">${PROJ_COLORS.map(([n,c])=>`<button class="sw ${c===cur?'on':''}" style="background:${c}" title="${n}${c===sugg?' (suggested for this project)':''}" data-act="pick-color" ${at} data-c="${c}">${c===sugg?'<span class="sugg">★</span>':''}</button>`).join('')}</div><span class="cdlg-div"></span>
+      <label class="cdlg-pick${cur&&!PROJ_COLORS.some(x=>x[1]===cur)?' on':''}" title="${cur&&!PROJ_COLORS.some(x=>x[1]===cur)?cur+' · ':''}Open the color picker"><input type="color" value="${cur||def||sugg||'#8db56b'}" data-chg="pick-color" ${at}></label></div>
+    <div class="cdlg-h">Icon</div>
+    <div class="cdlg-icon"><div class="cdlg-icol">
+      ${kind==='p'?`<button class="icon-pick" data-act="icon-pick" ${at} title="Choose the icon file">${prev||`<span class="picon lg empty">${ic('image')}</span>`}<span class="ph-ov">${ic('edit')}</span></button><input type="file" id="iconFallbackInput" accept="image/*" hidden data-chg="icon-file" ${at}>`
+        :`<label class="icon-pick" title="Choose an image">${prev||`<span class="picon lg empty">${ic('image')}</span>`}<span class="ph-ov">${ic('edit')}</span><input type="file" accept="image/*" hidden data-chg="icon-file" ${at}></label>`}
+      ${hasIcon?`<a class="small danger" data-act="icon-remove" ${at}>Remove</a>`:''}</div>
+      <div class="cdlg-itext muted small">${kind==='p'?(()=>{const p=getP(id);return `${p.features.icon?`<p>Linked to <code>${h(p.features.icon)}</code>${p.iconMissing?' <span class="c-fail">(file not found, using the fallback)</span>':''}. When that file changes, the icon here changes too.</p>`:'<p>Click the icon to pick an image file inside the project, for example the mod’s own icon. Workbench links to it, so changes to that file show up here.</p>'}<p>Falls back to <code>proj_management/icon.png</code> (cropped square). Supports <code>.png</code>, <code>.jpg</code>, <code>.svg</code>, and <code>.webp</code>.</p>`})():'<p>Click the icon to choose an image. It is stored with your Workbench settings and included in settings export.</p>'}</div></div>
   </div>`,'color-dlg');
 }
 function setPickedColor(kind,id,c){c=validColor(c)||'';
@@ -2574,6 +2717,7 @@ function openSearch(){
   const d=openModal('Search everything',`<div class="form-row"><span class="tsearch" style="max-width:none;flex:1">${ic('search')}<input type="text" id="gsQ" placeholder="Tests, notes, issues, decisions, ideas, features…" value="${h(S.gsq||'')}" autocomplete="off"></span>
     <select id="gsScope" title="Where to search">${scopes.map(([k,l])=>`<option value="${h(k)}" ${(S.gscope||'*')===k?'selected':''}>${h(l)}</option>`).join('')}</select></div>
     <div id="gsRes" class="gs-res"></div><p class="muted small" style="margin:8px 0 0"><kbd>↑</kbd> <kbd>↓</kbd> choose · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close · <kbd>Ctrl</kbd>+<kbd>K</kbd> opens this anywhere</p>`,'search-dlg');
+  d.addEventListener('close',()=>{S.gsPick=null});if(S.gsPick)d.querySelector('h2').textContent='Link a Workbench item';
   const q=d.querySelector('#gsQ'),sc=d.querySelector('#gsScope');
   const run=()=>{S.gsq=q.value;S.gscope=sc.value;renderSearch()};
   q.addEventListener('input',run);sc.addEventListener('change',run);
@@ -2589,7 +2733,7 @@ function renderSearch(){
   S.gsHits=hits.slice(0,120);
   if(!hits.length){box.innerHTML=`<p class="muted">No matches.</p>`;return}
   let o='',last=null;
-  S.gsHits.forEach((x,i)=>{if(x.p!==last){o+=`<div class="gs-proj" style="${projStyle(x.p)}">${ic('folder')}${h(projName(x.p))}</div>`;last=x.p}
+  S.gsHits.forEach((x,i)=>{if(x.p!==last){o+=`<div class="gs-proj" style="${projStyle(x.p)}">${picon(x.p,'xs')||ic('folder')}${h(projName(x.p))}</div>`;last=x.p}
     o+=`<button class="gs-item${i===0?' on':''}" data-act="gs-open" data-i="${i}"><span class="chip">${ic(TYPE_ICON[x.type])}${x.type}</span>${x.id?`<code>${h(x.id)}</code>`:''}<span class="gs-main"><b>${snippet(x.title,words[0])}</b><span class="muted small">${snippet(x.raw,words[0])}</span></span></button>`});
   box.innerHTML=o+(hits.length>120?`<p class="muted small">Showing the first 120 of ${hits.length}. Narrow the search or the scope.</p>`:'');
 }
@@ -2716,6 +2860,225 @@ function histGo(p,type,id){
   S.hl=hl?{pid:p.id,tab:go.tab,ids:[hl+id],what:'item from history',first:true,i:-1}:null;goTo({pid:p.id,...go});
 }
 
+/* ---------------- Notebook: topics with tasks, links and notes (workspace/notebook/*.md) ---------------- */
+const NB_STATUSES=['Open','Waiting','Done'];
+const NB_NOTE=`<!-- PROJ-MGMT:NOTEBOOK v1
+A Workbench notebook topic. The human edits it in Workbench; agents may read it and, only when asked, add tasks, links or notes.
+NEVER REPLACE THIS FILE: read it and edit it in place, keeping everything you don't mean to change.
+Header lines: Status (Open | Waiting | Done), Tags (comma separated), Created, Updated, Attachments (written by Workbench).
+## Tasks: "- [ ] text" open, "- [x] text" done, "- [3/10] text" a counter (current/target). "### Name" lines group the tasks below them.
+## Links: "- [Title](url)". Workbench item links start with "#project/".
+## Notes: free Markdown.
+-->`;
+const nbDate=()=>nowStamp().slice(0,10);
+function parseTopic(text,file){
+  const t={file,slug:file.replace(/\.md$/i,''),title:file.replace(/\.md$/i,''),status:'Open',tags:[],created:'',updated:'',attachments:[],groups:[{name:'',tasks:[]}],links:[],notes:'',extra:[]};
+  let sec='head',inNote=false;const notes=[];
+  for(const line of String(text).replace(/\r/g,'').split('\n')){
+    if(inNote){if(line.includes('-->'))inNote=false;continue}
+    if(/^\s*<!--/.test(line)){if(!line.includes('-->'))inNote=true;continue}
+    let m;
+    if(sec==='head'&&(m=line.match(/^#\s+(.+)/))){t.title=m[1].trim();continue}
+    if((m=line.match(/^##\s+(.+?)\s*$/))){const k=m[1].toLowerCase();sec=k==='tasks'?'tasks':k==='links'?'links':k==='notes'?'notes':'extra';if(sec==='extra')t.extra.push(line);continue}
+    if(sec==='head'){if((m=line.match(/^(Status|Tags|Created|Updated|Attachments):\s*(.*)$/i))){const k=m[1].toLowerCase(),v=m[2].trim();
+        if(k==='status')t.status=NB_STATUSES.find(s=>s.toLowerCase()===v.toLowerCase())||'Open';
+        else if(k==='tags')t.tags=v.split(',').map(x=>x.trim()).filter(Boolean);
+        else if(k==='attachments')t.attachments=[...v.matchAll(/\[([^\]]+)\]\(/g)].map(x=>x[1]);
+        else t[k]=v}continue}
+    if(sec==='tasks'){
+      if((m=line.match(/^###\s+(.+?)\s*$/))){t.groups.push({name:m[1],tasks:[]});continue}
+      if((m=line.match(/^\s*[-*]\s+\[( |x|X|\d+\s*\/\s*\d+)\]\s?(.*)$/))){const g=t.groups[t.groups.length-1],b=m[1];
+        const c=b.match(/(\d+)\s*\/\s*(\d+)/);g.tasks.push(c?{text:m[2],cur:+c[1],max:+c[2]}:{text:m[2],done:/x/i.test(b)});continue}
+      continue}
+    if(sec==='links'){if((m=line.match(/^\s*[-*]\s+\[([^\]]*)\]\((.*)\)\s*$/)))t.links.push({title:m[1],url:m[2].trim()});continue}
+    if(sec==='notes'){notes.push(line);continue}
+    if(sec==='extra')t.extra.push(line);
+  }
+  t.notes=notes.join('\n').replace(/^\n+|\n+$/g,'');
+  if(t.groups.length>1&&!t.groups[0].tasks.length)t.groups.shift();
+  return t;
+}
+function serializeTopic(t){
+  let o=`${NB_NOTE}\n# ${t.title}\n\nStatus: ${t.status}\nTags: ${t.tags.join(', ')}\nCreated: ${t.created||nbDate()}\nUpdated: ${t.updated||nbDate()}\n`;
+  if(t.attachments.length)o+=`Attachments: ${t.attachments.map(n=>`[${n}](attachments/${encodeURI(n)})`).join(', ')}\n`;
+  o+='\n## Tasks\n';
+  t.groups.forEach((g,i)=>{if(g.name||i>0)o+=`\n### ${g.name||'Tasks'}\n`;for(const k of g.tasks)o+=`- [${k.max!=null?`${k.cur||0}/${k.max}`:k.done?'x':' '}] ${k.text.replace(/\n/g,' ')}\n`});
+  o+='\n## Links\n';for(const l of t.links)o+=`- [${l.title.replace(/[\[\]]/g,'')}](${l.url})\n`;
+  o+=`\n## Notes\n${t.notes?t.notes+'\n':''}`;
+  if(t.extra.length)o+='\n'+t.extra.join('\n').replace(/\n+$/,'')+'\n';
+  return o;
+}
+const taskDone=k=>k.max!=null?(k.cur||0)>=k.max:!!k.done;
+function topicStats(t){const all=t.groups.flatMap(g=>g.tasks);return {total:all.length,done:all.filter(taskDone).length}}
+S.nb={topics:[],loaded:false};
+async function nbDir(create=true){return S.ws?S.ws.getDirectoryHandle('notebook',{create}):null}
+async function loadNotebook(){
+  if(!S.ws)return;const dir=await nbDir();const seen=new Set();
+  for await(const [n,e] of dir.entries()){if(e.kind!=='file'||!/\.md$/i.test(n))continue;seen.add(n);
+    const f=await e.getFile();const cur=S.nb.topics.find(x=>x.file===n);
+    if(cur&&cur.mtime===f.lastModified)continue;
+    if(cur&&cur._dirty)continue; // our own unsaved edits win; they are written next
+    const t=parseTopic(await f.text(),n);t.mtime=f.lastModified;
+    if(cur)Object.assign(cur,t);else S.nb.topics.push(t)}
+  S.nb.topics=S.nb.topics.filter(t=>seen.has(t.file)||t._dirty);S.nb.loaded=true;
+}
+function getTopic(slug){return S.nb.topics.find(t=>t.slug===slug)}
+function saveTopic(t,now){t._dirty=true;clearTimeout(t._sv);const go=async()=>{try{t.updated=nbDate();const dir=await nbDir();t.mtime=await writeFile(dir,t.file,serializeTopic(t));t._dirty=false;const s=$('#nbSaving');if(s){s.textContent='Saved';setTimeout(()=>{if(s.textContent==='Saved')s.textContent=''},1200)}}catch(e){toast('Could not save '+t.file+': '+e.message)}};
+  const s=$('#nbSaving');if(s)s.textContent='Saving…';if(now)return go();t._sv=setTimeout(go,600)}
+const NB_ST_CLS={Open:'st-Active',Waiting:'st-Paused',Done:'st-Completed'};
+function nbBase(){return location.href.split('#')[0]}
+function nbHref(url){return /^#/.test(url)?nbBase()+url:/^[a-z][a-z0-9+.-]*:/i.test(url)?url:'https://'+url}
+function nbHost(url){if(/^#project\//.test(url)){const p=getP(decodeURIComponent(url.split('/')[1].split('?')[0]));return 'Workbench'+(p?' · '+projName(p):'')}try{return new URL(nbHref(url)).host}catch{return url}}
+function renderNotebook(){
+  const v=S.view;if(v.topic){const t=getTopic(v.topic);if(t)return renderTopic(t);v.topic=null}
+  const f=v.nbf||'active',q=(S.nbq||'').trim().toLowerCase(),tag=v.nbtag||'';
+  const tags=[...new Set(S.nb.topics.flatMap(t=>t.tags))].sort((a,b)=>a.localeCompare(b));
+  const list=S.nb.topics.filter(t=>(f==='all'||(f==='active'?t.status!=='Done':t.status===f))&&(!tag||t.tags.includes(tag))&&(!q||[t.title,t.tags.join(' '),t.notes,...t.groups.flatMap(g=>[g.name,...g.tasks.map(k=>k.text)]),...t.links.map(l=>l.title)].join('\n').toLowerCase().includes(q)))
+    .sort((a,b)=>NB_STATUSES.indexOf(a.status)-NB_STATUSES.indexOf(b.status)||String(b.updated).localeCompare(String(a.updated))||a.title.localeCompare(b.title));
+  const cnt=k=>S.nb.topics.filter(t=>k==='all'||(k==='active'?t.status!=='Done':t.status===k)).length;
+  let o=`<div class="ph"><div><h1>${ic('book')}Notebook</h1><div class="muted small">Topics with tasks, links and notes. Saved in your workspace under <code>notebook/</code>.</div></div></div>
+  <div class="panel"><div class="form-row"><input type="text" id="nbNew" data-k="nbNew" placeholder="New topic, e.g. Mod release checklist" style="flex:1"><button class="primary" data-act="nb-new">${ic('plus')}Create topic</button></div></div>
+  <div class="home-tools"><input type="text" id="nbSearch" data-k="nbSearch" placeholder="Search topics…" value="${h(S.nbq||'')}">
+  <span class="seg-btns">${[['active','Open + waiting'],['Open','Open'],['Waiting','Waiting'],['Done','Done'],['all','All']].map(([k,l])=>`<button class="${f===k?'on':''}" data-act="nb-filter" data-f="${k}">${l} (${cnt(k)})</button>`).join('')}</span>
+  ${tags.length?`<span class="nb-tags">${tags.map(x=>`<button class="chip tag${tag===x?' on':''}" data-act="nb-tag" data-t="${h(x)}">#${h(x)}</button>`).join('')}</span>`:''}</div>`;
+  if(!S.nb.topics.length)return o+`<div class="empty">No topics yet. Create one above: a checklist, a research thread, a shopping list for a build, anything you want to keep track of.</div>`;
+  if(!list.length)return o+`<div class="empty">No topics match.</div>`;
+  return o+`<div class="grid">${list.map(t=>{const c=topicStats(t);return `<article class="card nb-card" data-act="nb-open" data-slug="${h(t.slug)}">
+    <div class="card-top"><h3>${h(t.title)}</h3><span class="chip ${NB_ST_CLS[t.status]}">${t.status}</span></div>
+    ${t.tags.length?`<div class="nb-tags">${t.tags.map(x=>`<span class="chip tag">#${h(x)}</span>`).join('')}</div>`:''}
+    ${c.total?`<div class="metric"><span>${c.done}/${c.total} tasks done</span><b>${Math.round(c.done/c.total*100)}%</b></div>${pctBar(c.done/c.total*100)}`:'<p class="muted small">No tasks yet.</p>'}
+    <div class="pills">${t.links.length?`<span>${ic('link')}${t.links.length} link${t.links.length>1?'s':''}</span>`:''}${t.notes?`<span>${ic('edit')}notes</span>`:''}${t.attachments.length?`<span>${ic('image')}${t.attachments.length}</span>`:''}<span class="muted">${h(t.updated||t.created||'')}</span></div></article>`}).join('')}</div>`;
+}
+function renderTopic(t){
+  const sl=h(t.slug),c=topicStats(t),ed=S.nbEdit||{};
+  let o=`<div class="ph"><div style="flex:1;min-width:0"><a class="small back" data-act="nb-back">${ic('back')}Notebook</a>
+    <h1 class="nb-title"><input type="text" class="nb-title-in" data-in="nb-title" data-k="nbt-${sl}" value="${h(t.title)}" aria-label="Topic title"></h1>
+    <div class="muted small path-line">${ic('book')}<span>notebook › ${h(t.file)}</span><span id="nbSaving"></span></div></div>
+    <div class="ph-right"><div class="ph-actions"><select class="st-sel ${NB_ST_CLS[t.status]}" data-chg="nb-status" data-slug="${sl}" aria-label="Status">${NB_STATUSES.map(s=>`<option ${s===t.status?'selected':''}>${s}</option>`).join('')}</select></div>
+    <div class="ph-links muted small"><a class="danger" data-act="nb-del" data-slug="${sl}">${ic('trash')}Delete topic</a></div></div></div>
+  <div class="nb-tagrow">${ic('layers')}<input type="text" data-chg="nb-tags" data-slug="${sl}" data-k="nbtags-${sl}" value="${h(t.tags.join(', '))}" placeholder="Tags, comma separated"></div>
+  <div class="nb-cols"><section class="panel nb-tasks"><div class="sec-head"><h2>${ic('check')}Tasks${c.total?` <span class="tab-count">${c.done}/${c.total}</span>`:''}</h2><button class="ghost" data-act="nb-group-add">${ic('plus')}Group</button></div>
+    ${c.total?pctBar(c.done/c.total*100):''}`;
+  t.groups.forEach((g,gi)=>{
+    const named=g.name||t.groups.length>1;
+    o+=`<div class="nb-group" data-nbg="${gi}">${named?`<div class="nb-ghead" data-nbdrag="g" data-g="${gi}"><span class="nb-grip" title="Drag to reorder">${ic('grip')}</span><input type="text" data-in="nb-gname" data-g="${gi}" data-k="nbg-${sl}-${gi}" value="${h(g.name)}" placeholder="Group name"><span class="muted small">${g.tasks.filter(taskDone).length}/${g.tasks.length}</span><button class="ghost icon danger" data-act="nb-group-del" data-g="${gi}" title="Delete group (its tasks move to the group above)">${ic('trash')}</button></div>`:''}
+    <div class="nb-list" data-nbdrop="${gi}">${g.tasks.map((k,i)=>{const dn=taskDone(k);return `<div class="nb-task${dn?' done':''}" data-nbdrag="t" data-g="${gi}" data-i="${i}">
+      <span class="nb-grip">${ic('grip')}</span>
+      ${k.max!=null?`<span class="nb-cnt"><button class="ghost icon" data-act="nb-cnt" data-g="${gi}" data-i="${i}" data-d="-1" title="Minus one">−</button><a data-act="nb-cnt-set" data-g="${gi}" data-i="${i}" title="Set count and target">${k.cur||0}<span class="muted">/${k.max}</span></a><button class="ghost icon" data-act="nb-cnt" data-g="${gi}" data-i="${i}" data-d="1" title="Plus one">+</button></span>`
+        :`<button class="nb-check${dn?' on':''}" data-act="nb-toggle" data-g="${gi}" data-i="${i}" aria-label="${dn?'Mark not done':'Mark done'}">${dn?ic('check'):''}</button>`}
+      <input type="text" class="nb-ttext" data-in="nb-task" data-g="${gi}" data-i="${i}" data-k="nbk-${sl}-${gi}-${i}" value="${h(k.text)}">
+      <button class="ghost icon" data-act="nb-kind" data-g="${gi}" data-i="${i}" title="${k.max!=null?'Make this a checkbox task':'Make this a counter (e.g. 3/10)'}">${k.max!=null?ic('check'):'#'}</button>
+      <button class="ghost icon danger" data-act="nb-task-del" data-g="${gi}" data-i="${i}" title="Delete task">${ic('x')}</button></div>`}).join('')}
+      <div class="nb-add">${ic('plus')}<input type="text" data-in="nb-add" data-g="${gi}" data-k="nba-${sl}-${gi}" placeholder="Add a task… (Enter; start with # for a counter, e.g. “#10 Collect resin”)"></div></div></div>`});
+  o+=`</section>
+  <section class="panel nb-links"><div class="sec-head"><h2>${ic('link')}Links${t.links.length?` <span class="tab-count">${t.links.length}</span>`:''}</h2><span class="form-row"><button class="ghost" data-act="nb-link-pick" title="Link a test, feature, decision, idea or project">${ic('search')}Workbench item</button><button class="ghost" data-act="nb-link-new">${ic('plus')}Link</button></span></div>
+    <div class="nb-llist" data-nbldrop="1">${t.links.map((l,i)=>ed.link===i?linkForm(l,i):`<div class="nb-link" data-nbdrag="l" data-i="${i}"><span class="nb-grip">${ic('grip')}</span><div class="nb-lmain"><a href="${h(nbHref(l.url))}" target="_blank" rel="noopener">${h(l.title||l.url)}</a><span class="muted small">${h(nbHost(l.url))}</span></div><button class="ghost icon" data-act="nb-link-edit" data-i="${i}" title="Edit link">${ic('edit')}</button><button class="ghost icon danger" data-act="nb-link-del" data-i="${i}" title="Remove link">${ic('x')}</button></div>`).join('')}
+    ${ed.link==='new'?linkForm({title:ed.title||'',url:ed.url||''},'new'):''}
+    ${!t.links.length&&ed.link!=='new'?'<p class="muted small">Websites, files, or items in Workbench. Titles open in a new tab.</p>':''}</div></section></div>
+  <section class="panel nb-notes"><div class="sec-head"><h2>${ic('edit')}Notes</h2><span class="seg-btns"><button class="${S.nbPrev?'':'on'}" data-act="nb-prev" data-v="0">Write</button><button class="${S.nbPrev?'on':''}" data-act="nb-prev" data-v="1">Preview</button></span></div>
+    ${S.nbPrev?`<div class="dec-body nb-md">${t.notes?md(t.notes.split('\n')):'<p class="muted">Nothing written yet.</p>'}</div>`:`<textarea data-in="nb-notes" data-k="nbn-${sl}" placeholder="Notes in Markdown. Paste screenshots here.">${h(t.notes)}</textarea>`}
+    ${t.attachments.length?`<div class="atts">${t.attachments.map(n=>`<span class="att"><a target="_blank"><img data-nbatt="${h(n)}" alt="${h(n)}" title="${h(n)}"></a><button data-act="nb-att-del" data-n="${h(n)}" title="Remove">${ic('x')}</button></span>`).join('')}</div>`:''}
+    <label class="filebtn" style="margin-top:8px">${ic('clip')}Attach file<input type="file" accept="image/*" multiple data-chg="nb-att"></label></section>`;
+  return o;
+}
+function linkForm(l,i){return `<div class="nb-lform"><input type="text" id="nbLT" data-k="nbLT" placeholder="Title" value="${h(l.title)}"><input type="text" id="nbLU" data-k="nbLU" placeholder="https://… or #project/…" value="${h(l.url)}"><button class="primary" data-act="nb-link-save" data-i="${i}">Save</button><button class="ghost" data-act="nb-link-cancel">Cancel</button></div>`}
+const curTopic=()=>S.view.page==='notebook'&&S.view.topic?getTopic(S.view.topic):null;
+async function nbAttUrl(n){const k='nb|'+n;if(S.urls[k])return S.urls[k];const d=await (await nbDir()).getDirectoryHandle('attachments');return S.urls[k]=URL.createObjectURL(await (await d.getFileHandle(n)).getFile())}
+function loadNbThumbs(){document.querySelectorAll('img[data-nbatt]').forEach(async img=>{try{const u=await nbAttUrl(img.dataset.nbatt);img.src=u;const a=img.closest('a');if(a)a.href=u}catch{img.alt='missing: '+img.dataset.nbatt}})}
+async function nbAddFiles(t,files){
+  const d=await (await nbDir()).getDirectoryHandle('attachments',{create:true});
+  for(const f of files){const ext=(f.name.match(/\.[a-z0-9]+$/i)||['.png'])[0].toLowerCase();let n=`${t.slug}-${Date.now().toString(36)}${ext}`;await writeFile(d,n,f);t.attachments.push(n)}
+  saveTopic(t,true);render();toast(`${files.length} file${files.length>1?'s':''} attached`)
+}
+function linkFromHit(x){
+  const go={...x.go};const {tab,tsub,...rest}=go;
+  const parts=['project',x.p.id,tab||'overview',...(tab==='testing'?[tsub||'batches']:[])].map(encodeURIComponent).join('/');
+  const qs=new URLSearchParams({...Object.fromEntries(Object.entries(rest).filter(([,v])=>v!=null).map(([k,v])=>[k,String(v)])),...(x.hl?{hl:x.hl}:{})}).toString();
+  const what=x.type==='project'?projName(x.p):`${x.id?x.id+' · ':''}${x.title}`;
+  return {title:x.type==='project'?what:`${projName(x.p)} › ${what}`,url:'#'+parts+(qs?'?'+qs:'')};
+}
+/* drag inside a topic: tasks (t), groups (g), links (l) */
+let nbDrag=null;
+document.addEventListener('dragstart',e=>{const el=e.target.closest?.('[data-nbdrag]');if(!el||!curTopic())return;
+  nbDrag={type:el.dataset.nbdrag,g:+el.dataset.g,i:+el.dataset.i};el.classList.add('dragging');e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain','nb')}catch{}e.stopPropagation()});
+document.addEventListener('dragend',()=>{if(!nbDrag)return;nbDrag=null;document.querySelectorAll('.dragging,.nb-before,.nb-after').forEach(x=>x.classList.remove('dragging','nb-before','nb-after'))});
+function nbTarget(e){
+  if(!nbDrag)return null;
+  if(nbDrag.type==='t'){const row=e.target.closest('.nb-task'),list=e.target.closest('[data-nbdrop]')||e.target.closest('.nb-group')?.querySelector('[data-nbdrop]');if(!list)return null;
+    const g=+list.dataset.nbdrop;if(row){const r=row.getBoundingClientRect();return {el:row,g,i:+row.dataset.i+(e.clientY>r.top+r.height/2?1:0),after:e.clientY>r.top+r.height/2}}
+    return {el:list.querySelector('.nb-add'),g,i:curTopic().groups[g].tasks.length,after:false}}
+  if(nbDrag.type==='g'){const gr=e.target.closest('.nb-group');if(!gr)return null;const r=gr.getBoundingClientRect(),after=e.clientY>r.top+Math.min(r.height/2,30);return {el:gr,i:+gr.dataset.nbg+(after?1:0),after}}
+  if(nbDrag.type==='l'){const row=e.target.closest('.nb-link');if(!row)return null;const r=row.getBoundingClientRect(),after=e.clientY>r.top+r.height/2;return {el:row,i:+row.dataset.i+(after?1:0),after}}
+}
+document.addEventListener('dragover',e=>{const t=nbTarget(e);if(!t)return;e.preventDefault();e.dataTransfer.dropEffect='move';
+  document.querySelectorAll('.nb-before,.nb-after').forEach(x=>x.classList.remove('nb-before','nb-after'));t.el?.classList.add(t.after?'nb-after':'nb-before')});
+document.addEventListener('drop',e=>{const t=nbTarget(e);if(!t)return;e.preventDefault();const tp=curTopic(),d=nbDrag;nbDrag=null;
+  if(d.type==='t'){const src=tp.groups[d.g].tasks,[k]=src.splice(d.i,1);let i=t.i;if(t.g===d.g&&d.i<i)i--;tp.groups[t.g].tasks.splice(i,0,k)}
+  else if(d.type==='g'){const [g]=tp.groups.splice(d.g,1);let i=t.i;if(d.g<i)i--;tp.groups.splice(i,0,g)}
+  else{const [l]=tp.links.splice(d.i,1);let i=t.i;if(d.i<i)i--;tp.links.splice(i,0,l)}
+  saveTopic(tp);render()});
+const NBA={
+  async 'nb-new'(){const inp=$('#nbNew'),name=inp?.value.trim();if(!name){inp?.focus();return}
+    const dir=await nbDir();let slug=slugify(name),n=2;while(await dir.getFileHandle(slug+'.md').then(()=>true,()=>false))slug=slugify(name)+'-'+n++;
+    const t={file:slug+'.md',slug,title:name,status:'Open',tags:[],created:nbDate(),updated:nbDate(),attachments:[],groups:[{name:'',tasks:[]}],links:[],notes:'',extra:[]};
+    S.nb.topics.push(t);await saveTopic(t,true);S.view={page:'notebook',topic:slug};render();scrollTo(0,0);setTimeout(()=>$('.nb-add input')?.focus())},
+  'nb-open'(d){S.nbEdit=null;S.view={page:'notebook',topic:d.slug};render();scrollTo(0,0)},
+  'nb-back'(){S.nbEdit=null;S.view={page:'notebook'};render();scrollTo(0,0)},
+  'nb-filter'(d){S.view.nbf=d.f;render()},
+  'nb-tag'(d){S.view.nbtag=S.view.nbtag===d.t?'':d.t;render()},
+  async 'nb-del'(d){const t=getTopic(d.slug);if(!t||!await confirmBox(`Delete the topic “${t.title}”? Its file notebook/${t.file} is removed. This can't be undone.`,'Delete'))return;
+    await (await nbDir()).removeEntry(t.file).catch(e=>toast(e.message));S.nb.topics=S.nb.topics.filter(x=>x!==t);S.view={page:'notebook'};render()},
+  'nb-toggle'(d){const t=curTopic(),k=t.groups[+d.g].tasks[+d.i];k.done=!k.done;saveTopic(t);render()},
+  'nb-cnt'(d){const t=curTopic(),k=t.groups[+d.g].tasks[+d.i];k.cur=Math.max(0,(k.cur||0)+ +d.d);saveTopic(t);render()},
+  'nb-cnt-set'(d){const t=curTopic(),k=t.groups[+d.g].tasks[+d.i];const v=prompt('Count and target, e.g. 3/10',`${k.cur||0}/${k.max}`);if(v==null)return;const m=v.match(/(\d+)\s*(?:\/\s*(\d+))?/);if(!m)return;k.cur=+m[1];if(m[2])k.max=Math.max(1,+m[2]);saveTopic(t);render()},
+  'nb-kind'(d){const t=curTopic(),k=t.groups[+d.g].tasks[+d.i];
+    if(k.max!=null){k.done=taskDone(k);delete k.max;delete k.cur}
+    else{const v=prompt('Count up to how many?','10');if(v==null)return;const n=parseInt(v,10);if(!(n>0))return;k.max=n;k.cur=k.done?n:0;delete k.done}
+    saveTopic(t);render()},
+  'nb-task-del'(d){const t=curTopic();t.groups[+d.g].tasks.splice(+d.i,1);saveTopic(t);render()},
+  'nb-group-add'(){const t=curTopic(),n=prompt('Name for the new group:');if(!n||!n.trim())return;if(t.groups.length===1&&!t.groups[0].name&&!t.groups[0].tasks.length)t.groups[0].name=n.trim();else{if(!t.groups[0].name)t.groups[0].name='Tasks';t.groups.push({name:n.trim(),tasks:[]})}saveTopic(t);render()},
+  async 'nb-group-del'(d){const t=curTopic(),gi=+d.g,g=t.groups[gi];if(g.tasks.length&&!await confirmBox(`Delete the group “${g.name}”? Its ${g.tasks.length} task${g.tasks.length>1?'s':''} move to ${gi?'the group above':'the next group'}.`,'Delete group'))return;
+    t.groups.splice(gi,1);if(!t.groups.length)t.groups.push({name:'',tasks:[]});else t.groups[Math.max(0,gi-1)].tasks[gi?'push':'unshift'](...g.tasks);
+    if(t.groups.length===1&&t.groups[0].name==='Tasks')t.groups[0].name='';saveTopic(t);render()},
+  'nb-link-new'(){S.nbEdit={link:'new'};render();setTimeout(()=>$('#nbLT')?.focus())},
+  'nb-link-pick'(){S.gsPick=x=>{const l=linkFromHit(x);S.nbEdit={link:'new',...l};render();setTimeout(()=>$('#nbLT')?.focus())};openSearch()},
+  'nb-link-edit'(d){S.nbEdit={link:+d.i};render();setTimeout(()=>$('#nbLT')?.focus())},
+  'nb-link-cancel'(){S.nbEdit=null;render()},
+  'nb-link-save'(d){const t=curTopic(),title=$('#nbLT').value.trim(),url=$('#nbLU').value.trim();if(!url){$('#nbLU').focus();return}
+    const l={title:title||url,url};if(d.i==='new')t.links.push(l);else t.links[+d.i]=l;S.nbEdit=null;saveTopic(t);render()},
+  'nb-link-del'(d){const t=curTopic();t.links.splice(+d.i,1);saveTopic(t);render()},
+  'nb-prev'(d){S.nbPrev=d.v==='1';render()},
+  'nb-att-del'(d){const t=curTopic();t.attachments=t.attachments.filter(n=>n!==d.n);saveTopic(t);render();toast('Removed from the topic (the file stays in notebook/attachments).')},
+};
+const NBCHG={
+  'nb-status'(d,v){const t=getTopic(d.slug);t.status=v;saveTopic(t);render()},
+  'nb-tags'(d,v){const t=getTopic(d.slug);t.tags=[...new Set(v.split(',').map(x=>x.trim().replace(/^#/,'')).filter(Boolean))];saveTopic(t);render()},
+  'nb-att'(d,v,el){const t=curTopic();if(t&&el.files.length)nbAddFiles(t,[...el.files]).catch(e=>toast(e.message))},
+};
+document.addEventListener('input',e=>{const el=e.target,k=el.dataset?.in;if(!k||!k.startsWith('nb-'))return;
+  if(el.id==='nbSearch')return;const t=curTopic();if(!t)return;
+  if(k==='nb-title'){t.title=el.value;document.title='Workbench - '+t.title;saveTopic(t)}
+  else if(k==='nb-task'){const x=t.groups[+el.dataset.g]?.tasks[+el.dataset.i];if(x){x.text=el.value;saveTopic(t)}}
+  else if(k==='nb-gname'){const g=t.groups[+el.dataset.g];if(g){g.name=el.value;saveTopic(t)}}
+  else if(k==='nb-notes'){t.notes=el.value;saveTopic(t)}
+});
+document.addEventListener('input',e=>{if(e.target.id==='nbSearch'){S.nbq=e.target.value;render()}});
+document.addEventListener('keydown',e=>{const el=e.target;
+  if(el.id==='nbNew'&&e.key==='Enter'){e.preventDefault();NBA['nb-new']();return}
+  if((el.id==='nbLT'||el.id==='nbLU')&&e.key==='Enter'){e.preventDefault();document.querySelector('[data-act="nb-link-save"]')?.click();return}
+  if((el.id==='nbLT'||el.id==='nbLU')&&e.key==='Escape'){e.preventDefault();e.stopPropagation();NBA['nb-link-cancel']();return}
+  if(el.dataset?.in==='nb-add'&&e.key==='Enter'){e.preventDefault();const t=curTopic(),v=el.value.trim();if(!v)return;const m=v.match(/^#(\d+)\s+(.+)/);
+    const gi=+el.dataset.g;t.groups[gi].tasks.push(m?{text:m[2],cur:0,max:+m[1]}:{text:v,done:false});saveTopic(t);render();setTimeout(()=>{const n=document.querySelector(`[data-in="nb-add"][data-g="${gi}"]`);n?.focus()});return}
+  if(el.dataset?.in==='nb-task'&&e.key==='Enter'){e.preventDefault();el.blur()}
+},true);
+document.addEventListener('paste',e=>{const el=e.target;if(el.dataset?.in!=='nb-notes')return;const t=curTopic();if(!t)return;
+  const files=[...(e.clipboardData?.items||[])].filter(i=>i.kind==='file').map(i=>i.getAsFile()).filter(Boolean);if(!files.length)return;e.preventDefault();nbAddFiles(t,files).catch(err=>toast(err.message))});
+
+document.addEventListener('mousedown',e=>{const g=e.target.closest?.('.nb-grip');if(g){const el=g.closest('[data-nbdrag]');if(el)el.draggable=true}},true);
+document.addEventListener('mouseup',()=>document.querySelectorAll('[data-nbdrag][draggable="true"]').forEach(x=>x.draggable=false),true);
+document.addEventListener('dragend',()=>document.querySelectorAll('[data-nbdrag][draggable="true"]').forEach(x=>x.draggable=false));
+Object.assign(A,NBA);Object.assign(CHG,NBCHG);
+
 /* ---------------- demo (in-memory files) ---------------- */
 const nf=()=>new DOMException('Not found','NotFoundError');
 class MemFile{constructor(n,d=''){this.kind='file';this.name=n;this.data=new Blob([d]);this.mtime=Date.now()}
@@ -2762,7 +3125,7 @@ async function boot(){
     if(!window.showDirectoryPicker){render();return}
     await idb.open();S.ws=await idb.get('workspace')||null;S.records=(await idb.get('projects'))||[];
   }
-  await loadAll();S.since=S.demo?demoSince():sinceLast();S.view=routeFromHash()||S.view;S.booted=true;render();setInterval(poll,4000);autoRestoreProjects();
+  await loadAll();await loadNotebook().catch(e=>console.warn('notebook',e));S.since=S.demo?demoSince():sinceLast();S.view=routeFromHash()||S.view;S.booted=true;render();setInterval(poll,4000);autoRestoreProjects();
   if(S.since.length){const n=S.since.reduce((a,x)=>a+x.parts.reduce((b,y)=>b+y.n,0),0);toast(`${n} change${n>1?'s':''} across ${S.since.length} project${S.since.length>1?'s':''} since you were last here`)}
 }
 boot().catch(e=>{console.error(e);$('#app').innerHTML=`<div class="empty">Startup failed: ${h(e.message)}</div>`});
