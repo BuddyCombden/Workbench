@@ -550,6 +550,9 @@ dialog.color-dlg{width:min(440px,calc(100vw - 32px))}
 .ph-links a:hover{color:var(--text)}.ph-links a.danger:hover{color:var(--fail)}
 .ph-links .ic{width:13px;height:13px}
 .toolbar+.batch-notes{margin:-6px 0 12px}
+.restore{border-left:3px solid var(--accent);margin-bottom:18px}
+.restore-row{display:flex;align-items:center;gap:12px;padding:7px 0;border-top:1px solid var(--line)}
+.restore-row .muted{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .set-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
 </style>
 </head>
@@ -568,7 +571,7 @@ dialog.color-dlg{width:min(440px,calc(100vw - 32px))}
    Open with ?demo for an in-memory demo.
    ===================================================================== */
 
-const APP_VERSION='0.18.0';
+const APP_VERSION='0.18.1';
 const RUN_MODE=location.protocol==='file:'?'file':(matchMedia('(display-mode: standalone)').matches||navigator.standalone?'app':'web');
 const STAGES=['Ideated','Designed','Testing','Iterating','Completed'];
 const STAGE_PCT={Ideated:10,Designed:25,Testing:50,Iterating:75,Completed:100};
@@ -781,10 +784,48 @@ function importSettings(text){
   if(d.settings){S.set={...SET_DEFAULTS,...d.settings};applySettings(true)}
   if(d.workspacePath){S.paths.__ws=d.workspacePath}
   const pend={fav:d.favoritesByName||{},path:d.pathsByName||{}};lsSet('wb-pending',pend);
-  if(d.layoutByName){const L=layout();L.groups=[];L.member={};const memb={};for(const g of d.layoutByName.groups||[]){const id='g'+rid();L.groups.push({id,name:g.name,collapsed:g.collapsed});for(const n of g.members||[])memb[n]=id}
+  if(d.layoutByName){const L=layout();L.groups=[];L.member={};const memb={};for(const g of d.layoutByName.groups||[]){const id='g'+rid();L.groups.push({id,name:g.name,collapsed:g.collapsed,color:validColor(g.color)||''});for(const n of g.members||[])memb[n]=id}
     lsSet('wb-pending-layout',{memb,order:d.layoutByName.order||[]});saveLayout()}
+  if(Array.isArray(d.projects)){const have=new Set(S.projects.filter(p=>p.loaded).map(projName));
+    const prev=lsGet('wb-pending-projects',[])||[];const list=[...prev.filter(x=>!d.projects.some(y=>y.name===x.name)),...d.projects.filter(x=>x&&x.name&&!have.has(x.name)).map(x=>({name:String(x.name),path:rootPath(x.path||''),folder:String(x.folder||'')}))];
+    lsSet('wb-pending-projects',list)}
   lsSet('wb-paths',S.paths);applyPending();render();renderSettings();
-  toast('Settings imported. Favourites and paths attach as you add the matching projects.');
+  const np=(lsGet('wb-pending-projects',[])||[]).length;
+  toast(`Settings imported.${np?` ${np} project${np>1?'s':''} to re-add: see the Projects page.`:' Favourites and paths attach as you add the matching projects.'}`);
+  autoRestoreProjects();
+}
+/* ---- re-adding projects listed in an imported settings file ---- */
+function pendingProjects(){const have=new Set(S.projects.filter(p=>p.loaded).map(projName));const l=(lsGet('wb-pending-projects',[])||[]).filter(x=>!have.has(x.name));return l}
+function savePendingProjects(l){if(l.length)lsSet('wb-pending-projects',l);else try{localStorage.removeItem('wb-pending-projects')}catch{}}
+async function addFromHandle(hd,opt={}){
+  const d=await isDupe(hd);if(d)return {p:d,dupe:true};
+  const existed=hd.name==='proj_management'||await hd.getDirectoryHandle('proj_management').then(()=>true,()=>false);
+  const r={id:rid(),handle:hd};S.records.push(r);await saveRecords();const p=mkProject(r.id,'folder',hd);S.projects.push(p);await loadProject(p);
+  if(opt.path&&!projPath(p)){S.paths[p.id]=rootPath(opt.path);lsSet('wb-paths',S.paths)}
+  const imp=p.loaded&&!opt.quiet?await onboardProject(p,{fresh:!existed}):null;
+  applyPending();return {p,existed,imp};
+}
+let autoRestoring=false;
+async function autoRestoreProjects(){ // projects whose path is inside the workspace can be re-added without a picker
+  if(autoRestoring||!S.ws||!S.paths.__ws)return;autoRestoring=true;let n=0;
+  try{const ws=rootPath(S.paths.__ws).toLowerCase(),left=[];
+    for(const x of pendingProjects()){
+      const pp=(x.path||'').toLowerCase();
+      if(!pp.startsWith(ws+'\\')){left.push(x);continue}
+      const parts=x.path.slice(ws.length+1).split(/[\\/]+/).filter(Boolean);let hd=S.ws;
+      try{for(const seg of parts)hd=await hd.getDirectoryHandle(seg);
+        const pm=await hd.getDirectoryHandle('proj_management').catch(()=>null);if(!pm)throw new Error('no proj_management');
+        const r=await addFromHandle(hd,{path:x.path,quiet:true});if(r.p.loaded)n++;else left.push(x)}
+      catch{left.push(x)}}
+    savePendingProjects(left);
+  }finally{autoRestoring=false}
+  if(n){render();toast(`Re-added ${n} project${n>1?'s':''} from your workspace.`)}
+}
+function renderRestore(){
+  const l=pendingProjects();if(!l.length)return '';
+  return `<section class="panel restore"><div class="sec-head"><h2>${ic('folder')}Projects from your imported settings <span class="tab-count">${l.length}</span></h2><a class="small muted" data-act="restore-skip-all">Dismiss all</a></div>
+  <p class="muted small" style="margin:0 0 8px">The browser needs you to pick each folder once. Click <b>Locate</b>: the path is copied, so paste it into the folder picker’s address bar and press Enter, then click Select Folder.${S.ws?'':' Tip: choose your workspace first; projects inside it are re-added automatically.'}</p>
+  ${l.map((x,i)=>`<div class="restore-row"><b>${h(x.name)}</b><span class="muted small" title="${h(x.path)}">${x.path?h(shortPath(x.path)):'(no saved path)'}</span><span class="spacer" style="flex:1"></span><button class="primary" data-act="restore-locate" data-i="${i}">${ic('folderOpen')}Locate</button><button class="ghost" data-act="restore-skip" data-i="${i}" title="Don't re-add this project">Skip</button></div>`).join('')}</section>`;
 }
 function applyPendingLayout(){
   const pl=lsGet('wb-pending-layout',null);if(!pl)return;const L=layout();let changed=false;
@@ -813,8 +854,8 @@ function renderSettings(){
   `<div class="set-group"><h4>App</h4>
    <p class="small muted" style="margin:0 0 8px">${RUN_MODE==='file'?'Running as a <b>local file</b>. Folder access is asked for on every launch. Open the hosted copy (GitHub Pages) and install it to keep access.':RUN_MODE==='web'?'Running as a <b>web page</b>. Install it as an app so folder access is remembered and it gets its own window and icon.':'Running as an <b>installed app</b>. Folder access is remembered.'}</p>
    <div class="form-row">${S.installEvt?`<button class="primary" data-act="install-app">${ic('plus')}Install Workbench</button>`:RUN_MODE==='web'?'<span class="small muted">To install: browser menu → “Install Workbench…” (or the install icon in the address bar).</span>':''}
-   <button data-act="export-settings">${ic('move')}Export settings</button><label class="filebtn">${ic('clip')}Import settings<input type="file" accept=".json,application/json" data-import-settings="1"></label></div>
-   <p class="small muted" style="margin:6px 0 0">Moving between the local file and the installed app? Export here, import there, then choose the workspace and re-add your project folders. Favourites and folder paths re-attach by project name.</p></div>
+   <button data-act="export-settings">${ic('move')}Export settings</button><label class="switch small" title="Adds every project's name and Windows folder path, so importing on another computer or browser can re-add them"><input type="checkbox" data-chg="exp-paths" ${lsGet('wb-exp-paths',true)!==false?'checked':''}>Include project paths</label><label class="filebtn">${ic('clip')}Import settings<input type="file" accept=".json,application/json" data-import-settings="1"></label></div>
+   <p class="small muted" style="margin:6px 0 0">Moving between the local file and the installed app? Export here, import there, then choose the workspace and re-add your project folders. Favourites, groups and folder paths re-attach by project name. With project paths included, projects inside the workspace are re-added automatically and the rest are listed on the Projects page to locate.</p></div>
   <div class="set-group"><h4>Open folders in File Explorer</h4>
    <p class="small muted" style="margin:0 0 8px">Browsers can’t open Explorer by themselves, so “Open folder” uses a tiny helper you install once. It only ever opens folders that exist; it never runs files.</p>
    <div class="form-row"><button data-act="dl-helper">${ic('folderOpen')}Download helper (.reg)</button>${lsGet('wb-helper',false)?`<span class="small c-pass">${ic('check')} marked installed</span>`:`<a class="small" data-act="helper-done">I’ve installed it</a>`}<a class="small muted" data-act="dl-unhelper">Uninstall file</a></div>
@@ -1648,7 +1689,7 @@ function renderHome(){
   const L=layout(),all=ordered(S.projects);
   const projs=all.filter(p=>!p.loaded||projStatus(p)!=='Idea'),ideas=all.filter(p=>p.loaded&&projStatus(p)==='Idea');
   const favs=all.filter(isFav),arch=projs.filter(p=>p.loaded&&projStatus(p)==='Archived').length;
-  let o=renderSince()+tools;
+  let o=renderSince()+renderRestore()+tools;
   if(favs.length)o+=homeSection('*fav','Favorites','starOn',favs,{empty:''});
   for(const g of L.groups)o+=homeSection(g.id,g.name,'layers',projs.filter(p=>groupOf(p)===g.id),{group:g});
   const loose=projs.filter(p=>!groupOf(p));
@@ -2004,7 +2045,7 @@ const A={
   'goto-batch'(d){Object.assign(S.view,{tab:'testing',batch:d.batch,filter:'all'});S.sticky.clear();render()},
   'goto-test'(d){Object.assign(S.view,{tab:'testing',batch:d.batch||'*',filter:'all'});S.sticky.clear();render();const el=document.getElementById('t-'+d.id);if(el){el.scrollIntoView({block:'center'});el.animate([{outline:'2px solid var(--accent)'},{outline:'2px solid transparent'}],{duration:1600})}},
   async 'choose-ws'(){
-    try{const hd=await pickDir('tfc-workspace');S.ws=hd;await idb.set('workspace',hd);await loadAll();S.view={page:'home'};render();toast('Workspace set to '+hd.name)}catch(e){if(e.name!=='AbortError')toast(e.message)}
+    try{const hd=await pickDir('tfc-workspace');S.ws=hd;await idb.set('workspace',hd);await loadAll();S.view={page:'home'};render();toast('Workspace set to '+hd.name);autoRestoreProjects()}catch(e){if(e.name!=='AbortError')toast(e.message)}
   },
   async 'add-project'(){
     try{let hd=await pickDir('tfc-project');
@@ -2147,6 +2188,19 @@ const A={
   'grp-all'(d){for(const g of layout().groups)g.collapsed=d.s==='collapse';saveLayout();render()},
   'grp-toggle'(d){const g=layout().groups.find(x=>x.id===d.g);if(g){g.collapsed=!g.collapsed;saveLayout();render()}},
   'run-start'(d){startRun(getP(d.pid))},
+  async 'restore-locate'(d){const l=pendingProjects(),x=l[+d.i];if(!x)return;
+    if(x.path){navigator.clipboard?.writeText(x.path).catch(()=>{});toast('Path copied. Paste it into the picker’s address bar (Ctrl+L, Ctrl+V, Enter).')}
+    try{let hd=await pickDir('tfc-project');
+      const pm=hd.name==='proj_management'?hd:await hd.getDirectoryHandle('proj_management').catch(()=>null);
+      const nm=pm&&await readFile(pm,'FEATURES.md').then(f=>f&&parseFeatures(f.text).name).catch(()=>'');
+      if(!pm&&!await confirmBox(`“${hd.name}” has no proj_management folder, so it isn't “${x.name}”. Add it anyway as a new project?`,'Add anyway'))return;
+      if(nm&&nm!==x.name&&!await confirmBox(`This folder's project is named “${nm}”, not “${x.name}”. Add it anyway?`,'Add anyway'))return;
+      const r=await addFromHandle(hd,{path:x.path});
+      if(r.dupe){toast('Already tracked: '+projName(r.p))}else toast(r.p.loaded?`Re-added ${projName(r.p)}`:'Could not load that folder: '+r.p.error);
+      savePendingProjects(pendingProjects().filter(y=>y.name!==x.name||r.p.loaded===false));render();
+    }catch(e){if(e.name!=='AbortError')toast(e.message)}},
+  'restore-skip'(d){const l=pendingProjects();l.splice(+d.i,1);savePendingProjects(l);render()},
+  async 'restore-skip-all'(){if(!await confirmBox('Stop listing these projects? You can still add any of them with Add project folder, or import the settings file again.','Dismiss all'))return;savePendingProjects([]);render()},
   'color-dlg'(d){colorDlg('p',d.pid)},
   'grp-color'(d){colorDlg('g',d.g)},
   'pick-color'(d){setPickedColor(d.k2,d.id,d.c);$('#wbModal')?.close()},
@@ -2184,7 +2238,9 @@ const A={
   async 'install-app'(){const e=S.installEvt;if(!e)return;e.prompt();const r=await e.userChoice.catch(()=>null);S.installEvt=null;renderSettings();if(r?.outcome==='accepted')toast('Installed. Open Workbench from its new icon.')},
   'export-settings'(){
     const byName=(m)=>Object.fromEntries(Object.entries(m||{}).filter(([k])=>!k.startsWith('__')).map(([id,v])=>{const p=getP(id);return p?[projName(p),v]:null}).filter(Boolean));
-    download('workbench-settings.json',JSON.stringify({app:'workbench',version:APP_VERSION,exported:nowStamp(),settings:S.set,workspacePath:S.paths.__ws||'',favoritesByName:byName(S.favs),pathsByName:byName(S.paths),layoutByName:{groups:layout().groups.map(g=>({name:g.name,collapsed:!!g.collapsed,members:S.projects.filter(p=>groupOf(p)===g.id).map(projName)})),order:layout().order.map(id=>getP(id)).filter(Boolean).map(projName)}},null,2));
+    const withPaths=lsGet('wb-exp-paths',true)!==false;
+    const projects=withPaths?S.projects.filter(p=>p.kind==='folder'&&p.loaded).map(p=>({name:projName(p),path:projPath(p)||'',folder:p.handle?.name||''})):undefined;
+    download('workbench-settings.json',JSON.stringify({app:'workbench',version:APP_VERSION,exported:nowStamp(),settings:S.set,workspacePath:S.paths.__ws||'',favoritesByName:byName(S.favs),...(withPaths?{pathsByName:byName(S.paths),projects}:{}),layoutByName:{groups:layout().groups.map(g=>({name:g.name,collapsed:!!g.collapsed,color:g.color||'',members:S.projects.filter(p=>groupOf(p)===g.id).map(projName)})),order:layout().order.map(id=>getP(id)).filter(Boolean).map(projName)}},null,2));
   },
   'home-clear'(){S.q='';S.homeFilter='all';render()},
   'set-path'(d){pathPrompt(getP(d.pid));render()},
@@ -2216,6 +2272,7 @@ const CHG={
   async status(d,v){const p=getP(d.pid);await editFeatures(p,m=>{m.status=v});toast(`${projName(p)} is now ${v}`)},
   'color-on'(d,v,el){if(!!getP(d.pid).features.color===!!el.checked)return;editFeatures(getP(d.pid),m=>{m.color=el.checked?suggestColor(m.name):''})},
   'pick-color'(d,v){setPickedColor(d.k2,d.id,v)},
+  'exp-paths'(d,v,el){lsSet('wb-exp-paths',!!el.checked)},
   color(d,v){if(validColor(v)===getP(d.pid).features.color)return;editFeatures(getP(d.pid),m=>{m.color=validColor(v)})},
   'idea-title'(d,v){if(v.trim())editIdeas(getP(d.pid),m=>{const x=m.items.find(y=>y.id===d.id);if(x)x.title=v.trim()})},
   'idea-area'(d,v){editIdeas(getP(d.pid),m=>{const x=m.items.find(y=>y.id===d.id);if(x)x.area=v})},
@@ -2705,7 +2762,7 @@ async function boot(){
     if(!window.showDirectoryPicker){render();return}
     await idb.open();S.ws=await idb.get('workspace')||null;S.records=(await idb.get('projects'))||[];
   }
-  await loadAll();S.since=S.demo?demoSince():sinceLast();S.view=routeFromHash()||S.view;S.booted=true;render();setInterval(poll,4000);
+  await loadAll();S.since=S.demo?demoSince():sinceLast();S.view=routeFromHash()||S.view;S.booted=true;render();setInterval(poll,4000);autoRestoreProjects();
   if(S.since.length){const n=S.since.reduce((a,x)=>a+x.parts.reduce((b,y)=>b+y.n,0),0);toast(`${n} change${n>1?'s':''} across ${S.since.length} project${S.since.length>1?'s':''} since you were last here`)}
 }
 boot().catch(e=>{console.error(e);$('#app').innerHTML=`<div class="empty">Startup failed: ${h(e.message)}</div>`});
