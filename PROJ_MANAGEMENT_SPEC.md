@@ -11,6 +11,7 @@ Give this file (or the `proj-management-testing` skill) to the agent working on 
     FEATURES.md      shared: agent + human (via the tool)
     TESTS.md         agent writes, tool reads
     FEEDBACK.md      tool writes, agent reads (never edit)
+    CHANGES.md       the human's requests (changes, bugs, questions, idea/research requests); agent replies
     DECISIONS.md     agent asks, human answers in the app
     IDEAS.md         the human's not-yet-committed ideas (shared)
     attachments/     screenshots referenced from FEEDBACK.md
@@ -169,11 +170,38 @@ Area: Flight
 Rough notes in Markdown.
 ```
 
-- Status is one of New, Ready, Parked, Promoted or Dismissed. IDs look like `I-001` and are never reused. `By:` is `you` or `agent`.
+- Status is one of New, Ready, Shelved, Promoted or Dismissed (older files may say Parked; it means Shelved). Workbench adds an `Updated:` line when the human edits an idea. IDs look like `I-001` and are never reused. `By:` is `you` or `agent`.
 - When you brainstorm because the human asked, add ideas with `By: agent` and `[New]`.
 - Don't act on ideas on your own. When an idea is **[Ready]**, or the human asks, turn it into a feature in FEATURES.md (stage Ideated, `Source: user`). If a choice has to be made first, turn it into a decision in DECISIONS.md instead.
 - After turning an idea into a feature or decision, set it to `[Promoted]` and add `Became: <new ID>`.
 - Never delete ideas.
+
+---
+
+## CHANGES.md (the human asks, the agent replies)
+
+The human writes requests in Workbench's **Changes** tab. Each one is an entry:
+
+```markdown
+<!-- PROJ-MGMT:CHANGES v1 ... -->
+# Changes — Valheim Glider Tweaks
+
+## GI-003 · Why does stamina drain while hovering? [Answered]
+Kind: Question
+Added: 2026-11-08 10:12
+Updated: 2026-11-08 11:40
+
+The human's notes. Never edit them.
+
+Reply:
+> Your answer, each line starting with "> ".
+```
+
+- Status: Open, In progress, Answered, Done or Won't do. Kind: Change, Bug, Question, Idea request, Research or Other. `Severity:` is only used for bugs.
+- **Changes and bugs:** set In progress while you work. When it ships, add a test with `Retests: GI-003` in TESTS.md. Workbench marks the entry Done when that test passes.
+- **Questions, research and idea requests:** answer in a `Reply:` block at the end of the entry and set the status to Answered. For idea requests, add the ideas to IDEAS.md (`By: agent`) and list their IDs in the reply.
+- If the human has to choose something, raise it in DECISIONS.md and mention the D-ID in the reply.
+- IDs are unique and never reused. Add entries yourself only when asked. Workbench merges your edits with the human's, field by field.
 
 ---
 
@@ -183,7 +211,7 @@ Sections, in order:
 
 1. **Summary**: a per-batch table of Pass / Partial / Fail / Blocked / Skipped / Needs retest / Untested.
 2. **Open issues**: unresolved FAIL and PARTIAL results, sorted by severity (Critical > Major > Minor > Cosmetic). Each has the tester's notes as a quote and attachment links (`attachments/<file>`, relative to FEEDBACK.md). A "Fix pending" line appears when a `Retests:` test exists.
-3. **General issues**: feedback that isn't tied to a test or a version (`GI-001`…). Each has a kind (Bug, Suggestion, Question or Other), a severity, a status and notes. Resolve one by adding a test with `Retests: GI-001` (or `Resolves: GI-001`).
+3. **Changes**: a short summary of the open entries in CHANGES.md (`GI-001`…). Read the full entries, and reply, in CHANGES.md.
 4. **Needs retest**: tests the tester flagged, or tests whose text changed after they were tested.
 5. **Blocked / skipped**: with the reason the tester gave.
 6. **Feature requests**: features with `Source: user`.
@@ -225,7 +253,7 @@ A project's icon comes from the `Icon:` path in FEATURES.md (relative to the pro
 
 ## Agent workflow (each iteration)
 
-1. Read `FEEDBACK.md`. Start with Open issues and General issues (Critical first), then Needs retest, then Feature requests.
+1. Read `FEEDBACK.md` and `CHANGES.md`. Start with Open issues and open Changes (Critical first), answer questions and research/idea requests, then Needs retest, then Feature requests.
 2. Read `DECISIONS.md`. Act on newly Decided items, and add new decisions for anything you need the human to choose.
    Check `IDEAS.md` for ideas marked [Ready] and promote them.
 3. Read `FEATURES.md`. Plan any `Source: user` features and update their stages.

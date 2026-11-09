@@ -6,7 +6,8 @@ Workbench is a single-file app (`Workbench.html`) for tracking testing, feedback
 `proj_management/` in this folder follows `PROJ_MANAGEMENT_SPEC.md`. The *proj-management-testing* skill covers the same rules.
 - `FEATURES.md`: areas and features with stages. Shared with the user, who owns `Status:` and usually sets Completed.
 - `TESTS.md`: add one `## Batch <version>` per release, newest first. Test IDs are `WB-NNN` and are never reused.
-- `FEEDBACK.md`: the user's results and general issues (GI-NNN). Read it first, never edit it.
+- `FEEDBACK.md`: the user's test results. Read it first, never edit it.
+- `CHANGES.md`: the user's requests (GI-NNN): changes, bugs, questions, idea and research requests. Reply in a `Reply:` block and update the status, as the file's header explains.
 - `DECISIONS.md`: put choices the user needs to make here (D-NNN), with research, options and a recommendation; act on the ones they've Decided.
 - `IDEAS.md`: the user's not-yet-committed ideas (I-NNN). Only promote [Ready] ones into features or decisions, then mark them [Promoted] with `Became:`.
 
