@@ -200,6 +200,7 @@ Reply:
 - Status: Open, In progress, Answered, Done or Won't do. Kind: Change, Bug, Question, Idea request, Research or Other. `Severity:` is only used for bugs.
 - **Changes and bugs:** set In progress while you work. When it ships, add a test with `Retests: GI-003` in TESTS.md. Workbench marks the entry Done when that test passes.
 - **Questions, research and idea requests:** answer in a `Reply:` block at the end of the entry and set the status to Answered. For idea requests, add the ideas to IDEAS.md (`By: agent`) and list their IDs in the reply.
+- **Follow-ups:** the human can follow up on an entry. A `Follow-up: <Kind> · <date>` block appears after the earlier messages, with its own text; answer it with a new `Reply:` block right under it.
 - If the human has to choose something, raise it in DECISIONS.md and mention the D-ID in the reply.
 - IDs are unique and never reused. Add entries yourself only when asked. Workbench merges your edits with the human's, field by field.
 
