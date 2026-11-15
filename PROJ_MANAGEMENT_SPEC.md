@@ -11,7 +11,9 @@ Give this file (or the `proj-management-testing` skill) to the agent working on 
     FEATURES.md      shared: agent + human (via the tool)
     TESTS.md         agent writes, tool reads
     FEEDBACK.md      tool writes, agent reads (never edit)
-    CHANGES.md       the human's requests (changes, bugs, questions, idea/research requests); agent replies
+    CHANGES.md       the human's Inbox: changes, bugs, questions, feature requests, investigations; agent replies
+    AGENT_LOG.md     the agent appends what it acted on / saw
+    workbench-view.json  Workbench's saved filters for this project (Workbench writes it; ignore)
     DECISIONS.md     agent asks, human answers in the app
     IDEAS.md         the human's not-yet-committed ideas (shared)
     attachments/     screenshots referenced from FEEDBACK.md
@@ -197,7 +199,8 @@ Reply:
 > Your answer, each line starting with "> ".
 ```
 
-- Status: Open, In progress, Answered, Done or Won't do. Kind: Change, Bug, Question, Idea request, Research or Other. `Severity:` is only used for bugs.
+- Status: Open, In progress, Answered, Done or Won't do. Kind: Change, Bug, Question, Feature request, Investigate or Other (older files may say Idea request / Research; Workbench renames them). `Severity:` is only used for bugs. `Resolved:` is written when the entry is closed; `From: I-006` means the human sent idea I-006 to the Inbox.
+- Feature request: design it in FEATURES.md (or raise a decision first), reply with the IDs, set Answered. Build it only when asked. Investigate: look into it and reply.
 - **Changes and bugs:** set In progress while you work. When it ships, add a test with `Retests: GI-003` in TESTS.md. Workbench marks the entry Done when that test passes.
 - **Questions, research and idea requests:** answer in a `Reply:` block at the end of the entry and set the status to Answered. For idea requests, add the ideas to IDEAS.md (`By: agent`) and list their IDs in the reply.
 - **Follow-ups:** the human can follow up on an entry. A `Follow-up: <Kind> · <date>` block appears after the earlier messages, with its own text; answer it with a new `Reply:` block right under it.
@@ -219,42 +222,58 @@ Sections, in order:
 7. **Results by batch**: every recorded result, including passes with notes.
 8. A `<!-- PROJ-MGMT-DATA ... -->` JSON block. This is the tool's storage. Never edit it.
 
-## Workspace notebook (`<workspace>/notebook/*.md`)
+## Workspace notebooks (`<workspace>/notebook/*.md`)
 
-Workbench's **Notebook** keeps one Markdown file per topic in the workspace folder (not in a project). Agents may read these, and add tasks, links or notes **only when asked**, editing the file in place.
+Workbench's **Notebooks** keep one Markdown file per notebook in the workspace folder (not in a project). Agents may read these, and add to them **only when asked**, editing the file in place. Workbench backs up the old file to `notebook/history/` before a save would remove anything.
 
 ```markdown
-<!-- PROJ-MGMT:NOTEBOOK v1 ... -->
-# Mod release checklist
+<!-- PROJ-MGMT:NOTEBOOK v2 ... -->
+# Mod release
 
+Summary: Steps for shipping a mod update
 Status: Open            (Open | Waiting | Done)
 Tags: valheim, release
-Created: 2026-11-07
-Updated: 2026-11-07
+Created: 2026-11-07 10:00:00
+Updated: 2026-11-12 18:30:12
 
-## Tasks
-### Before upload
-- [ ] Write changelog
-- [x] Bump version
-- [2/10] Screenshots taken      (a counter: current/target)
+## Page: Prep ^p1x2y
+- note: Loose elements sit right under the page heading ^a1b2c
 
-## Links
-- [Thunderstore page](https://thunderstore.io/...)
-- [Glider Tweaks › VGT-101](#project/<id>/testing/batches?hl=t-VGT-101)
-
-## Notes
-Free Markdown.
+### Before upload {color=#c98450} ^s1t2u
+- [ ] Write changelog ^c3d4e
+  - note: nested one level under the task ^f5g6h
+- [2/10] Screenshots taken {col=2} ^i7j8k
+- date: 2026-11-20 14:00 | Release day {dead} ^l9m0n
+- link: [Mod page](https://...) ^o1p2q
+- image: attachments/mod-release-x1.png | caption ^r3s4t
+- file: [notes.pdf](attachments/mod-release-x2.pdf) ^u5v6w
+- item: [Glider Tweaks › WB-101](#project/<id>/testing/batches?hl=t-WB-101) ^x7y8z
 ```
 
-`### Name` lines under Tasks group the tasks. Images live in `notebook/attachments/` and are listed on an `Attachments:` line written by Workbench.
+`## Page` with no title continues the page before. Extra lines of text are indented 4 spaces. `{hl=info|warn|idea div dead col=2}` are highlight, divider, deadline and second column. Leave the ` ^id` markers alone and add new lines without them.
 
 A project's icon comes from the `Icon:` path in FEATURES.md (relative to the project folder, so a mod can use its real icon file), falling back to a square `proj_management/icon.png` (or `.webp`, `.jpg`, `.svg`). Workbench shows it on the project card, header and tab.
 
 ---
 
+## AGENT_LOG.md (agent appends)
+
+After each pass, append a dated section saying what you handled, so Workbench can show it and leave it out of the next review prompt:
+
+```markdown
+## 2026-11-12 19:00:00
+- WB-144: acted - fixed severity focus; retest WB-167
+- WB-150: seen
+- GI-019: acted - shipped; retest WB-180
+```
+
+The log never changes results. To have something tested again, add a new test with `Retests: <old ID>`.
+
+---
+
 ## Agent workflow (each iteration)
 
-1. Read `FEEDBACK.md` and `CHANGES.md`. Start with Open issues and open Changes (Critical first), answer questions and research/idea requests, then Needs retest, then Feature requests.
+1. Read `FEEDBACK.md` and `CHANGES.md`. Start with Open issues and open Changes (Critical first), answer questions, investigations and feature requests, then Needs retest, then Feature requests.
 2. Read `DECISIONS.md`. Act on newly Decided items, and add new decisions for anything you need the human to choose.
    Check `IDEAS.md` for ideas marked [Ready] and promote them.
 3. Read `FEATURES.md`. Plan any `Source: user` features and update their stages.
@@ -263,4 +282,15 @@ A project's icon comes from the `Icon:` path in FEATURES.md (relative to the pro
    - a `Retests:` test for each fixed issue;
    - tests for new or changed features, linked with `Feature:`.
 6. Advance feature stages in `FEATURES.md`.
-7. Tell the human the batch is ready. The tool picks it up automatically.
+7. Append what you acted on or saw to `AGENT_LOG.md`.
+8. Tell the human the batch is ready. The tool picks it up automatically.
+
+---
+
+## Trips (workspace)
+
+Workbench's Trips section keeps one folder per trip in the workspace: `trips/<slug>/TRIP.md` (plus `icon.png`, `files/` for attached tickets and scans, and `history/`).
+The JSON also holds documents (`docs`), booking status (`book`: tobook, booked, paid, cancelled), cached map lookups (`geo`) and the linked notebook (`nbSlug`).
+TRIP.md is a readable summary of the active path that Workbench rewrites on every save, with the full plan as JSON under
+`## Data (Workbench)`. Agents read it freely and edit only when asked, and only the JSON: keep every `id`, never reuse one.
+Workbench merges edits made elsewhere field by field and backs up to `history/` if a save would remove anything.

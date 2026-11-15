@@ -9,5 +9,7 @@
 !/icons/
 !/tools/
 !/README.md
-!/PROJ_MANAGEMENT_SPEC.md
-!/CLAUDE.md
+
+/PROJ_MANAGEMENT_SPEC.md
+/CLAUDE.md
+/tools/workbench-icons.html

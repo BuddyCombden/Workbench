@@ -7,7 +7,8 @@ Workbench is a single-file app (`Workbench.html`) for tracking testing, feedback
 - `FEATURES.md`: areas and features with stages. Shared with the user, who owns `Status:` and usually sets Completed.
 - `TESTS.md`: add one `## Batch <version>` per release, newest first. Test IDs are `WB-NNN` and are never reused.
 - `FEEDBACK.md`: the user's test results. Read it first, never edit it.
-- `CHANGES.md`: the user's requests (GI-NNN): changes, bugs, questions, idea and research requests. Reply in a `Reply:` block and update the status, as the file's header explains.
+- `CHANGES.md`: the user's requests (GI-NNN): changes, bugs, questions, feature requests and things to investigate (the Inbox tab). Reply in a `Reply:` block and update the status, as the file's header explains.
+- `AGENT_LOG.md`: append what you acted on / saw after each pass (format in its header). To get something retested, add a new test with `Retests:`.
 - `DECISIONS.md`: put choices the user needs to make here (D-NNN), with research, options and a recommendation; act on the ones they've Decided.
 - `IDEAS.md`: the user's not-yet-committed ideas (I-NNN). Only promote [Ready] ones into features or decisions, then mark them [Promoted] with `Became:`.
 
