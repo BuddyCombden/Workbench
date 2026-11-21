@@ -28,3 +28,5 @@ Workbench is a single-file app (`Workbench.html`) for tracking testing, feedback
   - actions (`A`) and change handlers (`CHG`)
   - polling, demo file system, boot
 - Add `?demo` to the URL to test with in-memory sample data, for example with Playwright.
+- In tests and replies, tag commands or paths the user will paste as `text`{copy} (click copies) or `text`{highlight}. Add `Select: multiple` to a decision when several options can be chosen.
+- `ROADMAP.md`: plan the next builds there (format in its header) and keep it current; the user may drag items between builds.

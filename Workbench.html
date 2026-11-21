@@ -188,6 +188,22 @@ tr.click{cursor:pointer;transition:background .12s}tr.click:hover{background:var
 .t-graph{overflow:auto}.t-graph svg{display:block}.tg-e{fill:none;stroke:var(--pc,var(--accent));stroke-width:2.5}.tg-e.dim{stroke:var(--line-strong);stroke-dasharray:5 5}.tg-l{font-size:11px;fill:var(--muted)}.tg-l.dim{opacity:.5}
 .tg-n{cursor:pointer}.tg-n rect{fill:var(--panel);stroke:var(--pc,var(--accent));stroke-width:2}.tg-n.dim rect{stroke:var(--line-strong);stroke-dasharray:4 4}.tg-n.dim{opacity:.6}.tg-n:hover rect{fill:var(--accent-soft)}.tg-t{font-weight:700;font-size:13px;fill:var(--text)}.tg-s{font-size:11px;fill:var(--muted)}
 .hl-n{color:var(--accent)}.hl-w{color:color-mix(in srgb,var(--accent) 70%,#fff)}
+.feat-tools .fcol-all{font-size:15px;font-weight:600;padding-left:4px}.feat-tools .fcol-all .ic{width:18px;height:18px}
+.res-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.res-row a{cursor:pointer;display:inline-flex;gap:4px;align-items:center}.res-link{padding:1px 4px 1px 8px}.res-link button{padding:0}
+.dec-chk{width:22px;height:22px;border:2px solid var(--line-strong);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;padding:0;background:transparent;flex:none}.dec-opt.on .dec-chk{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}.dec-chk .ic{width:15px;height:15px}.dec-multi-h{margin:0 0 6px;display:flex;gap:4px;align-items:center}
+.dec-custom textarea{flex:1;resize:none;min-height:34px;border:0;background:transparent;padding:6px 4px}
+code.cblock{display:block;white-space:pre;overflow:auto;max-height:14em;padding:8px 10px;margin:6px 0;border-radius:6px}.kbd-run kbd{margin:0 2px}
+code.cb{cursor:pointer;border:1px solid var(--line-strong);border-radius:5px;padding:1px 6px;transition:background .15s}code.cb:hover{background:var(--accent-soft);border-color:var(--accent)}code.cb[data-cb~="copy"]::before{content:'';display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px;background:currentColor;opacity:.6;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Crect x='9' y='9' width='11' height='11' rx='2'/%3E%3Cpath d='M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Crect x='9' y='9' width='11' height='11' rx='2'/%3E%3Cpath d='M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1'/%3E%3C/svg%3E") center/contain no-repeat}code.cb.copied{background:color-mix(in srgb,var(--pass) 25%,transparent);border-color:var(--pass)}
+.ch-text{padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--panel2,transparent)}.ch-reply .ch-text{border:0;background:transparent;padding:0}.ch-text.l5{max-height:calc(5 * 1.55em + 16px);overflow:auto;resize:vertical}.ch-text.l12{max-height:calc(12 * 1.55em + 16px);overflow:auto;resize:vertical}.ch-text p{margin:0 0 4px}.ch-fold{align-self:flex-start;margin-bottom:4px}.ch-sys{margin:4px 0}
+.run-nav{flex-wrap:wrap}.run-nav .run-keys{order:3;flex-basis:100%;text-align:center}
+select:not(.sortbox select):not(.sev select):not([multiple]){appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:14px;padding-right:32px}
+.wait-strip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.wait-item{display:inline-flex;gap:6px;align-items:center;padding:8px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel)}.wait-item b{font-size:18px}.wait-item.zero{opacity:.55}.wait-item .ic{width:16px;height:16px;color:var(--muted)}
+.rm-builds{display:flex;flex-direction:column;gap:12px}.rm-build{border:1px solid var(--line);border-left:3px solid var(--line-strong);border-radius:var(--r);background:var(--panel);padding:12px 14px}.rm-build.rm-Next,.rm-build.rm-Inprogress{border-left-color:var(--pc,var(--accent))}.rm-build.rm-Testing{border-left-color:var(--partial)}.rm-build.rm-Released{opacity:.75;border-left-color:var(--pass)}
+.rm-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}.rm-ver{font-family:var(--mono,monospace);font-size:15px}.rm-title{font-weight:600;flex:1}.rm-desc{margin:0 0 6px}.rm-items{display:flex;flex-direction:column;gap:4px;min-height:28px}
+.rm-item{display:flex;gap:8px;align-items:center;padding:6px 8px;border-radius:var(--r-sm);border:1px solid transparent;background:var(--panel2,transparent);cursor:grab}.rm-item:hover{border-color:var(--line)}.rm-item .ic{width:15px;height:15px;color:var(--muted)}.rm-item .rm-t{flex:1}.rm-item a{cursor:pointer}.rm-item.dragging{opacity:.4}.rm-drop-before{box-shadow:0 -2px 0 var(--accent)}.rm-drop-into{outline:2px dashed var(--accent);outline-offset:2px}.rm-empty{margin:4px 0}
+.pr-list{display:flex;flex-direction:column;gap:10px}.pr-card{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:10px 12px;display:flex;flex-direction:column;gap:8px}.pr-head{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.pr-head b{font-size:15px;margin-right:4px}.pr-pchip .ic{width:12px;height:12px}
+.pr-body{display:flex;gap:8px;text-align:left;white-space:pre-wrap;font:inherit;font-size:13.5px;line-height:1.5;padding:8px 10px;border:1px dashed var(--line-strong);border-radius:var(--r-sm);background:transparent;color:var(--text);cursor:copy;max-height:12em;overflow:auto}.pr-body:hover{border-color:var(--accent);background:var(--accent-soft)}.pr-body .ic{flex:none;width:15px;height:15px;margin-top:2px;color:var(--muted)}
+.pr-title-in{font-weight:600;font-size:15px}.pr-projs{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.pick-list{display:flex;flex-direction:column;gap:6px}.pick-list button{justify-content:flex-start;display:flex;gap:8px}
 .ov-fold{display:inline-flex;align-items:center;gap:6px}.ov-fold .ic{width:16px;height:16px;opacity:.7}
 .kind-chips{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 12px}.kchip{padding:3px 10px;border-radius:999px;font-size:12.5px;display:inline-flex;gap:5px;align-items:center}.kchip .ic{width:13px;height:13px}.kchip.on{background:color-mix(in srgb,var(--accent) 22%,transparent);border-color:var(--accent);color:var(--text)}
 .t-head>.ag-mark{order:50;margin-left:auto}.t-head>.ag-mark~[style*="margin-left:auto"]{order:51;margin-left:0!important}
@@ -204,6 +220,7 @@ tr.click{cursor:pointer;transition:background .12s}tr.click:hover{background:var
 .sbtn.k-pass:hover{color:var(--pass)}.sbtn.k-partial:hover{color:var(--partial)}.sbtn.k-fail:hover{color:var(--fail)}.sbtn.k-blocked:hover{color:var(--blocked)}.sbtn.k-retest:hover{color:var(--retest)}
 .sbtn.on,.sbtn.on:hover{color:#fff;font-weight:600}
 .sbtn.on.k-pass{background:var(--pass);border-color:var(--pass)}
+:root{--change:#4fa3d9}.s-change{background:var(--change)}.c-change{color:var(--change)}.test.st-change{border-left-color:var(--change)}.sbtn.k-change:hover{color:var(--change)}.sbtn.on.k-change{background:var(--change);border-color:var(--change);color:#fff}
 .sbtn.on.k-partial{background:var(--partial);border-color:var(--partial)}
 .sbtn.on.k-fail{background:var(--fail);border-color:var(--fail)}
 .sbtn.on.k-blocked{background:var(--blocked);border-color:var(--blocked)}
@@ -649,8 +666,11 @@ dialog.color-dlg{width:min(500px,calc(100vw - 32px))}
 .ph-icon .picon,.ph-icon .swatch-btn{transition:opacity .15s,transform .15s}
 .ph-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s;color:var(--text);pointer-events:none}
 .ph-ov .ic{width:18px;height:18px;filter:drop-shadow(0 1px 2px #000a)}
-.ph-ident:hover .ph-icon .picon,.ph-ident:hover .ph-icon .swatch-btn,.ph-icon:focus-visible .picon,.ph-icon:focus-visible .swatch-btn,.icon-pick:hover .picon,.icon-pick:focus-visible .picon{opacity:.35}
-.ph-ident:hover .ph-ov,.ph-icon:focus-visible .ph-ov,.icon-pick:hover .ph-ov,.icon-pick:focus-visible .ph-ov{opacity:1}
+.icon-pick:hover .picon,.icon-pick:focus-visible .picon{opacity:.35}
+.ph-ident .ph-icon .picon,.ph-ident .ph-icon .swatch-btn{transition:box-shadow .2s,filter .2s}.ph-ident:hover .ph-icon .picon,.ph-ident:hover .ph-icon .swatch-btn,.ph-ident:focus-within .ph-icon .swatch-btn{filter:brightness(.88);box-shadow:3px 3px 0 var(--pc,var(--accent))}
+.ph-name{transition:text-shadow .2s;text-shadow:3px 3px 0 transparent}.ph-ident:hover .ph-name,.ph-ident:focus-within .ph-name{color:inherit!important;text-shadow:3px 3px 0 var(--pc,var(--accent))}
+.ph-pen{display:inline-flex;color:var(--muted);cursor:pointer;transition:filter .2s,color .2s}.ph-pen .ic{width:20px;height:20px}.ph-ident:hover .ph-pen{color:var(--text);filter:drop-shadow(2px 2px 0 var(--pc,var(--accent)))}
+.icon-pick:hover .ph-ov,.icon-pick:focus-visible .ph-ov{opacity:1}
 .ph-icon .swatch-btn{pointer-events:none}
 .cdlg-hrow{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
 .cdlg-hrow .cdlg-h{margin:0}
@@ -740,7 +760,7 @@ select option{background:var(--panel);color:var(--text)}
 .ph-ident .ph-sum{transition:color .15s;cursor:pointer}
 .ph-ident:hover .ph-sum,.ph-ident:focus-within .ph-sum{color:var(--pc,var(--accent-strong))}
 .faint{color:var(--faint)}
-.tag-in{display:inline-flex;align-items:center;gap:6px;color:var(--faint)}.tag-in input{width:220px;height:var(--ctl-h)}
+.tag-in{display:inline-flex;align-items:center;gap:6px;color:var(--faint);border:1px solid var(--line);background:var(--panel2,var(--panel));border-radius:var(--r-sm);padding:0 0 0 10px;height:var(--ctl-h);box-sizing:border-box}.tag-in:focus-within{border-color:var(--accent)}.tag-in input{width:220px;height:100%;border:0!important;background:transparent!important;box-shadow:none!important;padding-left:2px}
 .nb-tools{margin-bottom:14px}
 .nb-tagbar{margin:-6px 0 14px}
 .nb-card .pills{display:flex}.nb-edited{margin-left:auto}
@@ -760,7 +780,7 @@ select option{background:var(--panel);color:var(--text)}
 .dropfx-unfav{width:auto;padding:0 8px;gap:3px;border-radius:999px;background:var(--fail);color:#fff;left:50%;transform:translateX(-50%);margin-left:0}
 .dropfx-unfav .ic{width:14px;height:14px}
 .dropfx{position:absolute;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--pc,var(--accent));color:var(--accent-ink);pointer-events:none;z-index:2;box-shadow:0 4px 12px rgba(0,0,0,.35);border:2px solid var(--panel);box-sizing:border-box}
-.dropfx .ic{width:15px;height:15px}.dropfx-l{left:-15px}.dropfx-r{right:-15px}.dropfx-s{left:50%;margin-left:-13px}
+.dropfx .ic{width:15px;height:15px}.dropfx-l{left:-15px}.dropfx-r{right:-15px}.dropfx-s{left:50%;margin-left:-19px;width:38px;height:38px;margin-top:-19px}.dropfx-s .ic{width:22px;height:22px}
 .sec-head.drop-into{box-shadow:inset 0 -2px 0 var(--pc,var(--accent))}
 .grid.drop-into{outline:2px dashed var(--pc,var(--accent));outline-offset:4px;border-radius:var(--r)}
 .grp-head .grp-title .chev .ic,.grp-head .grp-title .chev svg{color:var(--pc,var(--accent))!important}
@@ -792,7 +812,8 @@ dialog.mv-dlg{width:min(560px,calc(100vw - 32px))}
 .grp-head h2.grp-title .tab-count{position:relative;top:-1px}
 dialog.wb-dlg::backdrop{transition:background .25s}
 dialog.wb-dlg.eyedrop::backdrop{background:transparent}
-dialog.wb-dlg.eyedrop{opacity:.15;transition:opacity .25s}
+dialog.wb-dlg.eyedrop{opacity:0;transition:opacity .25s}
+.cz-custom .sw-eye{opacity:0;transform:translateX(-36px);pointer-events:none;transition:opacity .25s,transform .25s;position:relative;z-index:0}.cz-custom .sw-paint:not(.sw-eye){position:relative;z-index:1}.cz-custom:hover .sw-eye,.cz-custom:focus-within .sw-eye{opacity:1;transform:none;pointer-events:auto}
 .chip.ag-acted{background:color-mix(in srgb,var(--pass) 16%,transparent);color:var(--pass)}
 .chip.ag-seen{background:color-mix(in srgb,var(--blocked) 18%,transparent);color:var(--blocked)}
 .chip.ag-sent{background:var(--panel3);color:var(--faint)}
@@ -872,15 +893,15 @@ button.danger-bg{background:var(--fail);border-color:var(--fail);color:#fff}
    Open with ?demo for an in-memory demo.
    ===================================================================== */
 
-const APP_VERSION='0.29.1';
+const APP_VERSION='0.32.0';
 const RUN_MODE=location.protocol==='file:'?'file':(matchMedia('(display-mode: standalone)').matches||navigator.standalone?'app':'web');
 const STAGES=['Ideated','Designed','Testing','Iterating','Completed'];
 const STAGE_PCT={Ideated:10,Designed:25,Testing:50,Iterating:75,Completed:100};
 const STAGE_ALIAS={idea:'Ideated',ideation:'Ideated',ideate:'Ideated',design:'Designed',test:'Testing',iterate:'Iterating',iteration:'Iterating',complete:'Completed',done:'Completed'};
 const STATUSES=['Idea','Active','Paused','Maintenance','Completed','Archived'];
 const STATUS_ORDER={Active:0,Maintenance:1,Paused:2,Completed:3,Archived:4,Idea:5};
-const STATES=[['pass','Pass'],['partial','Partial'],['fail','Fail'],['blocked','Blocked'],['skipped','Skipped'],['retest','Needs retest']];
-const STATE_LABEL={untested:'Untested',pass:'PASS',partial:'PARTIAL',fail:'FAIL',blocked:'BLOCKED',skipped:'SKIPPED',retest:'NEEDS RETEST',stale:'NEEDS RETEST (test changed)'};
+const STATES=[['pass','Pass'],['change','Change'],['partial','Partial'],['fail','Fail'],['blocked','Blocked'],['retest','Needs retest'],['skipped','Skipped']];
+const STATE_LABEL={untested:'Untested',change:'CHANGE',pass:'PASS',partial:'PARTIAL',fail:'FAIL',blocked:'BLOCKED',skipped:'SKIPPED',retest:'NEEDS RETEST',stale:'NEEDS RETEST (test changed)'};
 const SEVERITIES=['Critical','Major','Minor','Cosmetic'];
 const ID_RE=/^([A-Z][A-Z0-9]*(?:[-_.][A-Z0-9]+)+)\s*(?:·|—|–|-|:|\|)\s*(.*)$/;
 
@@ -907,18 +928,27 @@ ADDING A NEW BATCH (one per version/build you hand over for testing)
     Change: <commit / change this covers>      (optional)
     Retests: <ID>, <ID>                        (when this verifies a fix for a failed test)
   Any other line under a test is shown as its description.
+- Formatting in test text: \`code\`, and tagged code the human can click:
+    \`npm run build\`{copy}   click copies          \`WB-012\`{goto}    jumps to that item
+    \`text\`{highlight}       click selects         \`Ctrl+K\`{key}     shown as key caps
+    \`https://…\`{open}       opens in a new tab    \`C:\\Work\\app\`{folder}  opens in File Explorer
+    \`query\`{search}         searches Workbench    \`long code\`{block} own scrollable line
+  Combine tags with spaces: \`npm test\`{copy block}.
 - IDs: PREFIX-NNN in capitals (e.g. VGT-014). Unique across this whole file, never reused,
   never renumbered. Results are keyed by ID.
 - Editing the title/setup/steps/expected of a test that already has a result flags it
   "needs retest". To verify a FIX, add a NEW test with "Retests: <old ID>" instead.
-- Results and feedback are in FEEDBACK.md (read it, never edit it).
+- Results and feedback are in FEEDBACK.md (read it, never edit it). Results can be Pass, Change
+  (works, but the human wants it different: treat like a Change request), Partial, Fail,
+  Blocked, Needs retest or Skipped.
 -->`;
 const FEATURES_NOTE=`<!-- PROJ-MGMT:FEATURES v1
 NEVER REPLACE THIS FILE: read it and edit it in place. Keep every entry you aren't changing.
 AGENT INSTRUCTIONS - Shared file: you AND the human (through Workbench) edit it.
 The tool re-writes it in the canonical layout below, so keep to that layout.
 - Header lines: "Project: <name>", "Status: Idea|Active|Paused|Maintenance|Completed|Archived"
-  (the human owns Status), "Summary: <one line>", optional "Color: #RRGGBB" (human's choice).
+  (the human owns Status), "Summary: <one line>", optional "Color: #RRGGBB" and
+  "Icon: <path>" (the human's choice; leave them alone).
 - "## <Area name>" = an area/subsection. Features above the first "##" apply to the whole
   project (use only that if the project has no areas).
 - "### <ID> · <Title> [Stage]" = one feature. ID like F-AREA-01, unique, never reused.
@@ -949,6 +979,10 @@ them in Workbench, which rewrites that decision in the canonical layout below.
     - A: <option> - <pros/cons>
     - B: <option> - <pros/cons>
     Recommendation: <letter> - <why>
+- Multi-select: add "Select: multiple" under the heading when several options can be chosen.
+  Recommend several with "Recommendation: A, C - <why>". The answer comes back as
+  "Decision: A - <text>; C - <text>; Other: <their own words>".
+- Text can use \`code\` and the click tags listed in TESTS.md (e.g. \`value\`{copy}).
 - The human's answer is written as:
     Decision: <letter - option text, or their own answer>
     Decided: YYYY-MM-DD
@@ -973,8 +1007,9 @@ The human adds and edits ideas in Workbench, which rewrites this file in the lay
     Attachments: [name](attachments/name), ...   (written by Workbench; screenshots)
   Anything else is the idea's details (Markdown).
 - Only ADD ideas when the human asks you to brainstorm; mark them "By: agent" and status New.
-- Do NOT act on ideas by yourself. When an idea is [Ready] (the human wants it taken further) or
-  the human asks: turn it into a feature in FEATURES.md (stage Ideated, Source: user) or, if a
+- Do NOT act on ideas by yourself. When the human clicks "Ready for agent", Workbench turns the
+  idea into an Inbox entry in CHANGES.md ("From: I-…") and the idea becomes [Promoted] with
+  "Became: GI-…"; handle the Inbox entry. For an older idea marked [Ready], or when the human asks: turn it into a feature in FEATURES.md (stage Ideated, Source: user) or, if a
   choice is needed first, a decision in DECISIONS.md. Then set the idea to [Promoted] and add
   "Became: <new ID>". Never delete ideas; Shelved and Dismissed ideas stay for the record.
 -->`;
@@ -984,6 +1019,12 @@ HOW TO READ
 - "Open issues": every FAIL / PARTIAL result not yet resolved, with severity
   (Critical > Major > Minor > Cosmetic), the tester's notes and screenshots
   (paths are relative to this file, e.g. attachments/VGT-003_....png).
+- "Change requests on tests": the human passed these but wants something different. Handle
+  each like a Change and verify with a new test that has "Retests: <ID>".
+- An issue is RESOLVED when a test that Retests it passes, when that test is itself resolved
+  (chains), when the human links it to a passing test / closed Inbox entry / Completed
+  feature ("linked: …"), or when they mark it resolved by hand. Resolved issues need nothing.
+- Inbox entries marked REPLIED are waiting for the human; only act if a fix is still pending.
 - "Needs retest": tests the human flagged, or whose text you changed after a result.
 - "Blocked / skipped": could not be tested; notes say why.
 - "Changes": a summary of the human's requests (GI-NNN). The full entries, and where you
@@ -1057,6 +1098,7 @@ const ICONS={
   flask:'<path d="M9 3h6M10 3v6l-5.2 9.2A1.9 1.9 0 0 0 6.5 21h11a1.9 1.9 0 0 0 1.7-2.8L14 9V3"/><path d="M7.4 15h9.2"/>',
   layers:'<path d="M12 3.5l8.5 4.7-8.5 4.7-8.5-4.7z"/><path d="M3.5 12.4l8.5 4.7 8.5-4.7"/>',
   move:'<path d="M14 4h6v6M20 4l-8.5 8.5M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>',
+  prompt:'<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9.5l3 2.5-3 2.5M12.5 15H17"/>',
   globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   city:'<path d="M4 21V9l5-3v15M9 21V4l6 3v14M15 21v-9l5 2v7M3 21h18"/>',
   pin:'<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
@@ -1087,7 +1129,7 @@ const ICONS={
   alert:'<path d="M12 4l9 15.5H3z"/><path d="M12 10v4M12 17v.5"/>',
 };
 const ic=(n,cls='')=>`<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]||''}</svg>`;
-const STATE_ICON={pass:'check',partial:'partial',fail:'x',blocked:'blocked',skipped:'skip',retest:'retest',stale:'retest'};
+const STATE_ICON={change:'edit',pass:'check',partial:'partial',fail:'x',blocked:'blocked',skipped:'skip',retest:'retest',stale:'retest'};
 
 /* ---------------- optional per-project colors ---------------- */
 const PROJ_COLORS=[['Moss','#8db56b'],['Pine','#4f9e7c'],['Fjord','#5f95b8'],['Copper','#c98450'],['Ochre','#c9a54a'],['Rust','#c8624f'],['Plum','#a578bb'],['Slate','#8195aa']];
@@ -1112,7 +1154,7 @@ const SETTINGS=[
   {k:'test_ord',grp:'Project defaults',label:'Testing: order',slim:1,opts:[['ordered','Ordered'],['updated','Updated'],['newest','Newest'],['oldest','Oldest']]},
   {k:'test_f',label:'Testing: filter',slim:1,opts:[['untested','Untested'],['retest','Retest'],['issues','Issues'],['tested','Tested'],['all','All']]},
   {k:'ch_ord',label:'Inbox: order',slim:1,opts:[['updated','Updated'],['newest','Newest'],['oldest','Oldest']]},
-  {k:'ch_f',label:'Inbox: filter',slim:1,opts:[['open','Open'],['answered','Answered'],['closed','Closed'],['all','All']]},
+  {k:'ch_f',label:'Inbox: filter',slim:1,opts:[['open','Open'],['answered','Replies'],['closed','Closed'],['all','All']]},
   {k:'dec_rec',label:'Decisions: recommendation',slim:1,opts:[['after','After'],['show','Show'],['hide','Hide']]},
   {k:'dec_ord',label:'Decisions: order',slim:1,opts:[['updated','Updated'],['newest','Newest'],['oldest','Oldest']]},
   {k:'dec_f',label:'Decisions: filter',slim:1,opts:[['open','Undecided'],['done','Resolved'],['all','All']]},
@@ -1127,7 +1169,7 @@ function applySettings(save){
   Object.assign(r.dataset,{theme,palette:st.palette,accent:st.accent,font:st.font,radius:st.radius,motion:st.motion});
   r.classList.toggle('sl-theme-dark',theme!=='light');
   S.compact=st.density==='compact';document.body.classList.toggle('compact',S.compact);
-  if(save)try{localStorage.setItem('wb-settings',JSON.stringify(st))}catch{}
+  if(save){try{localStorage.setItem('wb-settings',JSON.stringify(st))}catch{}window.__wsHook?.('wb-settings')}
 }
 matchMedia('(prefers-color-scheme: light)').addEventListener?.('change',()=>{if(S.set?.theme==='system'){applySettings();render()}});
 function importSettings(text){
@@ -1222,6 +1264,9 @@ function openSettings(){
   d.id='wbSettings';document.body.append(d);renderSettings();
   S.sl?d.show():d.showModal();
 }
+function askText(title,ph,val=''){return new Promise(res=>{const d=openModal(title,`<input type="text" id="askT" placeholder="${h(ph)}" value="${h(val)}" style="width:100%"><div class="form-row" style="justify-content:flex-end;margin-top:12px"><button class="ghost" data-ask="0">Cancel</button><button class="primary" data-ask="1">OK</button></div>`,'ask-dlg');let done=false;
+  const fin=v=>{if(done)return;done=true;res(v);d.close()};d.addEventListener('click',e=>{const b=e.target.closest('[data-ask]');if(b)fin(b.dataset.ask==='1'?d.querySelector('#askT').value:null)});
+  d.querySelector('#askT').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();fin(e.target.value)}});d.addEventListener('close',()=>fin(null),{once:true});setTimeout(()=>d.querySelector('#askT')?.focus(),30)})}
 function confirmBox(msg,ok='Confirm'){
   return new Promise(res=>{
     const d=document.createElement('dialog');d.className='wb-dlg confirm-dlg';
@@ -1348,7 +1393,7 @@ function parseDecisions(text){
       const sm=t.match(/\s*\[([A-Za-z ]+)\]\s*$/);if(sm&&normDec(sm[1])){st=normDec(sm[1]);t=t.slice(0,sm.index).trim()}
       const it=splitIdTitle(t);d={id:it.id||('D-'+hashStr(it.title).slice(0,4).toUpperCase()),title:it.title,status:st||'Open',raised:'',area:'',feature:'',details:[],options:[],rec:'',decision:'',decided:'',notes:[]};m.items.push(d);mode=null;continue}
     if(!d){if(line.trim()&&!line.trim().startsWith('<!--'))m.intro.push(line);continue}
-    if((mm=line.match(/^(Raised|Area|Feature|Recommendation|Decision|Decided|Updated):\s*(.*)$/i))){const k=mm[1].toLowerCase(),v=mm[2].trim();
+    if((mm=line.match(/^(Raised|Area|Feature|Recommendation|Decision|Decided|Updated|Select):\s*(.*)$/i))){const k=mm[1].toLowerCase(),v=mm[2].trim();
       if(k==='recommendation')d.rec=v;else d[k]=v;mode=null;continue}
     if(/^Options:\s*$/i.test(line)){mode='opts';continue}
     if(/^Notes:\s*$/i.test(line)){mode='notes';continue}
@@ -1366,7 +1411,7 @@ function serializeDecisions(m,name){
   if(m.intro.length)o+='\n'+m.intro.join('\n')+'\n';
   for(const d of m.items){
     o+=`\n## ${d.id} · ${d.title} [${d.status}]\n`;
-    if(d.raised)o+=`Raised: ${d.raised}\n`;if(d.updated)o+=`Updated: ${d.updated}\n`;if(d.area)o+=`Area: ${d.area}\n`;if(d.feature)o+=`Feature: ${d.feature}\n`;
+    if(d.raised)o+=`Raised: ${d.raised}\n`;if(d.updated)o+=`Updated: ${d.updated}\n`;if(d.select)o+=`Select: ${d.select}\n`;if(d.area)o+=`Area: ${d.area}\n`;if(d.feature)o+=`Feature: ${d.feature}\n`;
     if(d.details.length)o+='\n'+d.details.join('\n')+'\n';
     if(d.options.length){o+='\nOptions:\n'+d.options.map(x=>`- ${x.key}: ${x.text}`).join('\n')+'\n'}
     if(d.rec)o+=`Recommendation: ${d.rec}\n`;
@@ -1410,8 +1455,26 @@ function nextIdeaId(m){let n=0;for(const i of m.items){const x=i.id.match(/^I-(\
 
 const openDecisions=p=>(p.dec?.items||[]).filter(d=>d.status==='Open');
 /* tiny, safe Markdown for decision details */
+/* `text`{copy highlight}: agent-tagged code. copy = click copies, highlight = click selects. Untagged stays plain code. */
+const CB_TAGS={copy:'Click to copy',highlight:'Click to select',open:'Click to open in a new tab',folder:'Click to open in File Explorer',goto:'Click to go there',search:'Click to search Workbench for this',block:'',key:''};
+const codeInl=html=>html.replace(/`([^`]+)`(?:\{([a-z ,]+)\})?/g,(m,c,t)=>{const tags=(t||'').split(/[ ,]+/).filter(x=>x in CB_TAGS);
+  if(tags.includes('key'))return `<span class="kbd-run">${c.split(/\s*\+\s*/).map(k=>`<kbd>${k}</kbd>`).join('+')}</span>`;
+  if(!tags.length)return `<code>${c}</code>`;const tip=tags.map(x=>CB_TAGS[x]).filter(Boolean).join(' · ');
+  return `<code class="${tags.some(x=>x!=='block')?'cb':''}${tags.includes('block')?' cblock':''}" data-cb="${tags.join(' ')}"${tip?` title="${tip}"`:''}>${c}</code>`});
+const rich=s=>codeInl(h(s));
+document.addEventListener('click',e=>{const c=e.target.closest?.('code');if(!c||c.closest('textarea,input'))return;const tags=(c.dataset.cb||'').split(' ');
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+  if(e.detail===3){e.preventDefault();sel();return}
+  if(e.detail!==1||!c.dataset.cb)return;if(getSelection().toString()&&!tags.includes('highlight'))return;
+  if(tags.includes('highlight'))sel();
+  const txt=c.textContent.trim();
+  if(tags.includes('open'))window.open(nbHref(txt),'_blank','noopener');
+  if(tags.includes('folder'))launchExternal(explorerUrl(txt));
+  if(tags.includes('goto')){const id=txt.toUpperCase(),p=getP(S.view.pid)||S.projects.find(x=>x.loaded&&(allTests(x).some(t=>t.id===id)||(x.fb.issues||[]).some(i=>i.id===id)||(x.dec?.items||[]).some(d=>d.id===id)));if(p){if(S.view.pid!==p.id)A.open({pid:p.id});setTimeout(()=>A['goto-ref']({id}),30)}else toast(`${id} wasn’t found in your projects.`)}
+  if(tags.includes('search')){S.gsq=txt;S.gscope='*';openSearch();setTimeout(()=>{const q=$('#gsQ');if(q)q.dispatchEvent(new Event('input',{bubbles:true}))},30)}
+  if(tags.includes('copy')){navigator.clipboard?.writeText(c.textContent).then(()=>toast('Copied: '+(c.textContent.length>60?c.textContent.slice(0,60)+'…':c.textContent))).catch(()=>toast('Could not copy'));c.classList.add('copied');setTimeout(()=>c.classList.remove('copied'),700)}});
 function md(lines){
-  const inl=s=>h(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>').replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g,'$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+  const inl=s=>codeInl(h(s)).replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>').replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g,'$1<a href="$2" target="_blank" rel="noopener">$2</a>');
   let o='',list=null,tbl=null;
   const flush=()=>{if(list){o+=`</${list}>`;list=null}if(tbl){o+='<div class="tbl-wrap"><table>'+tbl.map((r,i)=>`<tr>${r.map(c=>i?`<td>${inl(c)}</td>`:`<th>${inl(c)}</th>`).join('')}</tr>`).join('')+'</table></div>';tbl=null}};
   for(const l of lines){let m;
@@ -1438,17 +1501,29 @@ function effState(p,t){
   if(r.hash&&t.hash&&r.hash!==t.hash&&r.state!=='retest'&&r.state!=='untested')return 'stale';
   return r.state;
 }
-function resolution(p,t){
-  const fixers=allTests(p).filter(x=>x.retests.includes(t.id));if(!fixers.length)return null;
-  const ok=fixers.find(x=>effState(p,x)==='pass');
-  return ok?{status:'resolved',by:ok}:{status:'pending',by:fixers[0]};
-}
+const ISSUE_STATES=['fail','partial','blocked','retest','stale','change'];
+/* resolved when: marked by hand; a test that Retests (or is linked to) it passes, or is itself resolved (chains); a linked Inbox entry is closed; a linked feature is Completed */
+function resolution(p,t,seen){seen=seen||new Set();if(seen.has(t.id))return null;seen.add(t.id);
+  const r=p.fb.results[t.id]||{};if(r.resolvedAt)return {status:'resolved',manual:true,by:{id:'',batch:''},note:r.resolvedNote||'',at:r.resolvedAt};
+  const tests=allTests(p),links=r.links||[];
+  const fixers=[...tests.filter(x=>x.retests.includes(t.id)),...links.map(id=>tests.find(x=>x.id===id)).filter(Boolean)];
+  for(const f of fixers){if(effState(p,f)==='pass')return {status:'resolved',by:f,at:p.fb.results[f.id]?.updated};}
+  for(const f of fixers){const c=resolution(p,f,seen);if(c?.status==='resolved')return {status:'resolved',by:f,via:c,at:c.at}}
+  for(const id of links){const gi=(p.fb.issues||[]).find(i=>i.id===id);if(gi&&(gi.status==='resolved'||gi.status==='wontfix'))return {status:'resolved',by:{id,batch:''},kind:'inbox',at:gi.resolved||gi.updated};
+    const f=findFeat(p.features,id)?.f;if(f&&f.stage==='Completed')return {status:'resolved',by:{id,batch:''},kind:'feature'}}
+  if(fixers.length)return {status:'pending',by:fixers[0]};
+  if(links.length)return {status:'pending',by:{id:links[0],batch:''}};
+  return null}
+function resText(p,res){if(res.manual)return `${ic('check')}Resolved by hand${res.note?': “'+h(res.note)+'”':''}${res.at?' · '+h(shortStamp(res.at)):''}`;
+  const b=res.by,lk=`<a data-act="goto-ref" data-id="${h(b.id)}" data-batch="${h(b.batch||'')}"><code>${h(b.id)}</code></a>`;
+  if(res.status==='resolved')return `${ic('check')}Resolved by ${lk}${res.via?' (through its own retest)':b.batch?' — passed in '+h(b.batch):res.kind==='inbox'?' — closed':res.kind==='feature'?' — Completed':''}${res.at?' · '+h(shortStamp(res.at)):''}`;
+  return `Fix pending: ${lk}${b.batch?' in '+h(b.batch):''}`}
 function batchStats(p,b){
-  const c={total:0,untested:0,pass:0,partial:0,fail:0,blocked:0,skipped:0,retest:0};
+  const c={total:0,untested:0,pass:0,change:0,partial:0,fail:0,blocked:0,skipped:0,retest:0};
   for(const t of b.tests){c.total++;let s=effState(p,t);if(s==='stale')s='retest';c[s]++}
   c.done=c.total-c.untested-c.retest;return c;
 }
-function sumStats(p){const c={total:0,untested:0,pass:0,partial:0,fail:0,blocked:0,skipped:0,retest:0,done:0};for(const b of p.tests.batches){const s=batchStats(p,b);for(const k in c)c[k]+=s[k]}return c}
+function sumStats(p){const c={total:0,untested:0,pass:0,change:0,partial:0,fail:0,blocked:0,skipped:0,retest:0,done:0};for(const b of p.tests.batches){const s=batchStats(p,b);for(const k in c)c[k]+=s[k]}return c}
 const SEV_RANK={Critical:0,Major:1,Minor:2,Cosmetic:3};
 function openIssues(p){
   const out=[];for(const t of allTests(p)){const s=effState(p,t);if(s!=='fail'&&s!=='partial')continue;const res=resolution(p,t);if(res&&res.status==='resolved')continue;out.push({t,r:p.fb.results[t.id],res})}
@@ -1457,8 +1532,9 @@ function openIssues(p){
 const GI_KINDS=['Change','Bug','Question','Feature request','Investigate','Other'];
 const GI_STATUS={open:'Open',progress:'In progress',answered:'Answered',resolved:'Done',wontfix:'Won’t do'};
 const issueRes=(p,i)=>resolution(p,{id:i.id});
-const giOpen=(p,i)=>(i.status==='open'||i.status==='progress')&&issueRes(p,i)?.status!=='resolved';
-const giAnswered=p=>(p.fb.issues||[]).filter(i=>i.status==='answered');
+const giOpen=(p,i)=>i.status!=='resolved'&&i.status!=='wontfix'&&issueRes(p,i)?.status!=='resolved';
+function giLastReply(i){const f=i.follow||[];return f.length?!!(f[f.length-1].reply||'').trim():!!(i.reply||'').trim()}
+const giAnswered=p=>(p.fb.issues||[]).filter(i=>giOpen(p,i)&&giLastReply(i));
 const openGeneral=p=>(p.fb.issues||[]).filter(i=>giOpen(p,i)).sort((a,b)=>(SEV_RANK[a.severity]??9)-(SEV_RANK[b.severity]??9));
 const openCount=p=>openIssues(p).length+openGeneral(p).length;
 function nextGiId(p){let n=0;for(const i of p.fb.issues||[]){const m=i.id.match(/^GI-(\d+)$/);if(m)n=Math.max(n,+m[1])}return 'GI-'+String(n+1).padStart(3,'0')}
@@ -1477,11 +1553,14 @@ function serializeFeedback(p){
     o+=(r.notes?.trim()?quote(r.notes):'> (no notes)')+'\n';
     if(r.attachments?.length)o+=`Attachments: ${attLinks(r)}\n`;
   }
+  const chg=allTests(p).filter(t=>effState(p,t)==='change'&&resolution(p,t)?.status!=='resolved');
+  o+=`\n## Change requests on tests (${chg.length})\nThe human passed these but wants something changed (not a bug). Treat each like a Change: fix it and add a test with "Retests: <ID>".\n`;
+  for(const t of chg){const r=R[t.id];o+=`\n### ${t.id} · ${t.title} (batch ${t.batch})\n`+(r.notes?.trim()?quote(r.notes):'> (no notes)')+'\n';if(r.attachments?.length)o+=`Attachments: ${attLinks(r)}\n`}
   const gis=p.fb.issues||[],gOpen=gis.filter(i=>giOpen(p,i)),gClosed=gis.filter(i=>!giOpen(p,i));
   o+=`\n## Changes (${gOpen.length} open) — full entries in CHANGES.md\n`;if(!gis.length)o+='\nNone.\n';
   for(const i of [...gOpen].sort((a,b)=>(SEV_RANK[a.severity]??9)-(SEV_RANK[b.severity]??9))){
     const res=issueRes(p,i);
-    o+=`\n### ${i.id} · ${i.title} — ${i.kind||'Bug'}${i.severity?' · '+i.severity:''} · OPEN\n`;
+    o+=`\n### ${i.id} · ${i.title} — ${i.kind||'Bug'}${i.severity?' · '+i.severity:''} · ${giLastReply(i)?'REPLIED (waiting for the human; nothing to do unless a fix is pending)':'OPEN'}\n`;
     o+=`Raised: ${i.created||'?'}${i.updated&&i.updated!==i.created?' · Updated: '+i.updated:''}\n`;
     if(res)o+=`Fix pending: ${res.by.id} (batch ${res.by.batch}) not yet passed\n`;
     o+=(i.notes?.trim()?quote(i.notes):'> (no details)')+'\n';
@@ -1501,8 +1580,8 @@ function serializeFeedback(p){
   for(const b of p.tests.batches){
     const done=b.tests.filter(t=>effState(p,t)!=='untested');
     o+=`\n### Batch ${b.version}\n\n`;if(!done.length){o+='No results yet.\n';continue}
-    for(const t of done){const r=R[t.id],s=effState(p,t),res=(s==='fail'||s==='partial')?resolution(p,t):null;
-      o+=`- **${STATE_LABEL[s]}**${r.severity&&(s==='fail'||s==='partial')?' ('+r.severity+')':''} ${t.id} · ${t.title} — ${r.updated||''}${res?(res.status==='resolved'?' — RESOLVED by '+res.by.id:' — fix pending: '+res.by.id):''}\n`;
+    for(const t of done){const r=R[t.id],s=effState(p,t),res=ISSUE_STATES.includes(s)?resolution(p,t):null;
+      o+=`- **${STATE_LABEL[s]}**${r.severity&&(s==='fail'||s==='partial')?' ('+r.severity+')':''} ${t.id} · ${t.title} — ${r.updated||''}${res?(res.status==='resolved'?' — RESOLVED '+(res.manual?'by hand'+(res.note?' ('+res.note+')':''):'by '+res.by.id):' — fix pending: '+res.by.id):''}${r.links?.length?' — linked: '+r.links.join(', '):''}\n`;
       if(r.notes?.trim())o+=r.notes.trim().split(/\r?\n/).map(l=>'  > '+l).join('\n')+'\n';
       if(r.attachments?.length)o+=`  Attachments: ${attLinks(r)}\n`;
     }
@@ -1548,11 +1627,17 @@ function ideasTemplate(name){return IDEAS_NOTE+`\n# Ideas — ${name}\n`}
 function decisionsTemplate(name){return DECISIONS_NOTE+`\n# Decisions — ${name}\n`}
 function testsTemplate(name){return TESTS_NOTE+`\n# Tests — ${name}\n`}
 function featuresTemplate(name,status){return serializeFeatures({name,status,summary:'',intro:[],areas:[]})}
+/* GI-044: bring the instruction header of every proj_management file up to date (only the
+   leading <!-- PROJ-MGMT:… --> block is touched; the rest of the file is kept as is) */
+async function refreshNotes(p){const map={'TESTS.md':TESTS_NOTE,'FEATURES.md':FEATURES_NOTE,'DECISIONS.md':DECISIONS_NOTE,'IDEAS.md':IDEAS_NOTE,'CHANGES.md':CHANGES_NOTE,'AGENT_LOG.md':AGENTLOG_NOTE,'ROADMAP.md':ROADMAP_NOTE};
+  for(const [n,note] of Object.entries(map)){try{const f=await readFile(p.pm,n);if(!f)continue;const m=f.text.match(/^\uFEFF?\s*(<!--\s*PROJ-MGMT:([A-Z_]+)[\s\S]*?-->)/),id=note.match(/PROJ-MGMT:([A-Z_]+)/)[1];
+    if(m&&m[2]!==id)continue;if(!m){await writeFile(p.pm,n,note+'\n'+f.text.replace(/^\uFEFF/,''));continue}if(m[1].replace(/\r/g,'')===note)continue;await writeFile(p.pm,n,f.text.replace(m[1],note))}catch(e){console.warn('notes',n,e)}}}
 async function loadProject(p){
   try{
     p.perm=await perm(p.handle);
     if(p.perm!=='granted'){p.loaded=false;return}
     p.pm=p.handle.name==='proj_management'?p.handle:await p.handle.getDirectoryHandle('proj_management',{create:true});
+    await refreshNotes(p);
     const fallback=p.handle.name==='proj_management'?'Project':p.handle.name.replace(/([a-z])([A-Z])/g,'$1 $2').replace(/[_-]+/g,' ').trim();
     let [t,f,fb]=await Promise.all([readFile(p.pm,'TESTS.md'),readFile(p.pm,'FEATURES.md'),readFile(p.pm,'FEEDBACK.md')]);
     if(!f){await writeFile(p.pm,'FEATURES.md',featuresTemplate(fallback,p.kind==='hosted'?'Idea':'Active'));f=await readFile(p.pm,'FEATURES.md')}
@@ -1570,6 +1655,7 @@ async function loadProject(p){
     p.ideas=parseIdeas(idf.text);p.mt.ideas=idf.mtime;p.raw.ideas=idf.text;
     if(!fb)await saveFeedbackNow(p);
     await loadAgentLog(p);
+    await loadRoadmap(p);
     {const vf=await readFile(p.pm,'workbench-view.json');try{p.prefs=vf?JSON.parse(vf.text):{}}catch{p.prefs={}}}
     p.setupPending=!!(await readFile(p.pm,'AGENT_SETUP.md'));
     await resolveInWs(p);p.missing=false;if(S.favs)setTimeout(applyPending);
@@ -1821,7 +1907,7 @@ function agentMark(p,id,updated){const e=p.alog?.get(id),u=String(updated||'');
   return ''}
 const agentDone=(p,id,updated)=>{const e=p.alog?.get(id);return !!e&&e.status!=='retest'&&e.date>=String(updated||'').slice(0,e.date.length)};
 /* ---------------- saving feedback ---------------- */
-function fmtWhen(d){const now=new Date(),t=d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),dt=d.toLocaleDateString([],{month:'short',day:'numeric',...(d.getFullYear()!==now.getFullYear()?{year:'numeric'}:{})});return `${t}, ${dt}`}
+function fmtWhen(d){const now=new Date(),t=d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),day=x=>new Date(x.getFullYear(),x.getMonth(),x.getDate()).getTime(),dd=(day(now)-day(d))/864e5;if(dd===0)return `${t}, Today`;if(dd===1)return `${t}, Yesterday`;const dt=d.toLocaleDateString([],{month:'short',day:'numeric',...(d.getFullYear()!==now.getFullYear()?{year:'numeric'}:{})});return `${t}, ${dt}`}
 function lastUpdText(p){const u=p?.lastUpd;return u?`Last updated by ${u.who} at ${fmtWhen(new Date(u.t))}`:''}
 function setSaving(t){const el=$('#saving');if(!el)return;clearTimeout(S._savT);el.classList.remove('fade');el.textContent=t;
   if(/^Saved/.test(t)){const p=getP(S.view.pid);if(p)p.lastUpd={who:'You',t:Date.now()};S._savT=setTimeout(()=>{el.classList.add('fade');setTimeout(()=>{el.textContent=lastUpdText(getP(S.view.pid));el.classList.remove('fade')},400)},2500)}}
@@ -1905,10 +1991,11 @@ function render(){
   else if(v.page==='ideas')html=renderIdeas();
   else if(v.page==='notebook')html=renderNotebook();
   else if(v.page==='trips')html=renderTrips();
+  else if(v.page==='prompts')html=S.pr.loaded?renderPrompts():(loadPrompts().then(render),'<div class="empty">Loading prompts…</div>');
   else if(v.page==='project'&&getP(v.pid))html=renderProject(getP(v.pid));
   else html=renderHome();
   const cp=v.page==='project'?getP(v.pid):null;
-  document.title='Workbench - '+(cp?projName(cp):v.page==='ideas'?'Ideas':v.page==='notebook'?(v.topic&&getTopic(v.topic)?getTopic(v.topic).title:'Notebooks'):v.page==='trips'?(v.trip&&getTrip(v.trip)?getTrip(v.trip).data.title:'Trips'):'Projects');
+  document.title='Workbench - '+(cp?projName(cp):v.page==='ideas'?'Ideas':v.page==='notebook'?(v.topic&&getTopic(v.topic)?getTopic(v.topic).title:'Notebooks'):v.page==='trips'?(v.trip&&getTrip(v.trip)?getTrip(v.trip).data.title:'Trips'):v.page==='prompts'?'Prompts':'Projects');
   if(cp){const keep={};for(const k of ['tsub','batch','filter','gfilter','gkind','dfilter','ifilter','order','fcol','isort','dsort','gsort','drec'])if(v[k]!=null)keep[k]=v[k];S.mem[cp.id]=keep;lsSet('wb-viewmem',S.mem);savePrefs(cp,keep)}
   const app=$('#app'),vk=JSON.stringify([v.page,v.pid,v.tab,v.topic,v.trip,v.ttab]),same=S.lastView===vk;
   const anc=same?scrollAnchor(ae,fsel):null;
@@ -1976,6 +2063,7 @@ function routeFromHash(){
   const [page,pid,tab,tsub]=path.split('/').map(decodeURIComponent);
   if(page==='ideas')return {page:'ideas'};
   if(page==='trips')return {page:'trips',...(pid?{trip:pid}:{})};
+  if(page==='prompts')return {page:'prompts'};
   if(page==='notebook'){const el=new URLSearchParams(qs||'').get('el');if(el&&pid)setTimeout(()=>{const t=getTopic(pid);if(t)nbGoto(t,el)},300);return {page:'notebook',...(pid?{topic:pid}:{})}}
   if(page==='project'&&getP(pid)){const q=Object.fromEntries(new URLSearchParams(qs||''));const {hl,...extra}=q;S.mem[pid]={...(S.mem[pid]||{}),...viewFor(pid)};
     if(hl)S.hl={pid,tab:tab||'overview',ids:[hl],what:'linked item',first:true,i:-1};
@@ -1984,7 +2072,7 @@ function routeFromHash(){
 }
 function renderNav(){
   const v=S.view,p=v.page==='project'?getP(v.pid):null;
-  $('#nav').innerHTML=`<a class="${v.page==='home'?'on':''}" data-act="nav" data-page="home">${ic('grid')}Projects</a><a class="${v.page==='ideas'?'on':''}" data-act="nav" data-page="ideas">${ic('bulb')}Ideas</a><a class="${v.page==='notebook'?'on':''}" data-act="nav" data-page="notebook">${ic('book')}Notebooks</a><a class="${v.page==='trips'?'on':''}" data-act="nav" data-page="trips">${ic('globe')}Trips</a>${p?`<a class="on" style="${projStyle(p)}">${picon(p,'xs')||ic(projStatus(p)==='Idea'?'bulb':'folder')}${h(projName(p))}</a>`:''}`;
+  $('#nav').innerHTML=`<a class="${v.page==='home'?'on':''}" data-act="nav" data-page="home">${ic('grid')}Projects</a><a class="${v.page==='ideas'?'on':''}" data-act="nav" data-page="ideas">${ic('bulb')}Ideas</a><a class="${v.page==='notebook'?'on':''}" data-act="nav" data-page="notebook">${ic('book')}Notebooks</a><a class="${v.page==='trips'?'on':''}" data-act="nav" data-page="trips">${ic('globe')}Trips</a><a class="${v.page==='prompts'?'on':''}" data-act="nav" data-page="prompts">${ic('prompt')}Prompts</a>${p?`<a class="on" style="${projStyle(p)}">${picon(p,'xs')||ic(projStatus(p)==='Idea'?'bulb':'folder')}${h(projName(p))}</a>`:''}`;
   const dark=document.documentElement.dataset.theme!=='light';
   $('#topright').innerHTML=`${S.demo?'<span class="chip st-Idea">DEMO</span>':''}${S.ws?`<span class="ws" title="Workspace folder (ideas are stored here)">${ic('folder')} ${h(S.ws.name)}</span><button class="ghost small" data-act="choose-ws" title="Change workspace folder">Change</button>`:''}${tip(`Switch to ${dark?'light':'dark'} theme`,`<button class="ghost icon" data-act="theme" title="Switch to ${dark?'light':'dark'} theme">${ic(dark?'sun':'moon')}</button>`)}${tip('Search everything (Ctrl+K)',`<button class="ghost icon" data-act="search" title="Search everything (Ctrl+K)">${ic('search')}</button>`)}${tip('Settings',`<button class="ghost icon" data-act="settings" title="Settings">${ic('gear')}</button>`)}`;
 }
@@ -2005,7 +2093,7 @@ function renderWelcome(){return `<div class="welcome"><div class="logo-big">${LO
 <p><button class="primary" data-act="choose-ws">Choose workspace folder</button></p>
 <p class="muted small">The browser will ask permission to edit files in each folder you choose. Nothing is uploaded anywhere.</p></div>`}
 
-function stackBar(c,big){if(!c.total)return `<div class="bar${big?' big':''}"></div>`;return `<div class="bar${big?' big':''}">${['pass','partial','fail','blocked','skipped','retest'].map(k=>c[k]?`<i class="seg s-${k}" style="width:${c[k]/c.total*100}%" title="${c[k]} ${k}"></i>`:'').join('')}</div>`}
+function stackBar(c,big){if(!c.total)return `<div class="bar${big?' big':''}"></div>`;return `<div class="bar${big?' big':''}">${['pass','change','partial','fail','blocked','skipped','retest'].map(k=>c[k]?`<i class="seg s-${k}" style="width:${c[k]/c.total*100}%" title="${c[k]} ${k}"></i>`:'').join('')}</div>`}
 function pctBar(v,big){return `<div class="bar${big?' big':''}"><i class="seg s-feat" style="width:${v||0}%"></i></div>`}
 const fmtPct=v=>v==null?'—':Math.round(v)+'%';
 const grpColor=p=>{const g=layout().groups.find(x=>x.id===groupOf(p));return validColor(g?.color)};
@@ -2016,14 +2104,14 @@ function testRing(c,big){
   const pct=c.total?Math.round(c.done/c.total*100):0;
   if(!c.total)return `<div class="ring${big?' big':''}"><span>—</span></div>`;
   let at=0;const stops=[];
-  for(const k of ['pass','partial','fail','blocked','skipped']){if(!c[k])continue;const e=at+c[k]/c.total*100;stops.push(`var(--${k}) ${at}% ${e}%`);at=e}
+  for(const k of ['pass','change','partial','fail','blocked','skipped']){if(!c[k])continue;const e=at+c[k]/c.total*100;stops.push(`var(--${k}) ${at}% ${e}%`);at=e}
   stops.push(`var(--untested) ${at}% 100%`);
   return `<div class="ring${big?' big':''}" style="background:conic-gradient(${stops.join(',')})" title="${c.done} of ${c.total} tested"><span>${pct}%</span></div>`;
 }
 
 /* ---------------- favorites + folder paths (per browser) ---------------- */
 function lsGet(k,def){try{return JSON.parse(localStorage.getItem(k))??def}catch{return def}}
-function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}window.__wsHook?.(k)}
 const isFav=p=>!!S.favs[p.id];
 function favBtn(p){const on=isFav(p);return tip(on?'Unfavorite':'Favorite',`<button class="ghost icon fav${on?' on':''}" data-act="fav" data-pid="${h(p.id)}" title="${on?'Unfavorite':'Favorite'}" aria-pressed="${on}">${ic(on?'starOn':'star')}</button>`)}
 const winJoin=(a,b)=>String(a).replace(/[\\/]+$/,'')+'\\'+b;
@@ -2220,18 +2308,18 @@ function renderProject(p){
   if(v.tab==='testing'&&v.tsub==='issues'){v.tab='changes';v.tsub='batches'}
   const st=projStatus(p),tab=v.tab||(st==='Idea'?'features':'overview');
   const where=p.kind==='hosted'?`Workspace › ideas › ${h(p.handle.name)} › proj_management`:p.handle.name==='proj_management'?`(project folder) › proj_management`:`${h(p.handle.name)} › proj_management`;
-  const head=`<div class="ph"><div><a class="small back" data-act="nav" data-page="${st==='Idea'?'ideas':'home'}">${ic('back')}${st==='Idea'?'Ideas':'Projects'}</a><h1 class="ph-title"><span class="ph-ident"><button class="ph-icon${p.iconUrl?' has-img':''}" data-act="color-dlg" data-pid="${h(p.id)}" title="Customize: icon, color, title and summary" aria-label="Customize project">${p.iconUrl?picon(p,'md'):`<span class="swatch-btn${projColor(p)?'':' none'}"></span>`}<span class="ph-ov">${ic('edit')}</span></button><span class="ph-name" data-act="color-dlg" data-pid="${h(p.id)}">${h(projName(p))}</span></span>${favBtn(p)}</h1><div class="muted small path-line">${pathChip(p,where)}<a class="path-edit" data-act="set-path" data-pid="${h(p.id)}" title="${projPath(p)?'Change the saved Windows path':'Set the Windows path for this project'}">edit</a> <span id="saving">${h(lastUpdText(p))}</span></div></div>
-  <div class="ph-right"><div class="ph-actions">${st!=='Idea'?`<select data-chg="proj-group" data-pid="${h(p.id)}" title="Group on the Projects page" aria-label="Group"><option value="">No group</option>${layout().groups.map(g=>`<option value="${h(g.id)}" ${groupOf(p)===g.id?'selected':''}>${h(g.name)}</option>`).join('')}<option value="__new">+ New group…</option></select>`:''}<select class="st-sel st-${st}" data-chg="status" data-pid="${h(p.id)}" title="Project status" aria-label="Project status">${STATUSES.map(s=>`<option ${s===st?'selected':''}>${s}</option>`).join('')}</select>
+  const head=`<div class="ph"><div><a class="small back" data-act="nav" data-page="${st==='Idea'?'ideas':'home'}">${ic('back')}${st==='Idea'?'Ideas':'Projects'}</a><h1 class="ph-title"><span class="ph-ident"><button class="ph-icon${p.iconUrl?' has-img':''}" data-act="color-dlg" data-pid="${h(p.id)}" title="Customize: icon, color, title and summary" aria-label="Customize project">${p.iconUrl?picon(p,'md'):`<span class="swatch-btn${projColor(p)?'':' none'}"></span>`}</button><span class="ph-name" data-act="color-dlg" data-pid="${h(p.id)}">${h(projName(p))}</span><span class="ph-pen" data-act="color-dlg" data-pid="${h(p.id)}" title="Customize: icon, color, title and summary">${ic('edit')}</span></span></h1><div class="muted small path-line">${pathChip(p,where)}<a class="path-edit" data-act="set-path" data-pid="${h(p.id)}" title="${projPath(p)?'Change the saved Windows path':'Set the Windows path for this project'}">edit</a> <span id="saving">${h(lastUpdText(p))}</span></div></div>
+  <div class="ph-right"><div class="ph-actions">${favBtn(p)}${st!=='Idea'?`<select data-chg="proj-group" data-pid="${h(p.id)}" title="Group on the Projects page" aria-label="Group"><option value="">No group</option>${layout().groups.map(g=>`<option value="${h(g.id)}" ${groupOf(p)===g.id?'selected':''}>${h(g.name)}</option>`).join('')}<option value="__new">+ New group…</option></select>`:''}<select class="st-sel st-${st}" data-chg="status" data-pid="${h(p.id)}" title="Project status" aria-label="Project status">${STATUSES.map(s=>`<option ${s===st?'selected':''}>${s}</option>`).join('')}</select>
 </div>
-  <div class="ph-links muted small">${p.kind==='hosted'?`<a data-act="link-folder" data-pid="${h(p.id)}" title="Move this idea's files into a real project folder">${ic('move')}Move to project folder…</a>${st==='Idea'?`<a class="danger" data-act="delete-idea" data-pid="${h(p.id)}">${ic('trash')}Delete</a>`:`<a class="danger" data-act="remove-hosted" data-pid="${h(p.id)}" title="Stop tracking (files are kept in the workspace)">${ic('trash')}Remove</a>`}`:`<a data-act="move-folder" data-pid="${h(p.id)}" title="Rename or move this project's folder (uses the Explorer helper)">${ic('folder')}Move / rename</a><a class="danger" data-act="remove-project" data-pid="${h(p.id)}" title="Stop tracking (files are kept)">${ic('trash')}Remove</a>`}</div></div></div>
+  <div class="ph-links muted small">${p.kind==='hosted'?`<a data-act="link-folder" data-pid="${h(p.id)}" title="Move this idea's files into a real project folder">${ic('move')}Move to project folder…</a>${st==='Idea'?`<a class="danger" data-act="delete-idea" data-pid="${h(p.id)}">${ic('trash')}Delete</a>`:`<a class="danger" data-act="remove-hosted" data-pid="${h(p.id)}" title="Stop tracking (files are kept in the workspace)">${ic('trash')}Remove</a>`}`:`<a data-act="proj-prompts" data-pid="${h(p.id)}" title="Copy a prompt for this project's agent">${ic('prompt')}Prompts</a><a data-act="move-folder" data-pid="${h(p.id)}" title="Rename or move this project's folder (uses the Explorer helper)">${ic('folder')}Move / rename</a><a class="danger" data-act="remove-project" data-pid="${h(p.id)}" title="Stop tracking (files are kept)">${ic('trash')}Remove</a>`}</div></div></div>
   ${p.movePending?`<div class="note-info move-note">${ic('move')}<span>Moving the folder to <b>${h(p.movePending.to)}</b>. Once File Explorer opens it there, click <b>Re-link</b> and pick that folder. (If Windows showed an error, nothing moved; click Cancel.)</span><button class="primary" data-act="relink" data-pid="${h(p.id)}">Re-link</button><button class="ghost" data-act="move-cancel" data-pid="${h(p.id)}">Cancel</button></div>`:''}
   ${p.tests.dupes.length?`<div class="note-info c-fail">${ic('alert')} Duplicate test IDs in TESTS.md: ${h([...new Set(p.tests.dupes)].join(', '))}. Results for these are shared. Ask the agent to fix.</div>`:''}
-  <div class="tabs">${[['overview','Overview','chart'],['testing','Testing','flask'],['changes','Inbox','inbox'],['decisions','Decisions','scale'],['ideas','Ideas','bulb'],['features','Features','layers'],['history','History','retest']].map(([k,l,i])=>{
+  <div class="tabs">${[['overview','Overview','chart'],['testing','Testing','flask'],['changes','Inbox','inbox'],['decisions','Decisions','scale'],['ideas','Ideas','bulb'],['features','Features','layers'],['roadmap','Roadmap','route'],['history','History','retest']].map(([k,l,i])=>{
     const n=k==='decisions'?openDecisions(p).length:k==='testing'?openIssues(p).length:k==='changes'?openGeneral(p).length:k==='ideas'?(p.ideas?.items||[]).filter(ideaOpen).length:0;
     const na=k==='changes'?giAnswered(p).length:0;
     const tipT={decisions:n+' waiting for you',testing:n+' open test issue'+(n>1?'s':''),changes:n+' open',ideas:n+' open idea'+(n>1?'s':'')}[k]||'';
-    return `<a class="${tab===k?'on':''}${k==='overview'?' tab-ico':''}${k==='features'?' tab-right':''}" data-act="tab" data-tab="${k}"${k==='overview'?' title="Overview" aria-label="Overview"':''}>${ic(i)}${k==='overview'?'':l}${n?`<span class="tab-badge badge-${k}" title="${tipT}">${n}</span>`:''}${na?`<span class="tab-badge badge-answered" title="${na} answered by the agent">${ic('chat')}${na}</span>`:''}</a>`}).join('')}</div>`;
-  return `<div style="${projStyle(p)}">`+head+(tab==='testing'?renderTesting(p):tab==='features'?renderFeatures(p):tab==='decisions'?renderDecisions(p):tab==='ideas'?renderProjIdeas(p):tab==='changes'?renderGeneral(p,''):tab==='history'?renderHistory(p):renderOverview(p))+'</div>';
+    return `<a class="${tab===k?'on':''}${k==='overview'?' tab-ico':''}${k==='features'?' tab-right':''}" data-act="tab" data-tab="${k}"${k==='overview'?' title="Overview" aria-label="Overview"':''}>${ic(i)}${k==='overview'?'':l}${n?`<span class="tab-badge badge-${k}" title="${tipT}">${n}</span>`:''}${na?`<span class="tab-badge badge-answered" title="${na} with a reply you haven’t followed up">${ic('chat')}${na}</span>`:''}</a>`}).join('')}</div>`;
+  return `<div style="${projStyle(p)}">`+head+(tab==='testing'?renderTesting(p):tab==='features'?renderFeatures(p):tab==='decisions'?renderDecisions(p):tab==='ideas'?renderProjIdeas(p):tab==='changes'?renderGeneral(p,''):tab==='history'?renderHistory(p):tab==='roadmap'?renderRoadmap(p):renderOverview(p))+'</div>';
 }
 function renderOverview(p){
   const lb=p.tests.batches[0],lc=lb?batchStats(p,lb):{total:0,done:0},all=sumStats(p),oi=openIssues(p),og=openGeneral(p),od=openDecisions(p),fp=projFeatPct(p.features),fs=allFeatures(p.features);
@@ -2272,16 +2360,33 @@ function renderTesting(p){
 }
 const draftUrls=new WeakMap();
 function draftUrl(f){if(!draftUrls.has(f))draftUrls.set(f,URL.createObjectURL(f));return draftUrls.get(f)}
+/* the conversation: replied-to messages are read-only; long threads fold to the latest exchange (GI-034); fix notes sit after the reply (GI-039) */
+/* dragging a message taller lifts the 5/12-line cap; the height is remembered for the session */
+document.addEventListener('pointerdown',e=>{const el=e.target.closest?.('[data-chh]');if(!el)return;const r=el.getBoundingClientRect();if(e.clientX<r.right-22||e.clientY<r.bottom-22)return;el.style.height=el.offsetHeight+'px';el.style.maxHeight='none';
+  const up=()=>{removeEventListener('pointerup',up,true);(S.chH=S.chH||{})[el.dataset.chh]=el.offsetHeight};addEventListener('pointerup',up,true)},true);
+function giThread(p,i,pid,id){
+  const msgs=[{u:1,kind:i.kind,date:i.created,text:i.notes||'',k:'gin-'+i.id,in:'gi-notes',n:-1,who:'you'}];if((i.reply||'').trim())msgs.push({u:0,text:i.reply});
+  (i.follow||[]).forEach((f,n)=>{msgs.push({u:1,kind:f.kind,date:f.date,text:f.text||'',k:`gif-${i.id}-${n}`,in:'gi-fnotes',n,who:'your follow-up'});if((f.reply||'').trim())msgs.push({u:0,text:f.reply})});
+  msgs.forEach((m,j)=>{if(m.u)m.edit=!msgs.slice(j+1).some(x=>!x.u)});
+  const nU=msgs.filter(m=>m.u).length,nR=msgs.length-nU,long=nU>=2&&nR>=2,open=!!S.giThreadOpen?.[i.id];let lastR=-1;msgs.forEach((m,j)=>{if(!m.u)lastR=j});
+  const first=long&&!open?Math.max(0,lastR-1):0,lines=long?(open?12:5):0,res=issueRes(p,i),hk=j=>`${i.id}-${j}`,hs=j=>{const v=S.chH?.[hk(j)];return v?` style="height:${v}px;max-height:none"`:''};
+  let o=long?`<button class="ghost small ch-fold" data-act="gi-thread" data-id="${id}">${ic(open?'chevD':'chevR')}${open?'Show only the latest':`Show ${first} earlier message${first===1?'':'s'}`}</button>`:'';
+  msgs.forEach((m,j)=>{if(j<first)return;
+    if(m.u)o+=`<div class="ch-msg"><div class="ch-meta">${ic(CH_KIND_ICON[m.kind]||'edit')}<b>${h(m.kind)}</b> · ${h(m.date||'')} · ${m.who}</div>${m.edit?`<textarea data-in="${m.in}" data-k="${h(m.k)}" data-pid="${pid}" data-id="${id}"${m.n>=0?` data-n="${m.n}"`:''}${lines?` data-maxl="${lines}"`:''} placeholder="Details for the agent. Paste screenshots here.">${h(m.text)}</textarea>`:`<div class="ch-text${lines?' l'+lines:''}" data-chh="${hk(j)}"${hs(j)} title="Replied to, so it can't be edited">${md(m.text.split('\n'))}</div>`}</div>`;
+    else o+=`<div class="ch-reply"><div class="ch-reply-h">${ic('chat')}Agent reply</div><div class="dec-body ch-text${lines?' l'+lines:''}" data-chh="${hk(j)}"${hs(j)}>${md(m.text.split('\n'))}</div></div>`;
+    if(j===lastR&&res)o+=`<div class="note-info ch-sys">${resText(p,res)}</div>`});
+  if(res&&lastR<0)o+=`<div class="note-info ch-sys">${resText(p,res)}</div>`;
+  return o}
 function renderGeneral(p,sw=''){
   const pid=h(p.id),all=p.fb.issues||[],f=effPref(S.view.gfilter,'ch_f');
   const q=lqv('changes'),hit=i=>!q||[i.id,i.title,i.kind,i.notes,i.reply,...(i.follow||[]).flatMap(f=>[f.kind,f.text,f.reply])].join('\n').toLowerCase().includes(q),srt=effPref(S.view.gsort,'ch_ord');
-  const inF=(i,k)=>k==='all'||(k==='open'?giOpen(p,i):k==='answered'?i.status==='answered':!giOpen(p,i)&&i.status!=='answered');
+  const inF=(i,k)=>k==='all'||(k==='open'?giOpen(p,i):k==='answered'?giOpen(p,i)&&giLastReply(i):!giOpen(p,i));
   const nOpen=all.filter(i=>inF(i,'open')&&hit(i)).length,nAns=all.filter(i=>inF(i,'answered')&&hit(i)).length,nClosed=all.filter(i=>inF(i,'closed')&&hit(i)).length;
   const gk=S.view.gkind||'',inK=i=>!gk||i.kind===gk;
   const list=sortItems(all.filter(i=>inF(i,f)&&hit(i)&&inK(i)),srt,i=>i.created,i=>i.updated);
   const kindRow=`<div class="kind-chips">${[['','All kinds'],...GI_KINDS.map(k=>[k,k])].map(([k,l])=>{const n=all.filter(i=>inF(i,f)&&hit(i)&&(!k||i.kind===k)).length;return (k&&!n&&gk!==k)?'':`<button class="kchip${gk===k?' on':''}" data-act="gkind" data-k="${h(k)}">${k?ic(CH_KIND_ICON[k]||'dot'):''}${h(l)} <span class="muted">${n}</span></button>`}).join('')}</div>`;
   const dr=S.giDraft||(S.giDraft={title:'',kind:'Change',severity:'Minor',notes:'',files:[]});
-  let o=`<div class="toolbar">${listSearch('changes','Search inbox…')}<span class="spacer" style="flex:1"></span>${sortBox('gsort',LIST_SORTS,S.view.gsort||'default','',S.set.ch_ord)}<span class="seg-btns">${[['open','Open',nOpen],['answered','Answered',nAns],['closed','Closed',nClosed],['all','All',all.filter(hit).length]].map(([k,l,n])=>`<button class="${f===k?'on':''}" data-act="gfilter" data-f="${k}">${l} (${n})</button>`).join('')}</span></div>${kindRow}`;
+  let o=`<div class="toolbar">${listSearch('changes','Search inbox…')}<span class="spacer" style="flex:1"></span>${sortBox('gsort',LIST_SORTS,S.view.gsort||'default','',S.set.ch_ord)}<span class="seg-btns">${[['open','Open',nOpen],['answered','Replies',nAns],['closed','Closed',nClosed],['all','All',all.filter(hit).length]].map(([k,l,n])=>`<button class="${f===k?'on':''}" data-act="gfilter" data-f="${k}">${l} (${n})</button>`).join('')}</span></div>${kindRow}`;
   o+=`<div class="panel gi-new"><h3 style="margin-bottom:10px">${ic('plus')} New request</h3>
   <div class="form-row"><input type="text" id="giTitle" data-k="giTitle" data-in="gi-draft" data-f="title" placeholder="${{Change:'What should change, e.g. Make the glide speed configurable',Bug:'What went wrong, e.g. Sound cuts out near torches',Question:'Your question, e.g. Why does stamina drain while hovering?','Feature request':'A feature you want designed, e.g. Creature gliders',Investigate:'What to look into, e.g. How other mods handle wind'}[dr.kind]||'Short summary'}" value="${h(dr.title)}" style="flex:1;min-width:220px">
   <select data-in="gi-draft" data-f="kind">${GI_KINDS.map(k=>`<option ${dr.kind===k?'selected':''}>${k}</option>`).join('')}</select>
@@ -2298,14 +2403,7 @@ function renderGeneral(p,sw=''){
     ${bug?`<span class="sev sev-${sev} sev-solo" title="Severity"><select data-chg="gi-sev" data-pid="${pid}" data-id="${id}">${SEVERITIES.map(x=>`<option ${sev===x?'selected':''}>${x}</option>`).join('')}</select>${ic('chevD')}</span>`:''}
     <span class="chip ${openNow?(bug?'c-fail':'c-open'):i.status==='answered'?'c-answered':'c-pass'}" style="margin-left:auto">${res?.status==='resolved'?ic('check')+'Resolved by '+h(res.by.id):GI_STATUS[i.status]||i.status} · ${h(shortStamp(res?.status==='resolved'?(p.fb.results[res.by.id]?.updated||i.updated):(i.resolved&&!openNow?i.resolved:i.updated||i.created)))}</span></div>
     ${i.from?`<div class="note-info">${ic('bulb')} From idea <a data-act="goto-idea" data-id="${h(i.from)}"><code>${h(i.from)}</code></a>${giOpen(p,i)&&!i.reply&&!(i.follow||[]).length?` · <a data-act="idea-unsend" data-pid="${pid}" data-gi="${id}" title="Remove this from the Inbox and make it an idea again">${ic('back')}Return to ideas</a>`:''}</div>`:''}
-    ${res?`<div class="note-info">${res.status==='resolved'?`Resolved: <code>${h(res.by.id)}</code> passed in ${h(res.by.batch)}`:`Fix pending: re-tested by <a data-act="goto-test" data-batch="${h(res.by.batch)}" data-id="${h(res.by.id)}"><code>${h(res.by.id)}</code></a> in ${h(res.by.batch)}`}</div>`:''}
-    <div class="ch-tl">
-    <div class="ch-msg"><div class="ch-meta">${ic(CH_KIND_ICON[i.kind]||'edit')}<b>${h(i.kind)}</b> · ${h(i.created||'')} · you</div>
-    <textarea data-in="gi-notes" data-k="gin-${id}" data-pid="${pid}" data-id="${id}" placeholder="Details for the agent. Paste screenshots here.">${h(i.notes||'')}</textarea></div>
-    ${i.reply?`<div class="ch-reply"><div class="ch-reply-h">${ic('chat')}Agent reply</div><div class="dec-body">${md(i.reply.split('\n'))}</div></div>`:''}
-    ${(i.follow||[]).map((f,n)=>`<div class="ch-msg"><div class="ch-meta">${ic(CH_KIND_ICON[f.kind]||'edit')}<b>${h(f.kind)}</b> · ${h(f.date||'')} · your follow-up</div>
-      <textarea data-in="gi-fnotes" data-k="gif-${id}-${n}" data-pid="${pid}" data-id="${id}" data-n="${n}">${h(f.text||'')}</textarea></div>
-      ${f.reply?`<div class="ch-reply"><div class="ch-reply-h">${ic('chat')}Agent reply</div><div class="dec-body">${md(f.reply.split('\n'))}</div></div>`:''}`).join('')}
+    <div class="ch-tl">${giThread(p,i,pid,id)}
     ${S.giFollow?.pid===p.id&&S.giFollow.id===i.id?`<div class="ch-msg ch-compose"><div class="ch-meta">${ic('retest')}<b>Follow up</b><select data-in="gi-fdraft" data-f="kind">${GI_KINDS.map(k=>`<option ${S.giFollow.kind===k?'selected':''}>${k}</option>`).join('')}</select></div>
       <textarea id="giFollowText" data-in="gi-fdraft" data-f="text" data-k="gifd-${id}" placeholder="Your follow-up for the agent…">${h(S.giFollow.text||'')}</textarea>
       <div class="form-row" style="justify-content:flex-end"><button class="ghost" data-act="gi-follow-cancel">Cancel</button><button class="primary" data-act="gi-follow-send" data-pid="${pid}" data-id="${id}">${ic('chat')}Send follow-up</button></div></div>`:''}
@@ -2358,7 +2456,7 @@ function renderBatches(p,sw=''){
   const match=(t)=>{if(!hit(t))return false;if(S.sticky.has(t.id))return true;const s=effState(p,t);if(filter==='untested')return s==='untested';if(filter==='retest')return s==='retest'||s==='stale';if(filter==='tested')return s!=='untested';if(filter==='issues')return s==='fail'||s==='partial';return true};
   const cnt=f=>list.flatMap(b=>b.tests).filter(t=>{if(!hit(t))return false;const s=effState(p,t);return f==='untested'?s==='untested':f==='retest'?['retest','stale'].includes(s):f==='issues'?['fail','partial'].includes(s):f==='tested'?s!=='untested':true}).length;
   const trunc=(x,n)=>x.length>n?x.slice(0,n-1)+'…':x;
-  let o=`<div class="toolbar"><span class="sortbox batch-box"><span class="bp-lbl" data-act="open-batch" title="Choose a test batch">Test Batch</span><select id="batchSel" data-chg="batch" aria-label="Test batch">${bs.map(b=>`<option value="${h(b.version)}" ${b.version===bsel?'selected':''} title="${h(b.version+' — '+batchLabel(p,b))}">${h(trunc(b.version+' — '+batchLabel(p,b),36))}</option>`).join('')}<option value="*" ${bsel==='*'?'selected':''}>All batches</option></select>${ic('chevD')}</span>
+  let o=`<div class="toolbar"><span class="sortbox batch-box"><span class="bp-lbl" data-act="open-batch" title="Choose a test batch">Test Batch</span><select id="batchSel" data-chg="batch" aria-label="Test batch"><option value="*" ${bsel==='*'?'selected':''}>All batches</option>${bs.map(b=>`<option value="${h(b.version)}" ${b.version===bsel?'selected':''} title="${h(b.version+' — '+batchLabel(p,b))}">${h(trunc(b.version+' — '+batchLabel(p,b),36))}</option>`).join('')}</select>${ic('chevD')}</span>
   <span class="tsearch tsearch-grow">${ic('search')}<input type="text" id="testSearch" data-k="testSearch" placeholder="Search tests…" title="Searches IDs, titles, steps, expected and your notes across all batches" value="${h(S.tq||'')}">${q?`<button class="ghost icon" data-act="tsearch-clear" title="Clear search">${ic('x')}</button>`:''}</span>
   ${sortBox('torder',TORDERS,v.order&&v.order!=='default'?tOrder(v.order):'default','',S.set.test_ord)}
   <span class="seg-btns">${[['untested','Untested','No status yet'],['retest','Retest','Marked “needs retest”, or changed after you tested it'],['issues','Issues','Partial or fail'],['tested','Tested','Any status'],['all','All','Everything']].map(([k,l,t])=>`<button class="${filter===k?'on':''}" data-act="filter" data-f="${k}" title="${t}">${l} (${cnt(k)})</button>`).join('')}</span>
@@ -2396,15 +2494,17 @@ function testCard(p,t,run){
   const r=p.fb.results[t.id]||{},s=effState(p,t),pid=h(p.id),id=h(t.id);
   const feat=t.feature?findFeat(p.features,t.feature).f:null;
   let body='';
-  if(t.desc.length)body+=t.desc.map(l=>`<p>${h(l)}</p>`).join('');
-  if(t.setup)body+=`<p><span class="lbl">Setup</span>${h(t.setup)}</p>`;
-  if(t.steps.length)body+=`<div><span class="lbl">Steps</span><ol>${t.steps.map(x=>`<li>${h(x)}</li>`).join('')}</ol></div>`;
-  if(t.expected)body+=`<p><span class="lbl">Expected</span>${h(t.expected)}</p>`;
+  if(t.desc.length)body+=t.desc.map(l=>`<p>${rich(l)}</p>`).join('');
+  if(t.setup)body+=`<p><span class="lbl">Setup</span>${rich(t.setup)}</p>`;
+  if(t.steps.length)body+=`<div><span class="lbl">Steps</span><ol>${t.steps.map(x=>`<li>${rich(x)}</li>`).join('')}</ol></div>`;
+  if(t.expected)body+=`<p><span class="lbl">Expected</span>${rich(t.expected)}</p>`;
   if(t.change)body+=`<p class="muted small"><span class="lbl">Change</span>${h(t.change)}</p>`;
   let info='';
   for(const rid of t.retests){const old=allTests(p).find(x=>x.id===rid),or=p.fb.results[rid];
     info+=`<div class="note-info">Re-tests <a data-act="goto-test" data-batch="${h(old?.batch||'')}" data-id="${h(rid)}"><code>${h(rid)}</code></a>${old?' · '+h(old.title):''}${or?.state?` — was <b class="c-${or.state}">${STATE_LABEL[or.state]}</b>`:''}${or?.notes?`: “${h(or.notes.trim().slice(0,220))}${or.notes.length>220?'…':''}”`:''}</div>`}
-  if(s==='fail'||s==='partial'){const res=resolution(p,t);if(res)info+=`<div class="note-info">${res.status==='resolved'?`Resolved — <code>${h(res.by.id)}</code> passed in ${h(res.by.batch)}`:`Fix pending — re-tested by <a data-act="goto-test" data-batch="${h(res.by.batch)}" data-id="${h(res.by.id)}"><code>${h(res.by.id)}</code></a> in ${h(res.by.batch)}`}</div>`}
+  if(ISSUE_STATES.includes(s)){const res=resolution(p,t),links=r.links||[];
+    info+=`<div class="note-info res-row${res?.status==='resolved'?' c-pass':''}"><span>${res?resText(p,res):'<span class="muted">Not resolved</span>'}${links.length?` <span class="muted">· linked:</span> ${links.map(x=>`<span class="chip res-link"><a data-act="goto-ref" data-id="${h(x)}">${h(x)}</a><button class="ghost icon" data-act="res-unlink" data-pid="${pid}" data-id="${id}" data-l="${h(x)}" title="Remove link">${ic('x')}</button></span>`).join('')}`:''}</span><span class="spacer" style="flex:1"></span><a class="small" data-act="res-link" data-pid="${pid}" data-id="${id}" title="Link this to a newer test, feature or Inbox entry that fixes it">${ic('link')}Link…</a>${res?.manual?`<a class="small" data-act="res-unmark" data-pid="${pid}" data-id="${id}">Unresolve</a>`:res?.status==='resolved'?'':`<a class="small" data-act="res-mark" data-pid="${pid}" data-id="${id}">${ic('check')}Mark resolved</a>`}</div>`}
+  if(false){const res=null;if(res)info+=`<div class="note-info">${res.status==='resolved'?`Resolved — <code>${h(res.by.id)}</code> passed in ${h(res.by.batch)}`:`Fix pending — re-tested by <a data-act="goto-test" data-batch="${h(res.by.batch)}" data-id="${h(res.by.id)}"><code>${h(res.by.id)}</code></a> in ${h(res.by.batch)}`}</div>`}
   if(s==='stale')info+=`<div class="note-info c-retest">The agent changed this test after you marked it ${STATE_LABEL[r.state]}. Please retest.</div>`;
   const shown=s==='stale'?'retest':s;
   return `<div class="test${run?' run-order':''} st-${s}${s==='fail'||s==='partial'?' s-'+(r.severity||'Minor'):''}" id="t-${id}">
@@ -2425,7 +2525,10 @@ function testCard(p,t,run){
   <label class="filebtn">${ic('clip')}Attach file<input type="file" multiple data-att-up="1" data-pid="${pid}" data-id="${id}"></label><span class="paste-hint">or paste a screenshot into the box above (Ctrl+V)</span></div>
 </div>`;
 }
+const decMulti=d=>/^multi/i.test(d.select||'');
+function decPicked(d){const keys=[...String(d.decision||'').matchAll(/(?:^|;\s*)([A-Z]|\d{1,2})\s*-/g)].map(m=>m[1]).filter(k=>d.options.some(o=>o.key===k)),om=String(d.decision||'').match(/(?:^|;\s*)Other:\s*(.*)$/);return {keys,other:om?om[1]:''}}
 function decDraftFrom(d){
+  if(decMulti(d)){const pk=decPicked(d);return {multi:true,picks:pk.keys,customOn:!!pk.other,other:pk.other,choice:'',notes:d.notes.join('\n')}}
   const k=(d.decision.match(/^\s*([A-Z]|\d{1,2})\b/)||[])[1]||'',opt=k&&d.options.find(x=>x.key===k);
   return opt?{choice:k,other:'',notes:d.notes.join('\n')}:{choice:d.decision?'__custom':'',other:d.decision||'',notes:d.notes.join('\n')};
 }
@@ -2448,16 +2551,17 @@ function renderDecisions(p){
   if(!list.length)return o+`<div class="empty">${items.length?'Nothing here.':'No decisions yet. When the agent needs you to choose something, it will appear here with its research and options.'}</div>`;
   for(const d of list){
     const id=h(d.id),key=p.id+'|'+d.id,dr=S.decDraft[key]||(S.decDraft[key]=decDraftFrom(d));
-    const recKey0=(d.rec.match(/^\s*\**([A-Z]|\d{1,2})\b/)||[])[1]||'';
-    const chosenKey=d.status==='Decided'?((d.decision.match(/^\s*([A-Z]|\d{1,2})\b/)||[])[1]||''):dr.choice;
-    const isOpen=d.status==='Open',showRec0=0,showRec=rm==='show'||(rm==='after'&&(!isOpen||(!!dr.choice&&(dr.choice!=='__custom'||!!(dr.other||'').trim())))),recKey=showRec?recKey0:'';
+    const recKeys=((d.rec.match(/^\s*\**((?:[A-Z]|\d{1,2})(?:\s*(?:,|&|\+|and)\s*(?:[A-Z]|\d{1,2}))*)\b/)||[])[1]||'').split(/\s*(?:,|&|\+|and)\s*/).filter(Boolean),recKey0=recKeys[0]||'';
+    const multi=decMulti(d),picked=multi?(d.status==='Decided'?decPicked(d).keys:dr.picks||[]):null;
+    const chosenKey=d.status==='Decided'?((d.decision.match(/^\s*([A-Z]|\d{1,2})\b/)||[])[1]||''):dr.choice;const isOn=k=>multi?picked.includes(k):chosenKey===k;
+    const isOpen=d.status==='Open',showRec0=0,showRec=rm==='show'||(rm==='after'&&(!isOpen||(multi?(picked.length>0||(dr.customOn&&!!(dr.other||'').trim())):(!!dr.choice&&(dr.choice!=='__custom'||!!(dr.other||'').trim()))))),recKey=showRec?recKey0:'',isRec=k=>showRec&&recKeys.includes(k);
     o+=`<article class="dec st-${d.status}" id="d-${id}">
     <div class="t-head"><code>${id}</code><b class="dec-title">${h(d.title)}</b>${d.status!=='Open'?agentMark(p,d.id,d.updated||d.decided):''}<span class="chip dec-${d.status}">${d.status==='Open'?ic('alert'):d.status==='Decided'?ic('check'):''}${d.status}</span>
       ${d.area?`<span class="chip">${h(d.area)}</span>`:''}${d.feature?`<span class="chip">${h(d.feature)}</span>`:''}<span class="muted small" style="margin-left:auto">${d.raised?'Raised '+h(d.raised):''}${d.decided?' · Decided '+h(d.decided):''}</span></div>
     ${d.details.length?`<div class="dec-body">${md(showRec?d.details:d.details.filter(l=>!/^\s*\**recommend/i.test(l)))}</div>`:''}
-    ${d.options.length||(d.status==='Decided'&&d.decision)?`<div class="dec-opts">${d.options.map(x=>`<button class="dec-opt${chosenKey===x.key?' on':''}${recKey===x.key&&isOpen?' rec':''}" ${isOpen?`data-act="dec-pick" data-pid="${pid}" data-id="${id}" data-opt="${h(x.key)}"`:'disabled'}><span class="dec-key">${h(x.key)}</span><span class="dec-txt">${md([x.text]).replace(/^<p>|<\/p>$/g,'')}</span>${recKey===x.key?'<span class="chip st-Active">Recommended</span>':''}${!isOpen&&chosenKey===x.key?'<span class="chip dec-Decided">Your answer</span>':''}</button>`).join('')}${d.status==='Decided'&&d.decision&&!d.options.some(x=>x.key===chosenKey)?`<div class="dec-opt on" role="note"><span class="dec-key">${ic('check')}</span><span class="dec-txt">${h(d.decision)}</span><span class="chip dec-Decided">Your own answer</span></div>`:''}</div>`:''}
+    ${d.options.length||(d.status==='Decided'&&d.decision)?`<div class="dec-opts">${multi?`<p class="muted small dec-multi-h">${ic('check')}Pick any number</p>`:''}${d.options.map(x=>`<button class="dec-opt${isOn(x.key)?' on':''}${isRec(x.key)&&isOpen?' rec':''}" ${isOpen?`data-act="dec-pick" data-pid="${pid}" data-id="${id}" data-opt="${h(x.key)}"`:'disabled'}>${multi?`<span class="dec-key dec-chk" title="${h(x.key)}">${isOn(x.key)?ic('check'):''}</span>`:`<span class="dec-key">${h(x.key)}</span>`}<span class="dec-txt">${md([x.text]).replace(/^<p>|<\/p>$/g,'')}</span>${isRec(x.key)?'<span class="chip st-Active">Recommended</span>':''}${!isOpen&&isOn(x.key)?'<span class="chip dec-Decided">Your answer</span>':''}</button>`).join('')}${d.status==='Decided'&&d.decision&&(multi?!!decPicked(d).other:!d.options.some(x=>x.key===chosenKey))?`<div class="dec-opt on" role="note"><span class="dec-key">${ic('check')}</span><span class="dec-txt">${h(multi?decPicked(d).other:d.decision)}</span><span class="chip dec-Decided">Your own answer</span></div>`:''}</div>`:''}
     ${d.rec&&showRec?`<p class="small muted dec-rec">${ic('bulb')} <b>Agent’s recommendation:</b> ${h(d.rec)}</p>`:''}
-    ${isOpen?`<div class="dec-opt dec-custom${dr.choice==='__custom'?' on':''}" data-dec-custom="${id}"><span class="dec-key">${ic('edit')}</span><input type="text" data-in="dec-other" data-k="deco-${id}" data-pid="${pid}" data-id="${id}" placeholder="${d.options.length?'…or write your own answer':'Your answer'}" value="${h(dr.other)}"></div>`:''}
+    ${isOpen?`<div class="dec-opt dec-custom${(multi?dr.customOn:dr.choice==='__custom')?' on':''}" data-dec-custom="${id}">${multi?`<button class="dec-key dec-chk" data-act="dec-custom-tog" data-pid="${pid}" data-id="${id}" title="Include your own answer">${dr.customOn?ic('check'):''}</button>`:`<span class="dec-key">${ic('edit')}</span>`}<textarea rows="1" data-in="dec-other" data-maxl="4" data-k="deco-${id}" data-pid="${pid}" data-id="${id}" placeholder="${d.options.length?(multi?'…and/or write your own':'…or write your own answer'):'Your answer'}">${h(dr.other)}</textarea></div>`:''}
     <textarea data-in="dec-notes" data-k="decn-${id}" data-pid="${pid}" data-id="${id}" placeholder="Notes or reasoning for the agent (optional)" ${isOpen?'':`data-chg="dec-notes-save"`} style="margin-top:8px">${h(dr.notes)}</textarea>
     <div class="form-row" style="margin-top:8px;justify-content:flex-end">
     ${isOpen?`<button class="ghost" data-act="dec-set" data-s="Dropped" data-pid="${pid}" data-id="${id}" title="Not needed any more">Drop</button><button data-act="dec-set" data-s="Deferred" data-pid="${pid}" data-id="${id}" title="Decide later">Defer</button><button class="primary" data-act="dec-decide" data-pid="${pid}" data-id="${id}">${ic('check')}Decide</button>`:`<button data-act="dec-set" data-s="Open" data-pid="${pid}" data-id="${id}">${ic('retest')}Reopen</button>`}</div>
@@ -2516,13 +2620,13 @@ function renderFeatures(p){
   let o=`<div class="panel"><div class="meta-grid feat-meta"><label>Summary<input type="text" data-chg="meta-summary" data-k="meta-summary" data-pid="${pid}" value="${h(m.summary)}" placeholder="One line describing the project"></label><label>Search<span class="tsearch" style="max-width:none">${ic('search')}<input type="text" id="featSearch" data-k="featSearch" placeholder="Search features and areas…" value="${h(S.fq||'')}">${fq?`<button class="ghost icon" data-act="fsearch-clear" title="Clear search">${ic('x')}</button>`:''}</span></label></div>
   <div class="metric"><span>Overall feature completeness</span><b>${fmtPct(fp)}</b></div>${pctBar(fp,true)}
   <div class="legend" style="margin-top:8px">${STAGES.map(s=>`<span>${s} ${STAGE_PCT[s]}%</span>`).join('<span>›</span>')}</div></div>`;
-  if(m.areas.some(x=>x.name&&x.features.length))o+=`<div class="hint-row"><span class="muted small">${fq?`Showing features matching “${h(S.fq.trim())}”.`:'Click an area’s arrow to fold it.'}</span><span class="spacer" style="flex:1"></span>${fq?'':`<button class="ghost" data-act="fcol-all" data-pid="${pid}">${ic(fcol.size?'chevD':'chevR')}${fcol.size?'Expand all':'Collapse all'}</button>`}</div>`;
+  if(m.areas.some(x=>x.name&&x.features.length))o+=`<div class="hint-row feat-tools">${fq?`<span class="muted small">Showing features matching “${h(S.fq.trim())}”.</span>`:`<button class="ghost fcol-all" data-act="fcol-all" data-pid="${pid}">${ic(fcol.size?'chevR':'chevD')}${fcol.size?'Expand all':'Collapse all'}</button>`}<span class="spacer" style="flex:1"></span>${fq?'':`<button class="ghost fcol-all" data-act="add-feature" data-pid="${pid}" data-area="">${ic('plus')}Add a project-wide feature</button>`}</div>`;
   let anyHit=false;
   for(const a of areas){
     const an=h(a.name),ap=areaPct(a),aHit=fq&&a.name.toLowerCase().includes(fq),feats=fq&&!aHit?a.features.filter(fhit):a.features;
     if(fq&&!feats.length&&!aHit)continue;anyHit=anyHit||!!fq;
     const folded=!fq&&fcol.has(a.name);
-    if(!a.name&&!a.features.length&&m.areas.some(x=>x.name)){if(fq)continue;o+=`<p class="small"><a data-act="add-feature" data-pid="${pid}" data-area="">+ Add a project-wide feature</a></p>`;continue}
+    if(!a.name&&!a.features.length&&m.areas.some(x=>x.name)){if(fq)continue;continue}
     o+=`<section class="area${folded?' folded':''}"><div class="area-head"><button class="ghost icon area-tog" data-act="fcol" data-area="${an}" title="${folded?'Expand':'Collapse'}" aria-expanded="${!folded}">${ic(folded?'chevR':'chevD')}</button>${a.name?`<input type="text" data-chg="area-name" data-k="area-${an}" data-pid="${pid}" data-area="${an}" value="${an}">`:`<b style="flex:1">${m.areas.some(x=>x.name)?'Project-wide':'Features'}</b>`}
       <span class="pct">${fmtPct(ap)}</span>${pctBar(ap)}${a.name?`${tip('Delete area',`<button class="ghost danger" data-act="del-area" data-pid="${pid}" data-area="${an}" title="Delete area">${ic('trash')}</button>`)}`:''}</div>`;
     if(folded){o+=`<div class="muted small area-folded">${a.features.length} feature${a.features.length===1?'':'s'}</div></section>`;continue}
@@ -2609,7 +2713,7 @@ function taFit(el){
   if(st.mode==='fixed'){el.style.height=st.h+'px';st.last=el.offsetHeight;return}
   const cs=getComputedStyle(el),lh=parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.5;
   const frame=el.offsetHeight-el.clientHeight,pad=parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);
-  const max=Math.ceil(lh*8+pad+frame),top=el.scrollTop;
+  const max=Math.ceil(lh*(+el.dataset.maxl||8)+pad+frame),top=el.scrollTop;
   el.style.height='auto';const need=el.scrollHeight+frame;
   if(st.mode==='grow'){if(need>max)st.over=true;else if(st.over){st.mode='auto';st.over=false}}
   const hgt=st.mode==='grow'?Math.max(st.h,need):Math.min(need,max);
@@ -2772,6 +2876,14 @@ const A={
   tsub(d){S.view.tsub=d.s;render()},
   gfilter(d){S.view.gfilter=d.f;render()},
   gkind(d){S.view.gkind=d.k;render()},
+  'gi-thread'(d){(S.giThreadOpen=S.giThreadOpen||{})[d.id]=!S.giThreadOpen[d.id];render()},
+  'goto-ref'(d){const id=d.id,p=getP(S.view.pid);if(!p||!id)return;if(/^GI-/.test(id)){goTo({pid:p.id,tab:'changes',gfilter:'all',gkind:''});setTimeout(()=>{const el=document.getElementById('t-'+id);if(el){el.scrollIntoView({block:'center'});flashEl(el)}},60);return}
+    if(/^D-/.test(id)){A['goto-dec']({id});return}const t=allTests(p).find(x=>x.id===id);if(t){A['goto-test']({batch:t.batch,id});return}if(/^I-/.test(id)){A['goto-idea']({id});return}if(findFeat(p.features,id)?.f){A['idea-goto']({ref:id});return}toast(`${id} isn’t in this project.`)},
+  'res-link'(d){const p=getP(d.pid),t=allTests(p).find(x=>x.id===d.id);if(!t)return;S.gscope='p:'+p.id;
+    S.gsPick=x=>{const id=x.id;if(!id||id===t.id||!['test','change','feature'].includes(x.type)){toast('Pick a test, Inbox entry or feature from this project.');return}const r=touch(p,t);r.links=[...new Set([...(r.links||[]),id])];queueFeedbackSave(p);render();toast(`${t.id} linked to ${id}.`)};openSearch();setTimeout(()=>{const h2=document.querySelector('#wbModal h2');if(h2)h2.textContent=`Link ${t.id} to the test, Inbox entry or feature that fixes it`},0)},
+  'res-unlink'(d){const p=getP(d.pid),r=p.fb.results[d.id];if(!r)return;r.links=(r.links||[]).filter(x=>x!==d.l);queueFeedbackSave(p);render()},
+  async 'res-mark'(d){const p=getP(d.pid),t=allTests(p).find(x=>x.id===d.id);if(!t)return;const note=await askText(`Mark ${t.id} resolved`,'What fixed it? (optional)');if(note==null)return;const r=touch(p,t);r.resolvedAt=nowStampS();r.resolvedNote=note.trim();queueFeedbackSave(p);render()},
+  'res-unmark'(d){const p=getP(d.pid),r=p.fb.results[d.id];if(!r)return;delete r.resolvedAt;delete r.resolvedNote;queueFeedbackSave(p);render()},
   'ov-fold'(d){S.view[d.k]=!S.view[d.k];render()},
   dfilter(d){S.view.dfilter=d.f;if(d.f==='done')S.view.dfocus=null;render()},
   dfocus(){S.view.dfocus=S.view.dfocus==null?0:null;render();scrollTo(0,0)},
@@ -2796,10 +2908,12 @@ const A={
   async 'gi-del'(d){const p=getP(d.pid),i=findGi(p,d.id);if(!i||!await confirmBox(`Delete ${i.id} “${i.title}”? Prefer “Won’t fix” to keep a record.`,'Delete'))return;
     for(const n of i.attachments||[]){try{await (await p.pm.getDirectoryHandle('attachments')).removeEntry(n)}catch{}}
     (p.fbDeleted=p.fbDeleted||new Set()).add(i.id);p.fb.issues=p.fb.issues.filter(x=>x!==i);queueFeedbackSave(p);render()},
-  'dec-pick'(d){const dr=S.decDraft[d.pid+'|'+d.id];if(!dr)return;dr.choice=dr.choice===d.opt?'':d.opt;render()},
+  'dec-pick'(d){const dr=S.decDraft[d.pid+'|'+d.id];if(!dr)return;if(dr.multi){dr.picks=dr.picks.includes(d.opt)?dr.picks.filter(x=>x!==d.opt):[...dr.picks,d.opt]}else dr.choice=dr.choice===d.opt?'':d.opt;render()},
+  'dec-custom-tog'(d){const dr=S.decDraft[d.pid+'|'+d.id];if(!dr)return;dr.customOn=!dr.customOn;render()},
   'dec-decide'(d){
     const p=getP(d.pid),dr=S.decDraft[d.pid+'|'+d.id],cur=p.dec.items.find(x=>x.id===d.id);if(!dr||!cur)return;
-    let ans='';if(dr.choice==='__custom'||(!dr.choice&&dr.other.trim()))ans=dr.other.trim();else if(dr.choice){const o=cur.options.find(x=>x.key===dr.choice);ans=o?`${o.key} - ${o.text}`:dr.choice}
+    let ans='';if(dr.multi){const parts=cur.options.filter(o=>dr.picks.includes(o.key)).map(o=>`${o.key} - ${o.text}`);if(dr.customOn&&dr.other.trim())parts.push('Other: '+dr.other.trim().replace(/\s*\n\s*/g,' '));ans=parts.join('; ')}
+    else if(dr.choice==='__custom'||(!dr.choice&&dr.other.trim()))ans=dr.other.trim();else if(dr.choice){const o=cur.options.find(x=>x.key===dr.choice);ans=o?`${o.key} - ${o.text}`:dr.choice}
     if(!ans){toast('Pick an option or write your own answer');return}
     editDecisions(p,m=>{const x=m.items.find(y=>y.id===d.id);if(!x)return;x.status='Decided';x.decision=ans;x.decided=nowStampS();x.notes=dr.notes.split('\n')});
     toast(`${d.id} decided. The agent will pick it up from DECISIONS.md.`);
@@ -2854,13 +2968,19 @@ const A={
   async 'cz-cdel'(d){const k=ccKey(d.k2,d.id),list=recentColors(k),i=list.indexOf(d.c);if(i<0)return;const all=lsGet('wb-custom-colors2',null)||{};all[k]=list.filter(x=>x!==d.c);lsSet('wb-custom-colors2',all);
     const next=all[k][i]||all[k][i-1]||'';await czSet(d.k2,d.id,'color',next||(d.k2==='p'?(czData('p',d.id).group?.color?'':'app'):''));customizeDlg(d.k2,d.id,'color')},
   'cz-picker'(d){const x=czData(d.k2,d.id);openPicker(d.k2,d.id,x.color||recentColors(ccKey(d.k2,d.id))[0]||x.group?.color||'#5f95b8')},
-  async 'cz-eyedrop'(d){if(!window.EyeDropper)return;const dl=$('#wbModal');dl?.classList.add('eyedrop');try{const r=await new EyeDropper().open().finally(()=>dl?.classList.remove('eyedrop'));const c=validColor(r.sRGBHex);if(!c)return;pushRecent(c,ccKey(d.k2,d.id));await czSet(d.k2,d.id,'color',c);customizeDlg(d.k2,d.id,'color')}catch{}},
+  async 'cz-eyedrop'(d){if(!window.EyeDropper)return;const dl=$('#wbModal'),ac=new AbortController();
+    /* stay visible until the pointer leaves the window, then vanish until a color is picked or the dropper is cancelled; right-click cancels */
+    const hide=()=>dl?.classList.add('eyedrop'),out=e=>{if(!dl)return;const r=dl.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)hide()},rc=e=>{if(e.button===2||e.type==='contextmenu'){e.preventDefault();ac.abort()}};
+    dl?.classList.add('eyedrop-arm');document.addEventListener('pointermove',out,true);dl?.addEventListener('pointerleave',hide);document.addEventListener('pointerdown',rc,true);document.addEventListener('contextmenu',rc,true);
+    const clean=()=>{dl?.classList.remove('eyedrop','eyedrop-arm');document.removeEventListener('pointermove',out,true);dl?.removeEventListener('pointerleave',hide);document.removeEventListener('pointerdown',rc,true);document.removeEventListener('contextmenu',rc,true)};
+    try{const r=await new EyeDropper().open({signal:ac.signal}).finally(clean);const c=validColor(r.sRGBHex);if(!c)return;pushRecent(c,ccKey(d.k2,d.id));await czSet(d.k2,d.id,'color',c);customizeDlg(d.k2,d.id,'color')}catch{}},
   'nb-custom'(d){customizeDlg('n',d.slug)},
   async 'icon-pick'(d){await pickProjIcon(getP(d.id))},
   'grp-color'(d){colorDlg('g',d.g)},
   'pick-color'(d){setPickedColor(d.k2,d.id,d.c);$('#wbModal')?.close()},
   'run-exit'(){S.run=null;S.sticky.clear();render();scrollTo(0,0)},
   'run-step'(d){runStep(+d.d)},
+  'run-batch-go'(d){S.view.batch=d.batch;startRun(getP(d.pid))},
   search(){openSearch()},
   'gs-open'(d){const x=S.gsHits?.[+d.i];if(!x)return;const pick=S.gsPick;S.gsPick=null;$('#wbModal')?.close();if(pick){pick(x);return}
     if(x.nb){nbGoto(x.nb,x.elId||x.secId);return}
@@ -2938,6 +3058,7 @@ const CHG={
   async 'cz-title'(d,v){await czSet(d.k2,d.id,'title',v);const t=$('#wbModal.cz-dlg h2');if(t&&v.trim())t.textContent=t.textContent.replace(/:.*$/,': '+v.trim())},
   async 'cz-summary'(d,v){await czSet(d.k2,d.id,'summary',v)},
   isort(d,v){S.view.isort=v;render()},dsort(d,v){S.view.dsort=v;render()},gsort(d,v){S.view.gsort=v;render()},drec(d,v){S.view.drec=v;render()},nbsort(d,v){S.view.nbsort=v;render()},
+  'run-batch'(d,v){if(!S.run)return;S.view.batch=v;startRun(getP(S.run.pid))},
   torder(d,v){S.view.order=v==='default'?'default':tOrder(v);S.sticky.clear();render()},
   async 'icon-file'(d,v,el){const f=el.files[0];if(f)await setIcon(d.k2,d.id,f)},
   'exp-paths'(d,v,el){lsSet('wb-exp-paths',!!el.checked)},
@@ -3149,10 +3270,10 @@ document.addEventListener('drop',e=>{
   L.order=plan.order;L.member=plan.member;dragPid=null;saveLayout();render();
 });
 function selectCustom(el){
-  const dr=S.decDraft[el.dataset.pid+'|'+el.dataset.id];if(!dr)return;dr.choice='__custom';
+  const dr=S.decDraft[el.dataset.pid+'|'+el.dataset.id];if(!dr)return;if(dr.multi){if(!dr.customOn&&(el.value||'').trim()){dr.customOn=true;el.closest('.dec-custom')?.classList.add('on');const k=el.closest('.dec-custom')?.querySelector('.dec-chk');if(k)k.innerHTML=ic('check')}return}dr.choice='__custom';
   const card=el.closest('.dec');card?.querySelectorAll('.dec-opt.on').forEach(x=>x.classList.remove('on'));el.closest('.dec-custom')?.classList.add('on');
 }
-document.addEventListener('focusin',e=>{if(e.target.dataset?.in==='dec-other')selectCustom(e.target)});
+document.addEventListener('focusin',e=>{if(e.target.dataset?.in==='dec-other'&&!S.decDraft[e.target.dataset.pid+'|'+e.target.dataset.id]?.multi)selectCustom(e.target)});
 document.addEventListener('focusout',()=>setTimeout(()=>{if(S.pendingRender&&!isEditing()){S.pendingRender=false;render()}},60));
 
 /* ---------------- watch files for agent changes ---------------- */
@@ -3164,6 +3285,7 @@ async function poll(){
       const sp=await p.pm.getFileHandle('AGENT_SETUP.md').then(()=>true,()=>false);
       if(sp!==!!p.setupPending){p.setupPending=sp;if(!sp)msgs.push(`${projName(p)}: agent finished setup`)}
       {let f;try{f=await (await p.pm.getFileHandle('AGENT_LOG.md')).getFile()}catch{}if(f&&f.lastModified!==p.mt.alog){p.mt.alog=f.lastModified;p.alog=parseAgentLog(await f.text());applyRetestResets(p);requestRender()}}
+      {let f;try{f=await (await p.pm.getFileHandle('ROADMAP.md')).getFile()}catch{}if((f?.lastModified||0)!==(p.mt.roadmap||0)){await loadRoadmap(p);if(S.view.pid===p.id&&S.view.tab==='roadmap')requestRender()}}
       {const cm=await pollChanges(p);if(cm){msgs.push(cm);p._agentTouched=true;p.lastUpd={who:'Agent',t:Date.now()};go=go||{pid:p.id,tab:'changes',gfilter:'all',label:'Show'}}}
       for(const [k,file] of [['tests','TESTS.md'],['features','FEATURES.md'],['decisions','DECISIONS.md'],['ideas','IDEAS.md']]){
         let f;try{f=await (await p.pm.getFileHandle(file)).getFile()}catch{continue}
@@ -3183,6 +3305,7 @@ async function poll(){
       }
     }
   }catch(e){console.warn(e)}finally{S.polling=false}
+  if(S.ws){readWsSettings().catch(()=>{});if(S.view.page==='prompts'){const m=S.pr.mtime;await loadPrompts().catch(()=>{});if(m!==S.pr.mtime&&!isEditing())requestRender()}}
   if(S.ws&&S.trips?.loaded){const sig=S.trips.list.map(t=>t.slug+t.mtime).join();await loadTrips().catch(()=>{});if(sig!==S.trips.list.map(t=>t.slug+t.mtime).join()&&S.view.page==='trips')requestRender()}
   if(S.ws&&S.nb.loaded){const sig=S.nb.topics.map(t=>t.file+t.mtime).join();await loadNotebook().catch(()=>{});if(sig!==S.nb.topics.map(t=>t.file+t.mtime).join()&&S.view.page==='notebook')requestRender()}
   for(const p of S.projects)if(p.loaded&&p.pm){const old=p.iconSig;await loadIcon(p).catch(()=>{});if(p.iconSig!==old)requestRender()}
@@ -3246,7 +3369,7 @@ function customizeDlg(kind,id,keep){
       <div class="cz-cg"><span class="cdlg-h">App</span><div class="swatches"><button class="sw ${appSel?'on':''}" style="background:var(--accent-app,var(--accent))" data-act="cz-color" ${at} data-c="app" title="App theme accent"></button></div></div>
       ${kind==='p'&&d.group?.color?`<div class="cz-cg"><span class="cdlg-h">Group</span><div class="swatches"><button class="sw ${grpSel?'on':''}" style="background:${d.group.color}" data-act="cz-color" ${at} data-c="" title="Follow ${h(d.group.name)}"></button></div></div>`:''}
       <div class="cz-cg"><span class="cdlg-h">Presets</span><div class="swatches">${PROJ_COLORS.map(([n,c])=>`<button class="sw ${c===cur?'on':''}" style="background:${c}" title="${n}${c===d.sugg?' (suggested)':''}" data-act="cz-color" ${at} data-c="${c}">${c===d.sugg?'<span class="sugg">★</span>':''}</button>`).join('')}</div></div>
-      <div class="cz-cg cz-custom"><span class="cdlg-h">Custom</span><div class="swatches">${recentColors(ccKey(kind,id)).map(c=>`<button class="sw ${c===cur?'on':''}" style="background:${c}" title="${c}" data-act="cz-color" ${at} data-c="${c}"></button>`).join('')}<button class="sw sw-paint" data-act="cz-picker" ${at} title="Create your own color">${ic('paint')}</button><button class="sw sw-paint" data-act="cz-eyedrop" ${at} ${window.EyeDropper?'title="Pick a color from anywhere on screen"':'disabled title="Your browser doesn’t support the eyedropper"'}>${ic('pipette')}</button></div>
+      <div class="cz-cg cz-custom"><span class="cdlg-h">Custom</span><div class="swatches">${recentColors(ccKey(kind,id)).map(c=>`<button class="sw ${c===cur?'on':''}" style="background:${c}" title="${c}" data-act="cz-color" ${at} data-c="${c}"></button>`).join('')}<button class="sw sw-paint" data-act="cz-picker" ${at} title="Create your own color">${ic('paint')}</button><button class="sw sw-paint sw-eye" data-act="cz-eyedrop" ${at} ${window.EyeDropper?'title="Pick a color from anywhere on screen"':'disabled title="Your browser doesn’t support the eyedropper"'}>${ic('pipette')}</button></div>
         <div class="cp-pop" id="cpPop" hidden></div></div>
       ${cur&&recentColors(ccKey(kind,id)).includes(cur)?`<div class="cz-cg cz-del"><span class="cdlg-h">&nbsp;</span><button class="sw sw-del" data-act="cz-cdel" ${at} data-c="${cur}" title="Remove this custom color">${ic('x')}</button></div>`:''}
     </div>
@@ -3311,19 +3434,20 @@ function startRun(p){
   S.run={pid:p.id,ids,i:0,batch:bsel||'*',start:Date.now()};render();scrollTo(0,0);
 }
 function runTest(p){return S.run?allTests(p).find(t=>t.id===S.run.ids[S.run.i]):null}
-function runStats(p){const c={done:0,pass:0,partial:0,fail:0,blocked:0,skipped:0,retest:0,left:0};
+function runStats(p){const c={done:0,pass:0,change:0,partial:0,fail:0,blocked:0,skipped:0,retest:0,left:0};
   for(const id of S.run.ids){const t=allTests(p).find(x=>x.id===id);const s=t?effState(p,t):'untested';if(s==='untested'||s==='stale'||s==='retest')c.left++;else{c.done++;c[s]=(c[s]||0)+1}}return c}
 function renderRun(p){
   const R=S.run,t=runTest(p),c=runStats(p),n=R.ids.length,pct=Math.round(c.done/n*100);
-  let o=`<div class="toolbar run-bar"><span class="chip st-Idea">${ic('target')}Focus run · beta</span><b>${R.batch==='*'?'All batches':'Batch '+h(R.batch)}</b>
+  const left=b=>b.tests.filter(x=>['untested','retest','stale'].includes(effState(p,x))).length;
+  let o=`<div class="toolbar run-bar"><span class="chip st-Idea">${ic('target')}Focus run · beta</span><span class="sortbox batch-box"><select data-chg="run-batch" aria-label="Batch for this run"><option value="*" ${R.batch==='*'?'selected':''}>All batches</option>${p.tests.batches.map(b=>`<option value="${h(b.version)}" ${R.batch===b.version?'selected':''}>${h(b.version)} — ${left(b)} left</option>`).join('')}</select>${ic('chevD')}</span>
     <span class="muted small">${R.i+1} of ${n} · ${c.done} marked · ${c.left} left</span><div class="tb-bar" style="flex:1">${pctBar(pct)}</div>
     <button data-act="run-exit">${ic('x')}Exit run</button></div>`;
   if(!t||(c.left===0&&R.finished)){
     return o+`<div class="panel run-done"><h2>${ic('check')} Run complete</h2><p>${c.done} of ${n} tests marked: <b class="c-pass">${c.pass} pass</b> · <b class="c-partial">${c.partial} partial</b> · <b class="c-fail">${c.fail} fail</b> · ${c.blocked} blocked · ${c.skipped} skipped · ${c.retest} needs retest.</p>
-      <div class="form-row"><button class="primary" data-act="run-exit">Back to the list</button><button data-act="review-prompt" data-pid="${h(p.id)}">${ic('clip')}Copy review prompt</button>${R.batch!=='*'?`<button data-act="batch-report" data-pid="${h(p.id)}" data-batch="${h(R.batch)}">${ic('layers')}Batch report</button>`:''}</div></div>`;
+      <div class="form-row">${(()=>{if(R.batch==='*')return '';const bs=p.tests.batches,i=bs.findIndex(b=>b.version===R.batch),nx=[...bs.slice(i+1),...bs.slice(0,Math.max(0,i))].find(b=>left(b)>0);return nx?`<button class="primary" data-act="run-batch-go" data-pid="${h(p.id)}" data-batch="${h(nx.version)}">${ic('chevR')}Start batch ${h(nx.version)} (${left(nx)} left)</button>`:''})()}<button class="${R.batch==='*'?'primary':''}" data-act="run-exit">Back to the list</button><button data-act="review-prompt" data-pid="${h(p.id)}">${ic('clip')}Copy review prompt</button>${R.batch!=='*'?`<button data-act="batch-report" data-pid="${h(p.id)}" data-batch="${h(R.batch)}">${ic('layers')}Batch report</button>`:''}</div></div>`;
   }
   o+=`<div class="run-nav"><button data-act="run-step" data-d="-1" ${R.i===0?'disabled':''}>${ic('back')}Previous <kbd>←</kbd></button>
-    <span class="muted small run-keys"><kbd>P</kbd> pass · <kbd>A</kbd> partial · <kbd>F</kbd> fail · <kbd>B</kbd> blocked · <kbd>S</kbd> skip · <kbd>R</kbd> retest · <kbd>1</kbd>–<kbd>4</kbd> severity · <kbd>Ctrl</kbd>+<kbd>Enter</kbd> submit · <kbd>Esc</kbd> exit</span>
+    <span class="muted small run-keys"><kbd>A</kbd> pass · <kbd>S</kbd> change · <kbd>D</kbd> partial · <kbd>F</kbd> fail · <kbd>J</kbd> blocked · <kbd>K</kbd> retest · <kbd>L</kbd> skip · <kbd>;</kbd> feedback · <kbd>\`</kbd> back to results · <kbd>1</kbd>–<kbd>4</kbd> severity · <kbd>Ctrl</kbd>+<kbd>Enter</kbd> submit · <kbd>Esc</kbd> exit</span>
     <button data-act="run-step" data-d="1">${R.i===n-1?'Finish':'Next'} <kbd>→</kbd>${ic('chevR')}</button></div>`;
   o+=`<div class="run-card">${t.batch&&R.batch==='*'?`<div class="muted small" style="margin-bottom:4px">Batch ${h(t.batch)}</div>`:''}${testCard(p,t,true)}<div class="run-submit"><button class="primary" data-act="run-step" data-d="1" ${p.fb.results[t.id]?.state?'':'disabled title="Pick a result first"'}>${ic('check')}${R.i===n-1?'Submit & finish':'Submit & next'} <kbd>Ctrl</kbd>+<kbd>Enter</kbd></button></div></div>`;
   return o;
@@ -3347,13 +3471,15 @@ function runAfterMark(p,t,state){
 document.addEventListener('keydown',e=>{
   if(!S.run||S.view.page!=='project'||S.view.pid!==S.run.pid||S.view.tab!=='testing')return;
   const tg=e.target,sevSel=tg?.dataset?.chg==='severity',typing=tg&&!sevSel&&(tg.tagName==='TEXTAREA'||tg.tagName==='INPUT'||tg.tagName==='SELECT'||tg.isContentEditable);
+  if(e.code==='Backquote'&&!e.shiftKey&&!e.ctrlKey&&!e.altKey&&!document.querySelector('dialog[open],sl-dialog[open]')){const p=getP(S.run.pid),t=runTest(p);if(t){e.preventDefault();e.stopImmediatePropagation();const st=p.fb.results[t.id]?.state||'pass';(document.querySelector(`.run-card button[data-act="state"][data-state="${st}"]`)||document.querySelector('.run-card button[data-act="state"]'))?.focus()}return}
   if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)&&!document.querySelector('dialog[open],sl-dialog[open]')){const p=getP(S.run.pid),t=runTest(p);if(t&&p.fb.results[t.id]?.state){e.preventDefault();e.stopImmediatePropagation();runStep(1)}return}
   if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();if(typing||sevSel){tg.blur();return}A['run-exit']();return}
   if(sevSel&&e.key==='Tab'&&!e.shiftKey){const ta=tg.closest('.test')?.querySelector('textarea[data-in="notes"]');if(ta){e.preventDefault();ta.focus()}return}
   if(sevSel&&!['1','2','3','4'].includes(e.key))return;
   if(typing||e.ctrlKey||e.metaKey||e.altKey||document.querySelector('dialog[open],sl-dialog[open]'))return;
-  const k=e.key.toLowerCase(),map={p:'pass',a:'partial',f:'fail',b:'blocked',s:'skipped',r:'retest'};
+  const k=e.key.toLowerCase(),map={a:'pass',s:'change',d:'partial',f:'fail',j:'blocked',k:'retest',l:'skipped'};
   if(map[k]&&!e.shiftKey){e.preventDefault();runMark(map[k]);return}
+  if(e.key===';'){e.preventDefault();const ta=document.querySelector('.run-card textarea[data-in="notes"]');if(ta){ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length)}return}
   if(['1','2','3','4'].includes(k)){const p=getP(S.run.pid),t=runTest(p),r=t&&p.fb.results[t.id];if(r&&(r.state==='fail'||r.state==='partial')){e.preventDefault();e.stopImmediatePropagation();r.severity=['Cosmetic','Minor','Major','Critical'][+k-1];r.updated=nowStampS();S.runSev=null;queueFeedbackSave(p);render();const f=()=>{const ta=document.querySelector(`.run-card textarea[data-in="notes"][data-id="${CSS.escape(t.id)}"]`);if(ta){ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length)}};f();requestAnimationFrame(f)}return}
   if(e.key==='ArrowRight'||(k==='n'&&!e.shiftKey)){e.preventDefault();runStep(1);return}
   if(e.key==='ArrowLeft'||(k==='n'&&e.shiftKey)){e.preventDefault();runStep(-1);return}
@@ -3429,7 +3555,7 @@ function reviewPrompt(p){
   const R=p.fb.results,tests=allTests(p);
   const sent=[];const touched=tests.filter(t=>R[t.id]?.state&&since(R[t.id].updated)&&!agentDone(p,t.id,R[t.id].updated));touched.forEach(t=>sent.push(t.id));
   if(touched.length){const by={};for(const t of touched)(by[t.batch]=by[t.batch]||[]).push(t);
-    lines.push(`- Results recorded: ${Object.entries(by).map(([b,ts])=>{const c=k=>ts.filter(t=>effState(p,t)===k).length;return `batch ${b}: ${ts.length} (${['pass','partial','fail','blocked','skipped','retest'].map(k=>c(k)?c(k)+' '+k:'').filter(Boolean).join(', ')})`}).join('; ')}.`)}
+    lines.push(`- Results recorded: ${Object.entries(by).map(([b,ts])=>{const c=k=>ts.filter(t=>effState(p,t)===k).length;return `batch ${b}: ${ts.length} (${['pass','change','partial','fail','blocked','skipped','retest'].map(k=>c(k)?c(k)+' '+k:'').filter(Boolean).join(', ')})`}).join('; ')}.`)}
   const notesPass=tests.filter(t=>effState(p,t)==='pass'&&(R[t.id].notes||'').trim()&&!agentDone(p,t.id,R[t.id].updated));notesPass.forEach(t=>sent.push(t.id));if(notesPass.length)lines.push(`- Passed with notes (read them): ${notesPass.map(t=>t.id).join(', ')}.`);
   const oi=openIssues(p).filter(x=>!agentDone(p,x.t.id,x.r.updated));oi.forEach(x=>sent.push(x.t.id));if(oi.length)lines.push(`- Open issues (all batches): ${oi.slice(0,20).map(x=>`${x.t.id} (${x.r.severity||x.r.state})`).join(', ')}${oi.length>20?` and ${oi.length-20} more`:''}.`);
   const bl=touched.filter(t=>['blocked','skipped'].includes(effState(p,t))&&(R[t.id].notes||'').trim());if(bl.length)lines.push(`- Blocked or skipped with a note for you: ${bl.map(t=>t.id).join(', ')}.`);
@@ -3439,7 +3565,7 @@ function reviewPrompt(p){
   const rt=tests.filter(t=>['retest','stale'].includes(effState(p,t)));if(rt.length)lines.push(`- Needs retest: ${rt.map(t=>t.id).join(', ')}.`);
   if(lines.length===1)lines.push('- Nothing new since the last request. Check FEEDBACK.md and CHANGES.md for anything still open.');
   S._lastSent={pid:p.id,ids:sent};
-  lines.push('','Fix what you can, then add a new test batch to TESTS.md with a Retests: line for each fix, update feature stages, act on decided decisions and Ready ideas, and add decisions for anything you need me to choose. Read FEEDBACK.md (and attachments/) and CHANGES.md for my notes. Never overwrite proj_management files; edit them in place. When you are done, append what you acted on or saw to proj_management/AGENT_LOG.md (format in its header), and mark tests that can be tested again as "ready to retest".');
+  lines.push('','Fix what you can, then add a new test batch to TESTS.md with a Retests: line for each fix, update feature stages and the plan in ROADMAP.md (keep my drags), act on decided decisions and Ready ideas, and add decisions for anything you need me to choose. Read FEEDBACK.md (and attachments/) and CHANGES.md for my notes. Never overwrite proj_management files; edit them in place. When you are done, append what you acted on or saw to proj_management/AGENT_LOG.md (format in its header). To have something tested again, add a new test with a Retests: line.');
   return lines.join('\n');
 }
 /* ---------- BATCH REPORT (idea 8) ---------- */
@@ -3521,7 +3647,7 @@ async function autoRelink(p,segs){
 /* ---------- ACTIVITY HISTORY (idea 9) ---------- */
 function actSnap(p){
   const s={batches:{},feats:{},decs:{},ideas:{},issues:{},res:{},titles:{}};
-  const SL={pass:'Pass',partial:'Partial',fail:'Fail',blocked:'Blocked',skipped:'Skipped',retest:'Needs retest'};
+  const SL={change:'Change',pass:'Pass',partial:'Partial',fail:'Fail',blocked:'Blocked',skipped:'Skipped',retest:'Needs retest'};
   for(const t of allTests(p)){const r=p.fb.results[t.id];if(r&&r.state){s.res[t.id]=SL[r.state]+(r.severity&&(r.state==='fail'||r.state==='partial')?' ('+r.severity+')':'');s.titles[t.id]=t.title}}
   for(const b of p.tests.batches){const c=batchStats(p,b);s.batches[b.version]={total:c.total,done:c.done,pass:c.pass,partial:c.partial,fail:c.fail}}
   for(const f of allFeatures(p.features)){s.feats[f.id]=f.parts.length?Math.round(featPct(f))+'%':f.stage;s.titles[f.id]=f.title}
@@ -4247,6 +4373,167 @@ function tLinkDlg(t,s){const rows=()=>(s.links||[]).map((l,i)=>`<div class="form
   dlg.addEventListener('close',()=>{s.links=(s.links||[]).filter(l=>l.u);saveTrip(t);render()},{once:true})}
 Object.assign(A,TA);
 
+/* ================= 0.32.0: Roadmap tab (D-021), workspace settings file (D-023), prompt bank (D-024) ================= */
+/* ---------- Roadmap: proj_management/ROADMAP.md, written by the agent, rearranged by the human ---------- */
+const ROADMAP_NOTE=`<!-- PROJ-MGMT:ROADMAP v1
+NEVER REPLACE THIS FILE: read it and edit it in place. Keep every build you aren't changing.
+AGENT INSTRUCTIONS - You plan the upcoming builds here; the human sees them on Workbench's
+Roadmap tab and can drag items between builds (Workbench then rewrites this file).
+- One "## Build <version> · <title> [Status]" per build, soonest first.
+  Status: Planned | Next | In progress | Testing | Released.
+- Optional "Target: YYYY-MM-DD" and free-text description lines right under the heading.
+- Items, one per line: "- <ID> <optional note>" for features (F-…), Inbox entries (GI-…),
+  decisions (D-…), ideas (I-…) and tests (WB-…), or "- <free text>" for anything else.
+  Workbench shows each ID's title and current stage/status.
+- Keep it current: when a build ships, set it [Testing] or [Released]; move what slipped.
+  Respect the human's drags: if they moved an item, plan it in that build.
+-->`;
+function parseRoadmap(text){const r={name:'',builds:[]};let b=null;
+  for(const raw of stripAgentNote(text).split(/\r?\n/)){const line=raw.replace(/\s+$/,'');let m;
+    if(/^#\s/.test(line)){if(!r.name)r.name=line.replace(/^#\s+/,'').replace(/^Roadmap\s*[—–:-]\s*/i,'').trim();continue}
+    if((m=line.match(/^##\s+(?:Build\s+)?(.*?)\s*(?:\[([^\]]+)\])?\s*$/i))){const t=m[1];const mm=t.match(/^(\S+)\s*[·\-–—:]\s*(.*)$/);b={version:mm?mm[1]:t,title:mm?mm[2]:'',status:m[2]||'Planned',target:'',desc:[],items:[]};r.builds.push(b);continue}
+    if(!b)continue;
+    if((m=line.match(/^Target:\s*(.*)$/i))){b.target=m[1].trim();continue}
+    if((m=line.match(/^\s*[-*]\s+(.*)$/))){const v=m[1].trim(),im=v.match(/^([A-Z]{1,6}-[A-Z0-9]*-?\d+)\b[\s:·\-–—]*(.*)$/);b.items.push(im?{id:im[1],note:im[2].trim(),raw:v}:{id:'',note:v,raw:v});continue}
+    if(line.trim())b.desc.push(line)}
+  return r}
+function serializeRoadmap(r,name){let o=`${ROADMAP_NOTE}\n# Roadmap — ${r.name||name}\n`;
+  for(const b of r.builds){o+=`\n## Build ${b.version}${b.title?' · '+b.title:''} [${b.status||'Planned'}]\n`;if(b.target)o+=`Target: ${b.target}\n`;if(b.desc.length)o+=b.desc.join('\n')+'\n';if(b.items.length)o+='\n'+b.items.map(i=>'- '+i.raw).join('\n')+'\n'}
+  return o}
+async function loadRoadmap(p){const f=await readFile(p.pm,'ROADMAP.md');p.road=f?parseRoadmap(f.text):null;p.mt.roadmap=f?.mtime||0}
+function rmRef(p,id){if(!id)return null;
+  let x=findFeat(p.features,id)?.f;if(x)return {kind:'feature',icon:'layers',title:x.title,st:x.stage,cls:'stage-'+x.stage};
+  x=(p.fb.issues||[]).find(i=>i.id===id);if(x)return {kind:'inbox',icon:CH_KIND_ICON[x.kind]||'inbox',title:x.title,st:giOpen(p,x)?(giLastReply(x)?'Replied':GI_STATUS[x.status]):'Closed',cls:giOpen(p,x)?'c-open':'c-pass'};
+  x=(p.dec?.items||[]).find(d=>d.id===id);if(x)return {kind:'decision',icon:'scale',title:x.title,st:x.status,cls:x.status==='Open'?'c-partial':'c-pass'};
+  x=(p.ideas?.items||[]).find(i=>i.id===id);if(x)return {kind:'idea',icon:'bulb',title:x.title,st:x.status,cls:''};
+  x=allTests(p).find(t=>t.id===id);if(x){const s=effState(p,x);return {kind:'test',icon:'flask',title:x.title,st:STATE_LABEL[s]||s,cls:'c-'+s}}
+  return {kind:'?',icon:'dot',title:'(not found)',st:'',cls:'muted'}}
+function waitingStrip(p){const all=sumStats(p),chg=allTests(p).filter(t=>effState(p,t)==='change'&&resolution(p,t)?.status!=='resolved').length;
+  const it=[['testing',openIssues(p).length,'open test issue','alert','c-fail',{filter:'issues'}],['testing',all.untested+all.retest,'to test','flask','',{filter:'untested'}],['testing',chg,'change request','edit','c-change',{filter:'tested'}],['changes',giAnswered(p).length,'Inbox repl','chat','c-answered',{gfilter:'answered'}],['changes',openGeneral(p).length,'open in the Inbox','inbox','',{gfilter:'open'}],['decisions',openDecisions(p).length,'decision','scale','c-partial',{dfilter:'open'}],['ideas',(p.ideas?.items||[]).filter(ideaOpen).length,'pending idea','bulb','',{ifilter:'pending'}]];
+  return `<div class="wait-strip">${it.map(([tab,n,l,i,c,extra])=>`<button class="wait-item${n?'':' zero'}" data-act="rm-go" data-tab="${tab}" data-x="${h(JSON.stringify(extra))}">${ic(i)}<b class="${n?c:''}">${n}</b><span>${l==='Inbox repl'?(n===1?'Inbox reply':'Inbox replies'):l==='to test'||l==='open in the Inbox'?l:l+(n===1?'':'s')}</span></button>`).join('')}</div>`}
+const RM_ST=['Planned','Next','In progress','Testing','Released'];
+function renderRoadmap(p){const pid=h(p.id),r=p.road;
+  let o=`<div class="sec-head"><h2>${ic('route')}Waiting on you</h2></div>${waitingStrip(p)}`;
+  if(!r)return o+`<div class="empty">No roadmap yet. Ask the project’s agent to plan the next builds in <code class="cb" data-cb="copy" title="Click to copy">proj_management/ROADMAP.md</code> (the review prompt asks for it), or <a data-act="rm-create" data-pid="${pid}">create an empty one</a>.</div>`;
+  o+=`<div class="hint-row"><span class="muted small">Drag items between builds. The agent plans in ROADMAP.md and follows your moves.</span></div><div class="rm-builds">`;
+  r.builds.forEach((b,bi)=>{o+=`<section class="rm-build rm-${h((b.status||'').replace(/\s+/g,''))}" data-rmb="${bi}"><div class="rm-head"><b class="rm-ver">${h(b.version)}</b><span class="rm-title">${h(b.title)}</span><span class="chip rm-st">${h(b.status)}</span>${b.target?`<span class="muted small">${ic('calendar')}${h(b.target)}</span>`:''}</div>
+    ${b.desc.length?`<div class="muted small rm-desc">${md(b.desc)}</div>`:''}<div class="rm-items">${b.items.map((it,ii)=>{const ref=rmRef(p,it.id);return `<div class="rm-item" draggable="true" data-rmi="${bi}:${ii}">${ic('grip')}${ref?`${ic(ref.icon)}<a data-act="goto-ref" data-id="${h(it.id)}"><code>${h(it.id)}</code></a><span class="rm-t">${h(ref.title)}</span>${it.note?`<span class="muted small">${h(it.note)}</span>`:''}<span class="chip ${ref.cls}">${h(ref.st)}</span>`:`${ic('dot')}<span class="rm-t">${codeInl(h(it.note))}</span>`}</div>`}).join('')||'<p class="muted small rm-empty">Nothing planned. Drop items here.</p>'}</div></section>`});
+  return o+'</div>'}
+let rmDrag=null;
+document.addEventListener('dragstart',e=>{const it=e.target.closest?.('[data-rmi]');if(!it)return;rmDrag=it.dataset.rmi;it.classList.add('dragging');e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain','rm')}catch{}});
+function rmTarget(e){const sec=e.target.closest?.('[data-rmb]');if(!sec)return null;const items=[...sec.querySelectorAll('[data-rmi]')].filter(x=>x.dataset.rmi!==rmDrag);const nx=items.find(x=>{const r=x.getBoundingClientRect();return e.clientY<r.top+r.height/2});return {sec,bi:+sec.dataset.rmb,before:nx||null}}
+document.addEventListener('dragover',e=>{if(!rmDrag)return;const t=rmTarget(e);document.querySelectorAll('.rm-drop-before,.rm-drop-into').forEach(x=>x.classList.remove('rm-drop-before','rm-drop-into'));if(!t)return;e.preventDefault();(t.before||t.sec).classList.add(t.before?'rm-drop-before':'rm-drop-into')});
+document.addEventListener('dragend',()=>{rmDrag=null;document.querySelectorAll('.rm-drop-before,.rm-drop-into,.rm-item.dragging').forEach(x=>x.classList.remove('rm-drop-before','rm-drop-into','dragging'))});
+document.addEventListener('drop',async e=>{if(!rmDrag)return;const t=rmTarget(e);const from=rmDrag;rmDrag=null;if(!t)return;e.preventDefault();const p=getP(S.view.pid);if(!p?.road)return;
+  const [fb,fi]=from.split(':').map(Number),item=p.road.builds[fb]?.items[fi];if(!item)return;const toB=p.road.builds[t.bi],beforeRaw=t.before?p.road.builds[t.before.dataset.rmi.split(':')[0]].items[+t.before.dataset.rmi.split(':')[1]].raw:null;
+  const move=r=>{const sb=r.builds.find(b=>b.version===p.road.builds[fb].version),db=r.builds.find(b=>b.version===toB.version);if(!sb||!db)return false;const i=sb.items.findIndex(x=>x.raw===item.raw);if(i<0)return false;const [x]=sb.items.splice(i,1);let j=beforeRaw?db.items.findIndex(y=>y.raw===beforeRaw):-1;if(j<0)j=db.items.length;db.items.splice(j,0,x);return true};
+  try{const cur=await readFile(p.pm,'ROADMAP.md');const fresh=cur?parseRoadmap(cur.text):p.road;if(!move(fresh))return;p.road=fresh;p.mt.roadmap=await writeFile(p.pm,'ROADMAP.md',serializeRoadmap(fresh,projName(p)));setSaving('Saved');trackActivity(p,'you');render()}catch(err){toast('Could not save ROADMAP.md: '+err.message)}});
+Object.assign(A,{
+  'rm-go'(d){let x={};try{x=JSON.parse(d.x||'{}')}catch{}goTo({pid:S.view.pid,tab:d.tab,...x,...(d.tab==='testing'?{batch:'*',tsub:'batches'}:{})})},
+  async 'rm-create'(d){const p=getP(d.pid);await writeFile(p.pm,'ROADMAP.md',serializeRoadmap({name:projName(p),builds:[{version:'next',title:'Next build',status:'Next',target:'',desc:[],items:[]}]},projName(p)));await loadRoadmap(p);render()},
+});
+
+/* ---------- Workspace settings file: <workspace>/workbench-settings.json (D-023 C) ---------- */
+const WS_SET_FILE='workbench-settings.json',WS_KEYS=new Set(['wb-settings','wb-layout','wb-favs','wb-paths','wb-custom-colors2']);
+function settingsSnapshot(withPaths){const byName=(m)=>Object.fromEntries(Object.entries(m||{}).filter(([k])=>!k.startsWith('__')).map(([id,v])=>{const p=getP(id);return p?[projName(p),v]:null}).filter(Boolean));
+  const L=layout(),gName=id=>L.groups.find(g=>g.id===id)?.name;const cc=lsGet('wb-custom-colors2',null)||{};
+  return {app:'workbench',version:APP_VERSION,settings:S.set,workspacePath:S.paths.__ws||'',favoritesByName:byName(S.favs),favOrderByName:favOrder().map(id=>getP(id)).filter(Boolean).map(projName),
+    ...(withPaths?{pathsByName:byName(S.paths),projects:S.projects.filter(p=>p.kind==='folder'&&p.loaded).map(p=>({name:projName(p),path:projPath(p)||'',folder:p.handle?.name||''}))}:{}),
+    customColorsByName:Object.fromEntries(Object.entries(cc).map(([k,v])=>[k.startsWith('g:')&&k!=='g:_'?'g@'+(gName(k.slice(2))||k):k,v])),
+    layoutByName:{groups:L.groups.map(g=>({name:g.name,collapsed:!!g.collapsed,summary:g.summary||'',color:g.color||'',icon:g.icon||'',members:S.projects.filter(p=>groupOf(p)===g.id).map(projName)})),order:L.order.map(id=>getP(id)).filter(Boolean).map(projName),miscCollapsed:!!L.miscCollapsed}}}
+let wsSetT=null,wsSetBusy=false;
+function scheduleWsSettings(){if(!S.ws||!S.booted||S.demo&&!S.wsSetDemo||S._wsApplying)return;clearTimeout(wsSetT);wsSetT=setTimeout(writeWsSettings,900)}
+async function writeWsSettings(){if(!S.ws||wsSetBusy)return;wsSetBusy=true;try{const d={...settingsSnapshot(true),saved:nowStampS(),savedBy:RUN_MODE};const txt=JSON.stringify(d,null,1);
+  const cur=await readFile(S.ws,WS_SET_FILE);if(cur){try{const o=JSON.parse(cur.text);delete o.saved;delete o.savedBy;const n={...d};delete n.saved;delete n.savedBy;if(JSON.stringify(o)===JSON.stringify(n)){wsSetBusy=false;return}}catch{}}
+  S.wsSetMt=await writeFile(S.ws,WS_SET_FILE,txt);lsSet('wb-ws-saved',d.saved)}catch(e){console.warn('settings file',e)}wsSetBusy=false}
+/* read on start and whenever another copy of Workbench changes it */
+async function readWsSettings(force){if(!S.ws||S.demo&&!S.wsSetDemo)return;const f=await readFile(S.ws,WS_SET_FILE).catch(()=>null);
+  if(!f){if(S.booted)writeWsSettings();return}
+  if(!force&&f.mtime===S.wsSetMt)return;S.wsSetMt=f.mtime;let d;try{d=JSON.parse(f.text)}catch{return}
+  if(!force&&d.saved&&d.saved<=(lsGet('wb-ws-saved','')||''))return;
+  S._wsApplying=true;try{applyWsSettings(d)}finally{S._wsApplying=false}lsSet('wb-ws-saved',d.saved||'');render();renderSettings?.()}
+function applyWsSettings(d){if(d.app!=='workbench')return;
+  if(d.settings){S.set={...SET_DEFAULTS,...d.settings};applySettings(true)}
+  if(d.workspacePath)S.paths.__ws=d.workspacePath;
+  const id=n=>S.projects.find(p=>p.loaded&&projName(p)===n)?.id;
+  if(d.favoritesByName){const f={};for(const [n,v] of Object.entries(d.favoritesByName)){const x=id(n);if(x)f[x]=v}S.favs={...f};lsSet('wb-favs',S.favs)}
+  if(d.pathsByName)for(const [n,v] of Object.entries(d.pathsByName)){const x=id(n);if(x&&v)S.paths[x]=v}
+  lsSet('wb-paths',S.paths);
+  if(d.layoutByName){const L=layout(),byName=new Map(L.groups.map(g=>[g.name,g]));const groups=[],member={};
+    for(const g of d.layoutByName.groups||[]){const ex=byName.get(g.name)||{id:'g'+rid()};groups.push({...ex,name:g.name,collapsed:!!g.collapsed,summary:g.summary||'',color:validColor(g.color)||'',icon:/^data:image\//.test(g.icon||'')?g.icon:''});for(const n of g.members||[]){const x=id(n);if(x)member[x]=ex.id}}
+    L.groups=groups;L.member=member;const ord=(d.layoutByName.order||[]).map(id).filter(Boolean);L.order=[...ord,...L.order.filter(x=>!ord.includes(x))];L.miscCollapsed=!!d.layoutByName.miscCollapsed;
+    if(d.favOrderByName)L.favOrder=d.favOrderByName.map(id).filter(Boolean);
+    if(d.customColorsByName){const cc={};for(const [k,v] of Object.entries(d.customColorsByName)){if(k.startsWith('g@')){const g=groups.find(x=>x.name===k.slice(2));if(g)cc['g:'+g.id]=v}else cc[k]=v}lsSet('wb-custom-colors2',cc)}
+    saveLayout()}
+  if(Array.isArray(d.projects)){const have=new Set(S.projects.filter(p=>p.loaded).map(projName));const miss=d.projects.filter(x=>x&&x.name&&!have.has(x.name));
+    if(miss.length){const prev=(lsGet('wb-pending-projects',[])||[]).filter(x=>!miss.some(y=>y.name===x.name));savePendingProjects([...prev,...miss.map(x=>({name:String(x.name),path:rootPath(x.path||''),folder:String(x.folder||'')}))]);autoRestoreProjects()}}}
+
+/* ---------- Prompt bank: <workspace>/prompts.md (D-024 C: one bank, prompts can be linked to projects, tags) ---------- */
+const PROMPTS_NOTE=`<!-- PROJ-MGMT:PROMPTS v1
+Written by Workbench (Prompts page). One "## <Title> ^<id>" per prompt, then optional
+"Tags: a, b" and "Projects: Name, Name" (empty = every project), a blank line, then the prompt.
+Placeholders filled in when copied: {project} {path} {batch} {date}.
+-->`;
+const PROMPT_START=[{title:'Audit Codebase',tags:['audit','code'],projects:[],body:'Audit the codebase for unnecessary complexity, duplicated logic, and assumptions that no longer hold.\nShow me what we could remove or simplify, with the evidence for each recommendation.\nThen propose the smallest changes that preserve existing behaviour.'}];
+S.pr=S.pr||{list:[],loaded:false,mtime:0};
+function parsePrompts(text){const out=[];let c=null,phase='';for(const raw of stripAgentNote(text).split(/\r?\n/)){const line=raw.replace(/\s+$/,'');let m;
+  if(/^#\s/.test(line)&&!c)continue;
+  if((m=line.match(/^##\s+(.*?)(?:\s+\^([\w-]+))?$/))){c={id:m[2]||'p'+rid(),title:m[1].trim(),tags:[],projects:[],body:[]};out.push(c);phase='f';continue}
+  if(!c)continue;
+  if(phase==='f'&&(m=line.match(/^(Tags|Projects):\s*(.*)$/i))){c[m[1].toLowerCase()]=m[2].split(/\s*,\s*/).filter(Boolean);continue}
+  if(phase==='f'&&!line.trim()){phase='b';continue}phase='b';c.body.push(line)}
+  for(const x of out)x.body=x.body.join('\n').replace(/^\n+|\n+$/g,'');return out}
+function serializePrompts(list){return `${PROMPTS_NOTE}\n# Prompts\n`+list.map(c=>`\n## ${c.title.replace(/\n/g,' ')||'Untitled'} ^${c.id}\n${c.tags.length?`Tags: ${c.tags.join(', ')}\n`:''}${c.projects.length?`Projects: ${c.projects.join(', ')}\n`:''}\n${c.body}\n`).join('')}
+async function loadPrompts(){if(!S.ws)return;const f=await readFile(S.ws,'prompts.md').catch(()=>null);
+  if(!f){if(!S.pr.loaded){S.pr.list=PROMPT_START.map(x=>({...x,id:'p'+rid()}));S.pr.loaded=true;await savePrompts()}return}
+  if(f.mtime===S.pr.mtime||S.pr.dirty?.size)return;S.pr.list=parsePrompts(f.text);S.pr.mtime=f.mtime;S.pr.loaded=true}
+async function savePrompts(){const cur=await readFile(S.ws,'prompts.md').catch(()=>null);let list=S.pr.list;
+  if(cur&&S.pr.mtime&&cur.mtime!==S.pr.mtime){const theirs=parsePrompts(cur.text),dirty=S.pr.dirty||new Set(),gone=S.pr.gone||new Set();
+    list=theirs.filter(x=>!gone.has(x.id)).map(x=>dirty.has(x.id)?(S.pr.list.find(y=>y.id===x.id)||x):x);for(const x of S.pr.list)if(dirty.has(x.id)&&!list.some(y=>y.id===x.id))list.push(x);S.pr.list=list}
+  S.pr.mtime=await writeFile(S.ws,'prompts.md',serializePrompts(list));S.pr.dirty=new Set();S.pr.gone=new Set()}
+function prSave(c){(S.pr.dirty=S.pr.dirty||new Set()).add(c.id);clearTimeout(S.pr._t);S.pr._t=setTimeout(()=>savePrompts().catch(e=>toast('Could not save prompts.md: '+e.message)),600)}
+function fillPrompt(c,p){const b=p?.tests.batches[0];return c.body.replace(/\{project\}/g,p?projName(p):'{project}').replace(/\{path\}/g,p?(projPath(p)||p.handle?.name||''):'{path}').replace(/\{batch\}/g,b?b.version:'{batch}').replace(/\{date\}/g,nowStampS().slice(0,10))}
+const hasPh=c=>/\{(project|path|batch)\}/.test(c.body);
+async function copyPrompt(c,p){if(!p&&hasPh(c)){const cand=c.projects.length?S.projects.filter(x=>x.loaded&&c.projects.includes(projName(x))):S.projects.filter(x=>x.loaded);
+    if(cand.length===1)p=cand[0];else{p=await pickProject(cand,`“${c.title}” uses {project}/{path}/{batch}. Which project?`);if(!p)return}}
+  try{await navigator.clipboard.writeText(fillPrompt(c,p));toast(`Copied “${c.title}”${p?' for '+projName(p):''}.`)}catch{toast('Could not copy')}}
+function pickProject(list,title){return new Promise(res=>{const d=openModal(title,`<div class="pick-list">${list.map(p=>`<button data-pick="${h(p.id)}" style="${projStyle(p)}">${picon(p,'xs')||ic('folder')}${h(projName(p))}</button>`).join('')}</div>`,'pick-dlg');let done=false;
+  d.addEventListener('click',e=>{const b=e.target.closest('[data-pick]');if(b){done=true;res(getP(b.dataset.pick));d.close()}});d.addEventListener('close',()=>{if(!done)res(null)},{once:true})})}
+function promptCard(c,ctx){const id=h(c.id),ed=S.prEdit===c.id;
+  if(ed)return `<div class="pr-card editing" id="pr-${id}"><input type="text" class="pr-title-in" data-prin="title" data-id="${id}" data-k="pr-t-${id}" value="${h(c.title)}" placeholder="Title">
+    <textarea data-prin="body" data-id="${id}" data-k="pr-b-${id}" data-maxl="16" placeholder="The prompt. Placeholders: {project} {path} {batch} {date}">${h(c.body)}</textarea>
+    <div class="form-row"><span class="tag-in">${ic('layers')}<input type="text" data-prin="tags" data-id="${id}" data-k="pr-g-${id}" value="${h(c.tags.join(', '))}" placeholder="Tags, comma separated"></span></div>
+    <div class="pr-projs"><span class="muted small">Linked projects (none = all):</span>${S.projects.filter(p=>p.loaded).map(p=>`<button class="kchip${c.projects.includes(projName(p))?' on':''}" data-act="pr-proj" data-id="${id}" data-n="${h(projName(p))}">${h(projName(p))}</button>`).join('')}</div>
+    <div class="form-row" style="justify-content:flex-end"><button class="ghost danger" data-act="pr-del" data-id="${id}">${ic('trash')}Delete</button><button class="primary" data-act="pr-edit" data-id="">${ic('check')}Done</button></div></div>`;
+  return `<div class="pr-card" id="pr-${id}"><div class="pr-head"><b>${h(c.title)}</b>${c.tags.map(t=>`<span class="chip">${h(t)}</span>`).join('')}${c.projects.length?c.projects.map(n=>`<span class="chip pr-pchip">${ic('folder')}${h(n)}</span>`).join(''):'<span class="chip muted">all projects</span>'}<span class="spacer" style="flex:1"></span><button class="ghost icon" data-act="pr-edit" data-id="${id}" title="Edit">${ic('edit')}</button></div>
+    <button class="pr-body" data-act="pr-copy" data-id="${id}"${ctx?` data-pid="${h(ctx)}"`:''} title="Click to copy${hasPh(c)?' (placeholders filled in)':''}">${ic('copy')}<span>${h(c.body)}</span></button></div>`}
+function prFilter(list,ctxPid){const q=(S.prq||'').trim().toLowerCase(),tag=S.prTag||'',pf=ctxPid?projName(getP(ctxPid)):(S.prProj||'');
+  return list.filter(c=>(!q||[c.title,c.body,...c.tags].join('\n').toLowerCase().includes(q))&&(!tag||c.tags.includes(tag))&&(!pf||!c.projects.length||c.projects.includes(pf)))}
+function renderPrompts(){const list=prFilter(S.pr.list),tags=[...new Set(S.pr.list.flatMap(c=>c.tags))].sort();
+  let o=`<div class="home-tools"><span class="tsearch">${ic('search')}<input type="text" id="prSearch" data-k="prSearch" placeholder="Search prompts…" value="${h(S.prq||'')}">${S.prq?`<button class="ghost icon" data-act="pr-q-clear" title="Clear search">${ic('x')}</button>`:''}</span>
+    <select data-chg="pr-proj-f" title="Show prompts for a project"><option value="">All projects</option>${S.projects.filter(p=>p.loaded).map(p=>`<option ${S.prProj===projName(p)?'selected':''}>${h(projName(p))}</option>`).join('')}</select><span class="spacer" style="flex:1"></span><button class="primary" data-act="pr-new">${ic('plus')}New prompt</button></div>
+    ${tags.length?`<div class="kind-chips"><button class="kchip${S.prTag?'':' on'}" data-act="pr-tag" data-t="">All tags</button>${tags.map(t=>`<button class="kchip${S.prTag===t?' on':''}" data-act="pr-tag" data-t="${h(t)}">${h(t)}</button>`).join('')}</div>`:''}
+    <p class="muted small">Click a prompt to copy it. {project}, {path}, {batch} and {date} are filled in (you’re asked which project when it isn’t clear). Saved in <code>prompts.md</code> in your workspace.</p>`;
+  return o+`<div class="pr-list">${list.map(c=>promptCard(c)).join('')||'<div class="empty">No prompts match.</div>'}</div>`}
+Object.assign(A,{
+  'pr-new'(){const c={id:'p'+rid(),title:'',tags:S.prTag?[S.prTag]:[],projects:S.prProj?[S.prProj]:[],body:''};S.pr.list.unshift(c);S.prEdit=c.id;prSave(c);render();setTimeout(()=>document.querySelector(`[data-k="pr-t-${c.id}"]`)?.focus(),30)},
+  'pr-edit'(d){S.prEdit=d.id||null;render()},
+  async 'pr-del'(d){const c=S.pr.list.find(x=>x.id===d.id);if(!c||!await confirmBox(`Delete the prompt “${c.title||'Untitled'}”?`,'Delete'))return;S.pr.list=S.pr.list.filter(x=>x!==c);(S.pr.gone=S.pr.gone||new Set()).add(c.id);S.prEdit=null;await savePrompts();render()},
+  'pr-proj'(d){const c=S.pr.list.find(x=>x.id===d.id);if(!c)return;c.projects=c.projects.includes(d.n)?c.projects.filter(x=>x!==d.n):[...c.projects,d.n];prSave(c);render()},
+  'pr-copy'(d){const c=S.pr.list.find(x=>x.id===d.id);if(c)copyPrompt(c,d.pid?getP(d.pid):null)},
+  'pr-tag'(d){S.prTag=d.t;render()},
+  'pr-q-clear'(){S.prq='';render();$('#prSearch')?.focus()},
+  async 'proj-prompts'(d){const p=getP(d.pid);await loadPrompts();const list=prFilter(S.pr.list,p.id);
+    openModal(`Prompts for ${projName(p)}`,`<p class="muted small">Prompts linked to this project and ones for every project. Click to copy with this project filled in. <a data-act="nav" data-page="prompts">Manage prompts →</a></p><div class="pr-list">${list.map(c=>promptCard(c,p.id)).join('')||'<div class="empty">No prompts yet.</div>'}</div>`,'pr-dlg')},
+});
+Object.assign(CHG,{'pr-proj-f'(d,v){S.prProj=v;render()}});
+document.addEventListener('input',e=>{const el=e.target;if(el.id==='prSearch'){S.prq=el.value;render();return}
+  if(el.dataset.prin){const c=S.pr.list.find(x=>x.id===el.dataset.id);if(!c)return;const f=el.dataset.prin;c[f]=f==='tags'?el.value.split(/\s*,\s*/).filter(Boolean):el.value;if(el.tagName==='TEXTAREA')taFit(el);prSave(c)}});
+document.addEventListener('click',e=>{if(e.target.closest('[data-act="nav"]')&&$('#wbModal.pr-dlg'))$('#wbModal')?.close()},true);
+
+window.__wsHook=k=>{if(WS_KEYS.has(k))scheduleWsSettings()};
+
+
 /* ================= TRIPS Release 2: booking status, attachments, documents, checklist ================= */
 const TBOOK=[['','No booking'],['tobook','To book'],['booked','Booked'],['paid','Paid'],['cancelled','Cancelled']];
 function tBook(s){const b=s.book||'';return `<label class="tbook tb-${b||'none'}" title="Booking status"><select data-tchg="book" data-id="${s.id}" aria-label="Booking status">${TBOOK.map(([k,l])=>`<option value="${k}" ${b===k?'selected':''}>${l}</option>`).join('')}</select></label>`}
@@ -4323,7 +4610,9 @@ function renderMap(t){const pts=mapPoints(t.data),miss=pts.filter(p=>p.s.geo?.no
   setTimeout(()=>drawMap(t),0);if(need.length&&!S.tGeo&&!S._geoAuto?.[t.slug]){(S._geoAuto=S._geoAuto||{})[t.slug]=1;setTimeout(()=>A['t-geo']({}),50)}
   return o}
 async function drawMap(t){const box=document.getElementById('tMap');if(!box)return;let L;try{L=await loadLeaflet()}catch{box.outerHTML=`<div class="empty">${ic('globe')} Connect to the internet for the map view.</div>`;return}
-  if(!document.body.contains(box))return;const map=L.map(box,{scrollWheelZoom:false});const dk=document.documentElement.dataset.theme!=='light';L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/${dk?'dark_all':'voyager'}/{z}/{x}/{y}{r}.png`,{maxZoom:19,subdomains:'abcd',attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions" target="_blank">CARTO</a>'}).addTo(map);
+  if(!document.body.contains(box))return;const map=L.map(box,{scrollWheelZoom:false});const dk=document.documentElement.dataset.theme!=='light',esri='https://server.arcgisonline.com/ArcGIS/rest/services/',att='Tiles © <a href="https://www.esri.com" target="_blank">Esri</a> — Esri, HERE, Garmin, © OpenStreetMap contributors, and the GIS user community';
+  if(dk){L.tileLayer(esri+'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:att}).addTo(map);L.tileLayer(esri+'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:16}).addTo(map)}
+  else L.tileLayer(esri+'World_Street_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:att}).addTo(map);
   const flat=tripFlat(t.data),stops=flat.filter(x=>(x.s.t==='city'||x.s.t==='place')&&x.s.geo&&!x.s.geo.none),ll=[];let n=0;
   const col=t.data.color||getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#7c8cff';
   for(const x of stops){n++;const p=[x.s.geo.lat,x.s.geo.lon];ll.push(p);L.marker(p,{icon:L.divIcon({className:'t-pin',html:`<span style="background:${col}">${n}</span>`,iconSize:[26,26],iconAnchor:[13,13]})}).addTo(map).bindPopup(`<b>${h(x.s.name)}</b><br>${h(String(x.s.arr||'').replace('T',' '))}`)
@@ -4451,7 +4740,7 @@ async function boot(){
     await idb.open();S.ws=await idb.get('workspace')||null;S.records=(await idb.get('projects'))||[];
   }
   await loadAll();if(S._pdefReset)for(const p of S.projects)if(p.loaded&&p.prefs&&Object.keys(p.prefs).length){p.prefs={};writeFile(p.pm,'workbench-view.json','{}').catch(()=>{})}
-  await loadNotebook().catch(e=>console.warn('notebook',e));await loadTrips().catch(e=>console.warn('trips',e));S.since=S.demo?demoSince():sinceLast();S.view=routeFromHash()||S.view;S.booted=true;render();setInterval(poll,4000);autoRestoreProjects();
+  await loadNotebook().catch(e=>console.warn('notebook',e));await loadTrips().catch(e=>console.warn('trips',e));S.since=S.demo?demoSince():sinceLast();S.view=routeFromHash()||S.view;S.booted=true;render();readWsSettings().catch(e=>console.warn('settings file',e));loadPrompts().then(()=>{if(S.view.page==='prompts')render()}).catch(()=>{});setInterval(poll,4000);autoRestoreProjects();
   if(S.since.length){const n=S.since.reduce((a,x)=>a+x.parts.reduce((b,y)=>b+y.n,0),0);toast(`${n} change${n>1?'s':''} across ${S.since.length} project${S.since.length>1?'s':''} since you were last here`)}
 }
 boot().catch(e=>{console.error(e);$('#app').innerHTML=`<div class="empty">Startup failed: ${h(e.message)}</div>`});

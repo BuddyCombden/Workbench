@@ -294,3 +294,20 @@ The JSON also holds documents (`docs`), booking status (`book`: tobook, booked, 
 TRIP.md is a readable summary of the active path that Workbench rewrites on every save, with the full plan as JSON under
 `## Data (Workbench)`. Agents read it freely and edit only when asked, and only the JSON: keep every `id`, never reuse one.
 Workbench merges edits made elsewhere field by field and backs up to `history/` if a save would remove anything.
+
+---
+
+## Additions in 0.30.0
+
+- **Change result.** Besides Pass, Partial, Fail, Blocked, Needs retest and Skipped, the human can mark a test **Change**: it works but they want something different (not a bug). FEEDBACK.md lists these under "Change requests on tests"; handle them like Changes and add a test with `Retests: <ID>`.
+- **Resolution.** An issue is resolved when a test that Retests it passes, when that test is itself resolved (chains), when the human links it to a test that passes, an Inbox entry that is closed or a feature that is Completed, or when they mark it resolved by hand. FEEDBACK.md shows "RESOLVED by …" and "linked: …"; the JSON results keep `links`, `resolvedAt` and `resolvedNote`.
+- **Multi-select decisions.** Add `Select: multiple` under a decision's heading to let the human pick several options. Their answer is written as `A - …; C - …; Other: …`.
+- **Clickable code.** In tests, replies and decisions, tag code with {copy} (click copies), {highlight} (click selects), {open} (URL in a new tab), {folder} (Windows folder in File Explorer), {goto} (an ID like WB-012, GI-003, D-004, I-007 or F-…), {search} (Workbench search), {key} (key caps, e.g. `Ctrl+Shift+K`{key}) and {block} (own scrollable line). Combine with spaces: `npm test`{copy block}. Untagged `code` stays plain.
+- **Several recommendations.** In a multi-select decision, `Recommendation: A, C - why` marks each listed option.
+- **Headers stay current.** Workbench rewrites the leading `<!-- PROJ-MGMT:… -->` instruction block of each file when it loads a project; don't edit those blocks.
+- **Inbox.** Open means not closed; an entry whose latest message is your reply is waiting for the human (FEEDBACK.md marks it REPLIED).
+
+## Additions in 0.32.0
+
+- **ROADMAP.md (agent writes, human rearranges).** `## Build <version> · <title> [Planned|Next|In progress|Testing|Released]`, optional `Target:` and description lines, then `- <ID> <note>` or `- <free text>` items. Workbench's Roadmap tab shows titles and stages for IDs and lets the human drag items between builds; plan with their moves. Keep it current each pass.
+- **Workspace files.** `workbench-settings.json` (Workbench's settings, layout and project paths, shared by every copy of Workbench) and `prompts.md` (the human's prompt bank). Agents don't edit either.
